@@ -1,0 +1,53 @@
+{
+  "name": "phasmo-helper",
+  "productName": "Phasmo Helper",
+  "version": "0.2.1",
+  "description": "Phasmophobia için her zaman üstte duran yardımcı overlay (resmi değildir)",
+  "author": "wiesdante",
+  "homepage": "https://github.com/wiesdante/phasmo-helper",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never",
+    "release": "electron-builder --win --publish always"
+  },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  },
+  "devDependencies": {
+    "electron": "^44.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "io.github.wiesdante.phasmohelper",
+    "productName": "Phasmo Helper",
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "src/**/*",
+      "data/**/*",
+      "i18n/**/*"
+    ],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "artifactName": "Phasmo-Helper-Setup-${version}.${ext}",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Phasmo Helper"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "wiesdante",
+        "repo": "phasmo-helper",
+        "releaseType": "release"
+      }
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "app": {
+    "title": "Phasmo Helper"
+  },
+  "window": {
+    "minimize": "Minimize",
+    "hide": "Hide (F8)",
+    "quit": "Close"
+  },
+  "tabs": {
+    "evidence": "Evidence",
+    "ghosts": "Ghosts",
+    "timers": "Timers",
+    "speed": "Speed",
+    "settings": "Settings",
+    "cursed": "Cursed"
+  },
+  "evidence": {
+    "count": "Evidence count",
+    "reset": "Reset",
+    "possible": "Possible ghosts ({n})",
+    "excluded": "Excluded ({n})",
+    "none": "No matching ghost.",
+    "howTo": "Click: found ✓ → absent ✕ → empty. Right-click: absent directly. Use ✕ next to a ghost to eliminate it manually.",
+    "reducedNote": "Only {n} evidence is shown on this difficulty; some may never appear. ★ evidence is always shown.",
+    "eliminate": "Eliminate this ghost",
+    "restore": "Restore",
+    "speedBar": "Measured speed: {v} m/s. Non-matching ghosts are dimmed.",
+    "speedClear": "Clear",
+    "speedMatch": "Matches measured speed",
+    "resetToast": "Evidence reset"
+  },
+  "settings": {
+    "language": "Language",
+    "opacity": "Opacity",
+    "sound": "Sound alerts",
+    "shortcuts": "Shortcuts",
+    "shortcutsNote": "A screen for changing shortcuts will be added later."
+  },
+  "shortcuts": {
+    "toggleWindow": "Show/hide window",
+    "opacityDown": "Decrease opacity",
+    "opacityUp": "Increase opacity",
+    "speedTap": "Speed meter: tap",
+    "speedReset": "Speed meter: reset",
+    "smudgeTimer": "Incense timer",
+    "huntTimer": "Hunt timer (start/end)",
+    "ev_emf": "Evidence: EMF 5",
+    "ev_spiritbox": "Evidence: Spirit Box",
+    "ev_uv": "Evidence: Ultraviolet",
+    "ev_orb": "Evidence: Orb",
+    "ev_writing": "Evidence: Ghost Writing",
+    "ev_freezing": "Evidence: Freezing",
+    "ev_dots": "Evidence: D.O.T.S",
+    "evReset": "Reset evidence"
+  },
+  "shortcutTest": "Shortcut works: {name}",
+  "ghosts": {
+    "search": "Search ghosts…"
+  },
+  "ghost": {
+    "hunt": "Hunt threshold",
+    "speed": "Speed",
+    "rulesOut": "If you see this, it is NOT this ghost:",
+    "forcedHint": "Always shown on reduced evidence",
+    "fakeHint": "Fake evidence that always appears (not counted)"
+  },
+  "speed": {
+    "tapHint": "Press F6 or click here on every footstep",
+    "reset": "Reset (F7)",
+    "modifier": "In-game ghost speed setting (%)",
+    "los": "Measured during a chase (ghost could see me)",
+    "losHint": "For best results measure while the ghost can't see you: with line of sight most ghosts speed up to +65% over 13 s.",
+    "needMore": "{n} more taps…",
+    "detail": "{spm} steps/min · {n} taps",
+    "matches": "Ghosts matching this speed ({n})",
+    "refTitle": "Reference: speed → steps/min",
+    "spm": "steps/min",
+    "standard": "most ghosts",
+    "resetToast": "Speed measurement reset"
+  },
+  "timers": {
+    "incenseTitle": "Incense",
+    "huntTitle": "Hunt & cooldown",
+    "start": "Start",
+    "restart": "Restart",
+    "stop": "Stop",
+    "normalGhosts": "normal",
+    "incenseIdle": "Press F9 when you incense the ghost.",
+    "incenseStarted": "Incense timer started",
+    "incenseStatus": {
+      "safeAll": "No ghost can hunt (except cursed hunts).",
+      "demon": "Demon can hunt now; others can't yet.",
+      "normal": "Normal ghosts can hunt; Spirit can't yet.",
+      "spirit": "Incense protection over; every ghost incl. Spirit can hunt."
+    },
+    "incense": {
+      "demon": "60 s: Demon can hunt",
+      "normal": "90 s: ghosts can hunt",
+      "spirit": "180 s: Spirit can hunt too"
+    },
+    "noteUnder60": "Hunt started {s} s after incense. Even a Demon waits 60 s; the incense may have missed, or it was a cursed hunt.",
+    "noteUnder90": "Hunt started {s} s after incense (before 90 s) → most likely a Demon. Not a Spirit.",
+    "noteUnder180": "Hunt started {s} s after incense (before 180 s) → not a Spirit.",
+    "noteOver180": "Hunt started {s} s after incense; this rules nothing out.",
+    "huntStarted": "Hunt started",
+    "huntEnded": "Hunt ended",
+    "huntIdle": "Press F10 when a hunt starts. Press again if it ends early.",
+    "huntRunning": "Hunt in progress. It ends when the timer runs out (estimate).",
+    "cooldownAll": "Cooldown: no ghost can hunt.",
+    "cooldownDemon": "Demon can hunt again (20 s); others at 25 s.",
+    "cooldownDone": "Cooldown over: the ghost can hunt again",
+    "toastHuntStarted": "Hunt timer started",
+    "toastHuntEnded": "Hunt ended, cooldown started",
+    "cursed": "A cursed hunt happened this contract (+20 s)",
+    "huntLen": "Hunt length (incl. grace): {s} s",
+    "diff": {
+      "amateur": "Amateur",
+      "intermediate": "Intermediate",
+      "professional": "Professional",
+      "nightmare": "Nightmare",
+      "insanity": "Insanity"
+    },
+    "size": {
+      "0": "Small",
+      "1": "Medium",
+      "2": "Large"
+    }
+  },
+  "cursed": {
+    "general": "General rules & cursed hunts",
+    "use": "How to use",
+    "danger": "Cursed hunt / danger",
+    "tips": "Tips"
+  },
+  "about": {
+    "title": "About",
+    "project": "Project page",
+    "disclaimer": "An unofficial, fan-made helper tool. Not affiliated with Kinetic Games. Phasmophobia is a trademark of Kinetic Games.",
+    "sources": "Ghost and item info is compiled from community sources and may change with game updates:",
+    "updates": "The app downloads new versions automatically and installs them when you restart it."
+  },
+  "update": {
+    "ready": "New version (v{v}) downloaded. It will install when you restart the app.",
+    "installed": "Phasmo Helper updated to v{v}."
+  }
+}

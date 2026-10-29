@@ -1,0 +1,147 @@
+{
+  "app": {
+    "title": "Phasmo Helper"
+  },
+  "window": {
+    "minimize": "Küçült",
+    "hide": "Gizle (F8)",
+    "quit": "Kapat"
+  },
+  "tabs": {
+    "evidence": "Kanıtlar",
+    "ghosts": "Hayaletler",
+    "timers": "Süreler",
+    "speed": "Hız",
+    "settings": "Ayarlar",
+    "cursed": "Lanetli"
+  },
+  "evidence": {
+    "count": "Kanıt sayısı",
+    "reset": "Sıfırla",
+    "possible": "Olası hayaletler ({n})",
+    "excluded": "Elenenler ({n})",
+    "none": "Uyan hayalet yok.",
+    "howTo": "Tıkla: bulundu ✓ → yok ✕ → boş. Sağ tık: doğrudan yok. Hayaletin yanındaki ✕ ile elle eleyebilirsin.",
+    "reducedNote": "Bu zorlukta sadece {n} kanıt gösterilir; bazı kanıtlar hiç çıkmayabilir. ★ işaretli kanıtlar her zaman gösterilir.",
+    "eliminate": "Bu hayaleti ele",
+    "restore": "Geri al",
+    "speedBar": "Ölçülen hız: {v} m/s. Uymayanlar soluk.",
+    "speedClear": "Temizle",
+    "speedMatch": "Ölçülen hıza uyuyor",
+    "resetToast": "Kanıtlar sıfırlandı"
+  },
+  "settings": {
+    "language": "Dil",
+    "opacity": "Şeffaflık",
+    "sound": "Sesli uyarılar",
+    "shortcuts": "Kısayollar",
+    "shortcutsNote": "Kısayolları değiştirme ekranı ileride eklenecek."
+  },
+  "shortcuts": {
+    "toggleWindow": "Pencereyi göster/gizle",
+    "opacityDown": "Şeffaflığı azalt",
+    "opacityUp": "Şeffaflığı artır",
+    "speedTap": "Hız ölçer: vuruş",
+    "speedReset": "Hız ölçer: sıfırla",
+    "smudgeTimer": "Tütsü zamanlayıcısı",
+    "huntTimer": "Av zamanlayıcısı (başladı/bitti)",
+    "ev_emf": "Kanıt: EMF 5",
+    "ev_spiritbox": "Kanıt: Spirit Box",
+    "ev_uv": "Kanıt: Ultraviyole",
+    "ev_orb": "Kanıt: Orb",
+    "ev_writing": "Kanıt: Hayalet Yazısı",
+    "ev_freezing": "Kanıt: Dondurucu",
+    "ev_dots": "Kanıt: D.O.T.S",
+    "evReset": "Kanıtları sıfırla"
+  },
+  "shortcutTest": "Kısayol çalışıyor: {name}",
+  "ghosts": {
+    "search": "Hayalet ara…"
+  },
+  "ghost": {
+    "hunt": "Avlanma eşiği",
+    "speed": "Hız",
+    "rulesOut": "Bunu görürsen bu hayalet DEĞİL:",
+    "forcedHint": "Azaltılmış kanıtta her zaman gösterilir",
+    "fakeHint": "Her zaman görünen sahte kanıt (kanıt sayısına dahil değil)"
+  },
+  "speed": {
+    "tapHint": "Her ayak sesinde F6'ya bas ya da buraya tıkla",
+    "reset": "Sıfırla (F7)",
+    "modifier": "Oyundaki hayalet hızı ayarı (%)",
+    "los": "Kovalarken ölçtüm (hayalet beni görüyordu)",
+    "losHint": "En doğru sonuç için hayalet seni görmüyorken ölç: görüş hattında çoğu hayalet 13 sn içinde %65'e kadar hızlanır.",
+    "needMore": "{n} vuruş daha…",
+    "detail": "{spm} adım/dk · {n} vuruş",
+    "matches": "Bu hıza uyan hayaletler ({n})",
+    "refTitle": "Referans: hız → adım/dk",
+    "spm": "adım/dk",
+    "standard": "çoğu hayalet",
+    "resetToast": "Hız ölçümü sıfırlandı"
+  },
+  "timers": {
+    "incenseTitle": "Tütsü",
+    "huntTitle": "Av ve bekleme",
+    "start": "Başlat",
+    "restart": "Yeniden",
+    "stop": "Durdur",
+    "normalGhosts": "normal",
+    "incenseIdle": "Hayaleti tütsüleyince F9'a bas.",
+    "incenseStarted": "Tütsü sayacı başladı",
+    "incenseStatus": {
+      "safeAll": "Hiçbir hayalet avlanamaz (lanetli eşya hariç).",
+      "demon": "Demon artık avlanabilir; diğerleri henüz avlanamaz.",
+      "normal": "Normal hayaletler avlanabilir; Spirit henüz avlanamaz.",
+      "spirit": "Tütsü koruması bitti, Spirit dahil her hayalet avlanabilir."
+    },
+    "incense": {
+      "demon": "60 sn: Demon avlanabilir",
+      "normal": "90 sn: hayaletler avlanabilir",
+      "spirit": "180 sn: Spirit de avlanabilir"
+    },
+    "noteUnder60": "Av tütsüden {s} sn sonra başladı. Demon bile 60 sn bekler; tütsü hayalete denk gelmemiş olabilir ya da lanetli av.",
+    "noteUnder90": "Av tütsüden {s} sn sonra başladı (90 sn dolmadan) → büyük ihtimalle Demon. Spirit olamaz.",
+    "noteUnder180": "Av tütsüden {s} sn sonra başladı (180 sn dolmadan) → Spirit olamaz.",
+    "noteOver180": "Av tütsüden {s} sn sonra başladı; bu süre bir hayaleti elemez.",
+    "huntStarted": "Av başladı",
+    "huntEnded": "Av bitti",
+    "huntIdle": "Av başlayınca F10'a bas. Av erken biterse tekrar bas.",
+    "huntRunning": "Av sürüyor. Sayaç bitince av biter (tahmini).",
+    "cooldownAll": "Bekleme: hiçbir hayalet avlanamaz.",
+    "cooldownDemon": "Demon tekrar avlanabilir (20 sn); diğerleri 25 sn'de.",
+    "cooldownDone": "Bekleme bitti: hayalet tekrar avlanabilir",
+    "toastHuntStarted": "Av sayacı başladı",
+    "toastHuntEnded": "Av bitti, bekleme başladı",
+    "cursed": "Bu kontratta lanetli av oldu (+20 sn)",
+    "huntLen": "Av süresi (hazırlık dahil): {s} sn",
+    "diff": {
+      "amateur": "Amatör",
+      "intermediate": "Orta",
+      "professional": "Profesyonel",
+      "nightmare": "Kabus",
+      "insanity": "Delilik"
+    },
+    "size": {
+      "0": "Küçük",
+      "1": "Orta",
+      "2": "Büyük"
+    }
+  },
+  "cursed": {
+    "general": "Genel kurallar ve lanetli av",
+    "use": "Kullanım",
+    "danger": "Lanetli av / tehlike",
+    "tips": "İpuçları"
+  },
+  "about": {
+    "title": "Hakkında",
+    "project": "Proje sayfası",
+    "disclaimer": "Resmi olmayan, hayranlar tarafından yapılmış bir yardımcı araçtır. Kinetic Games ile bağlantısı yoktur. Phasmophobia, Kinetic Games'in ticari markasıdır.",
+    "sources": "Hayalet ve eşya bilgileri topluluk kaynaklarından derlenmiştir; oyun güncellemeleriyle değişebilir:",
+    "updates": "Uygulama yeni sürümleri otomatik olarak indirir ve kapatıp açınca kurar."
+  },
+  "update": {
+    "ready": "Yeni sürüm (v{v}) indirildi. Uygulamayı kapatıp açınca yüklenecek.",
+    "installed": "Phasmo Helper v{v} sürümüne güncellendi."
+  }
+}

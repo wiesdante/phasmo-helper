@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "general": {
+    "tr": [
+      "Varsayılan zorluklarda (Delilik hariç) her kontratta rastgele 1 lanetli eşya çıkar; her haritada her eşyanın tek bir sabit yeri vardır.",
+      "Sadece soruşturma alanının (binanın) içinde çalışır. Kullanmak hazırlık süresini hemen bitirir.",
+      "Lanetli av: akıl sağlığına ve av bekleme süresine bakmadan başlar, hazırlık süresi sadece 1 sn'dir.",
+      "Lanetli av olduktan sonra o kontrattaki tüm avlar 20 sn daha uzun sürer.",
+      "Lanetli avı sadece 2 kullanım hakkı kalmış 3. seviye haç durdurabilir. Tütsü hayaleti kör eder ama avı engellemez.",
+      "Özel zorlukta 'Dost hayalet' ayarı açıksa lanetli eşyalar av başlatmaz."
+    ],
+    "en": [
+      "On default difficulties (except Insanity) one random cursed possession spawns per contract; each item has one fixed spawn per map.",
+      "Only works inside the investigation area. Using one ends the setup phase immediately.",
+      "Cursed hunt: ignores sanity and hunt cooldown; grace period is only 1 s.",
+      "After a cursed hunt, every later hunt in that contract lasts 20 s longer.",
+      "Only a Tier III crucifix with 2 charges left can stop a cursed hunt. Incense blinds the ghost but doesn't prevent it.",
+      "With the custom 'Friendly ghost' option, cursed possessions don't start hunts."
+    ]
+  },
+  "items": [
+    {
+      "id": "ouija", "name": { "tr": "Ouija Tahtası", "en": "Ouija Board" },
+      "summary": { "tr": "Hayalete sesli soru sorarsın; her cevap akıl sağlığı yer.", "en": "Ask the ghost questions by voice; every answer costs sanity." },
+      "use": {
+        "tr": ["Yere koy ya da elindeyken aç, sonra sesli (ya da metin menüsünden) soru sor.", "İşin bitince mutlaka \"Goodbye\" de. Cevap EMF 2 (kanıtsa EMF 5) üretebilir."],
+        "en": ["Place it or activate it in hand, then ask by voice (or via the text menu).", "Always say \"Goodbye\" when done. Answers can create EMF 2 (EMF 5 if it's the evidence)."]
+      },
+      "danger": {
+        "tr": ["Akıl sağlığın sorunun maliyetinden düşükse tahta kırılır ve lanetli av başlar.", "\"Hide and seek\" (saklambaç) demek tahtayı kırar ve 5'ten geri sayımla lanetli av başlatır.", "Tahta açıkken uzaklaşmak ya da binadan çıkmak onu kapatır/kırabilir."],
+        "en": ["If your sanity is below the question's cost, the board breaks and a cursed hunt starts.", "Saying \"hide and seek\" breaks it and starts a cursed hunt after a 5-count.", "Walking away or leaving the building while it's on can deactivate/break it."]
+      },
+      "table": {
+        "cols": { "tr": ["Soru (örnek)", "Ne söyler", "Maliyet"], "en": ["Question (example)", "Reveals", "Cost"] },
+        "rows": [
+          { "tr": ["Where are you?", "Hayaletin şu an bulunduğu oda", "%50"], "en": ["Where are you?", "Ghost's current room", "50%"] },
+          { "tr": ["Where is your bone?", "Kemiğin olduğu oda", "%20"], "en": ["Where is your bone?", "Room with the bone", "20%"] },
+          { "tr": ["How old are you?", "Yaş (Thaye'de yaşlandıkça artar)", "%5"], "en": ["How old are you?", "Age (grows as a Thaye ages)", "5%"] },
+          { "tr": ["How is my sanity?", "Akıl sağlığı aralığı", "%5"], "en": ["How is my sanity?", "Your sanity band", "5%"] },
+          { "tr": ["How long have you been dead?", "Kaç yıl önce öldüğü", "%5"], "en": ["How long have you been dead?", "Years since death", "5%"] },
+          { "tr": ["How do you feel?", "Hayaletin duygusu", "%5"], "en": ["How do you feel?", "Ghost's mood", "5%"] },
+          { "tr": ["Hide and seek", "Lanetli av (5'ten geri sayım)", "—"], "en": ["Hide and seek", "Cursed hunt (5-count)", "—"] }
+        ]
+      },
+      "tips": {
+        "tr": ["Akıl sağlığı aralıkları: >%80 Sağlıklı, %60–80 İyi, %40–60 Orta, %20–40 Kötü, <%20 Berbat.", "Thaye şüphesi: yaşını iki kez, aralıklı sor; artıyorsa Thaye (90+ yaş Thaye'yi doğrular)."],
+        "en": ["Sanity bands: >80% Healthy, 60–80% Good, 40–60% Average, 20–40% Bad, <20% Awful.", "Thaye check: ask its age twice, some minutes apart; if it grows it's a Thaye (age 90+ confirms)."]
+      }
+    },
+    {
+      "id": "musicbox", "name": { "tr": "Müzik Kutusu", "en": "Music Box" },
+      "summary": { "tr": "Çalınca hayalet şarkıya eşlik eder; yakındaysa kutuya doğru yürür.", "en": "When played, the ghost sings along; if close, it walks toward the box." },
+      "use": {
+        "tr": ["Elde aç. Hayalet 20 m içindeyse şarkıya eşlik eder, yerini belli eder.", "Hayalet 5 m içindeyse (Yokai'de 2,5 m) bir event başlar ve hayalet kutuya doğru yürür.", "2,5 m içindeki oyuncular saniyede %2,5 akıl sağlığı kaybeder (tüm şarkı ~%75)."],
+        "en": ["Open it in hand. If the ghost is within 20 m it sings along, revealing its location.", "Within 5 m (2.5 m for Yokai) an event starts and the ghost walks to the box.", "Players within 2.5 m lose 2.5% sanity per second (~75% for the whole song)."]
+      },
+      "danger": {
+        "tr": ["Hayalet kutuyu tutan oyuncuya ulaşırsa ya da event sırasında 5 sn'den uzun yürürse lanetli av başlar.", "Çalarken kutuyu fırlatmak lanetli av başlatabilir.", "Akıl sağlığın %0'a inerse normal av başlar."],
+        "en": ["If the ghost reaches the holder, or walks for over 5 s during the event, a cursed hunt starts.", "Throwing it while it plays can start a cursed hunt.", "Hitting 0% sanity starts a normal hunt."]
+      },
+      "tips": {
+        "tr": ["Önce yere bırak, sonra çaldır: elinde değilken hayalet sana gelmez.", "Hayaletin odasını bulmak için iyidir; şarkının sesinin geldiği yere bak."],
+        "en": ["Put it on the floor before playing so the ghost doesn't walk to you.", "Good for finding the ghost room: follow where the singing comes from."]
+      }
+    },
+    {
+      "id": "mirror", "name": { "tr": "Lanetli Ayna", "en": "Haunted Mirror" },
+      "summary": { "tr": "Bakınca hayaletin favori odasını canlı görürsün.", "en": "Shows a live view of the ghost's favourite room." },
+      "use": {
+        "tr": ["Elde aç: hayaletin favori odası, içindeki eşyalar, ışıklar ve oyuncularla birlikte görünür.", "Maliyet: saniyede %7,5, en az %20 (2,67 sn'den kısa bakış bile %20)."],
+        "en": ["Activate in hand: shows the favourite room with its items, lights and players.", "Cost: 7.5% per second, minimum 20% (even under 2.67 s costs 20%)."]
+      },
+      "danger": {
+        "tr": ["Kullanırken akıl sağlığın %0'a inerse ayna çatlar ve lanetli av başlar.", "%20'nin altındayken açarsan da av başlar. Çatlayan ayna bir daha kullanılamaz."],
+        "en": ["If your sanity hits 0% while using it, the mirror cracks and a cursed hunt starts.", "Activating it below 20% also starts the hunt. A cracked mirror can't be used again."]
+      },
+      "tips": {
+        "tr": ["Kısa bak: oda tanıdıksa 2–3 sn yeter, maliyet %20 ile sınırlı kalır."],
+        "en": ["Keep it short: 2–3 s is enough to recognise the room and keeps the cost at 20%."]
+      }
+    },
+    {
+      "id": "voodoo", "name": { "tr": "Vudu Bebeği", "en": "Voodoo Doll" },
+      "summary": { "tr": "İğne batırınca hayaleti etkileşime zorlar; kanıt çıkarabilir.", "en": "Pushing a pin forces a ghost interaction; can produce evidence." },
+      "use": {
+        "tr": ["Her kullanımda 10 iğneden rastgele biri batar; iğne başına %5 akıl sağlığı.", "Hayalet etkileşimi zorlanır: EMF 5 veya UV izi gibi kanıtlar çıkabilir.", "Hayalet Yazısı defterini ve D.O.T.S'u tetiklemez."],
+        "en": ["Each use pushes a random one of 10 pins; 5% sanity per pin.", "Forces a ghost interaction: can produce evidence like EMF 5 or UV.", "Does not trigger the Ghost Writing book or D.O.T.S."]
+      },
+      "danger": {
+        "tr": ["Kalp iğnesi gelirse %10 akıl sağlığı gider ve lanetli av başlar.", "Akıl sağlığın bir iğnenin maliyetinden düşükse kalan tüm iğneler birden batar ve av başlar."],
+        "en": ["The heart pin costs 10% and starts a cursed hunt.", "If your sanity is below a pin's cost, all remaining pins are pushed at once and a hunt starts."]
+      },
+      "tips": {
+        "tr": ["Kanıt aramak için hayaletin odasında kullan; her basışta 1/10 ihtimalle kalp iğnesi gelebilir."],
+        "en": ["Use it in the ghost room to hunt for evidence; each press can hit the heart pin."]
+      }
+    },
+    {
+      "id": "circle", "name": { "tr": "Çağırma Çemberi", "en": "Summoning Circle" },
+      "summary": { "tr": "5 mumu yakınca hayalet çemberde belirir, sonra lanetli av başlar.", "en": "Light 5 candles: the ghost materialises in the circle, then a cursed hunt starts." },
+      "use": {
+        "tr": ["Yerinden oynatılamaz. Mumları çakmak ya da yanan mumla tek tek yak.", "Her mum yakındaki oyunculardan %16 akıl sağlığı alır (5 mum = %80).", "Son mumdan sonra hayalet çemberde 5 sn hareketsiz görünür: fotoğraf için ideal an. Ön kapı kilitlenir."],
+        "en": ["Can't be moved. Light the candles one by one with an igniter or lit candle.", "Each candle costs 16% sanity to nearby players (5 candles = 80%).", "After the last candle the ghost appears frozen in the circle for 5 s: perfect for a photo. The front door locks."]
+      },
+      "danger": {
+        "tr": ["5 sn'lik görünmenin ardından lanetli av başlar.", "Son mumu yakarken akıl sağlığın %16 veya altındaysa av hemen başlar."],
+        "en": ["A cursed hunt starts after the 5-second appearance.", "If your sanity is 16% or lower when lighting the last candle, the hunt starts immediately."]
+      },
+      "tips": {
+        "tr": ["Çemberin yakınına 3. seviye haç koy: lanetli avı durdurabilir.", "Kaçış yolunu önceden planla; ön kapı kilitli olacak."],
+        "en": ["Place a Tier III crucifix near the circle: it can stop the cursed hunt.", "Plan your escape route first; the front door will be locked."]
+      }
+    },
+    {
+      "id": "tarot", "name": { "tr": "Tarot Kartları", "en": "Tarot Cards" },
+      "summary": { "tr": "10 kartlık deste; her kartın rastgele iyi ya da kötü etkisi var.", "en": "A 10-card deck; each card has a random good or bad effect." },
+      "use": {
+        "tr": ["Eline al, binanın içinde tek tek çek. Her kart çekilince yanar.", "Deste 10 karttır; her kart kendi ihtimaliyle bağımsız seçilir, tekrar edebilir ya da hiç çıkmayabilir.", "Av sırasında çekilen her kart Joker (The Fool) olur."],
+        "en": ["Hold it and draw one card at a time inside the building. Each card burns.", "10 cards per deck; each rolls independently, so repeats or absences happen.", "Any card drawn during a hunt becomes The Fool."]
+      },
+      "danger": {
+        "tr": ["Ölüm (Death) kartı lanetli av başlatır; Asılan Adam (Hanged Man) seni anında öldürür.", "Deste bitince sonraki tüm avlar 20 sn uzar (muhtemelen hata ama oyunda böyle)."],
+        "en": ["Death starts a cursed hunt; The Hanged Man kills you instantly.", "Once the deck is empty, every later hunt lasts 20 s longer (likely a bug, but it's how it works)."]
+      },
+      "table": {
+        "cols": { "tr": ["Kart", "Etki", "İhtimal"], "en": ["Card", "Effect", "Chance"] },
+        "rows": [
+          { "tr": ["The Tower (mavi)", "Hayalet aktivitesi 20 sn boyunca 2 katı", "%20"], "en": ["The Tower (blue)", "Ghost activity doubled for 20 s", "20%"] },
+          { "tr": ["Wheel of Fortune", "Yeşil yanarsa +%25, kırmızı yanarsa −%25 akıl sağlığı", "%20"], "en": ["Wheel of Fortune", "Green: +25% sanity, red: −25%", "20%"] },
+          { "tr": ["The Fool (açık mor)", "Başka bir kart gibi görünür, etkisi yok", "%17"], "en": ["The Fool (light purple)", "Looks like another card, no effect", "17%"] },
+          { "tr": ["The Hermit (camgöbeği)", "Hayalet 1 dk favori odasına kapanır (av/event engellenmez)", "%10"], "en": ["The Hermit (cyan)", "Ghost stuck in its room for 1 min (hunts/events still possible)", "10%"] },
+          { "tr": ["The Devil (pembe)", "En yakın oyuncuya hayalet event'i", "%10"], "en": ["The Devil (pink)", "Ghost event toward the nearest player", "10%"] },
+          { "tr": ["Death (mor)", "Lanetli av", "%10"], "en": ["Death (purple)", "Cursed hunt", "10%"] },
+          { "tr": ["The Sun (sarı)", "Akıl sağlığı %100", "%5"], "en": ["The Sun (yellow)", "Sanity to 100%", "5%"] },
+          { "tr": ["The Moon (beyaz)", "Akıl sağlığı %0", "%5"], "en": ["The Moon (white)", "Sanity to 0%", "5%"] },
+          { "tr": ["High Priestess", "Ölü bir oyuncuyu diriltir; ölü yoksa bir sonraki ölümü geri alır", "%2"], "en": ["High Priestess", "Revives a dead player, or the next one to die", "2%"] },
+          { "tr": ["The Hanged Man", "Çeken oyuncu anında ölür", "%1"], "en": ["The Hanged Man", "The drawer dies instantly", "1%"] }
+        ]
+      },
+      "tips": {
+        "tr": ["Destede hiç Death kartı olmama ihtimali ~%35'tir; avsız garantisi yoktur.", "The Moon ve Death riskinden dolayı akıl sağlığın düşükken çekme."],
+        "en": ["~35% of decks contain no Death card; no hunt is guaranteed either way.", "Avoid drawing at low sanity because of The Moon and Death."]
+      }
+    },
+    {
+      "id": "monkeypaw", "name": { "tr": "Maymun Pençesi", "en": "Monkey Paw" },
+      "summary": { "tr": "Dilek tutarsın; her dileğin bedeli vardır.", "en": "Make wishes; every wish has a price." },
+      "use": {
+        "tr": ["Sesli ya da metin menüsüyle dilek tut. Her dilek kontrat başına bir kez kullanılır.", "Dilek sayısı zorluk çarpanına göre: 2x altı 5, 2x–2,99x 4, 3x ve üstü 3 dilek."],
+        "en": ["Wish by voice or text menu. Each wish works once per contract.", "Wishes by difficulty multiplier: below 2x 5, 2x–2.99x 4, 3x+ 3 wishes."]
+      },
+      "danger": {
+        "tr": ["\"See the ghost\" ve \"knowledge\" dilekleri lanetli av başlatır.", "\"Activity\" dileği sigortayı kontrat boyunca kalıcı olarak bozar."],
+        "en": ["\"See the ghost\" and \"knowledge\" start cursed hunts.", "\"Activity\" breaks the breaker permanently for the contract."]
+      },
+      "table": {
+        "cols": { "tr": ["Dilek", "Etki", "Bedeli"], "en": ["Wish", "Effect", "Price"] },
+        "rows": [
+          { "tr": ["I wish to see the ghost", "Hayalet bulunduğu yerde belirir", "Lanetli av; av bitene kadar görüşün sisli"], "en": ["I wish to see the ghost", "Ghost manifests where it is", "Cursed hunt; your vision is fogged until it ends"] },
+          { "tr": ["I wish for activity", "Aktivite 2 dk boyunca 2 katı", "Sigorta kalıcı bozulur; çıkış kapısı 2 dk kilitlenir"], "en": ["I wish for activity", "Activity doubled for 2 min", "Breaker broken permanently; exit locked 2 min"] },
+          { "tr": ["I wish to trap the ghost", "Hayalet favori odasına ışınlanır, kapılar 1 dk kilitlenir", "Senin odan da kilitlenir; 1 dk sonra av"], "en": ["I wish to trap the ghost", "Ghost teleported to its room, doors locked 1 min", "Your room locks too; hunt after 1 min"] },
+          { "tr": ["I wish for sanity", "Herkes %50 akıl sağlığına çıkar/iner", "Pasif akıl sağlığı kaybı 1,5 kat; favori oda değişir"], "en": ["I wish for sanity", "Everyone set to 50% sanity", "Passive drain ×1.5; favourite room randomised"] },
+          { "tr": ["I wish to be safe", "En yakın saklanma yeri açılır", "Odanın ışıkları patlar; hayalet seni ve elektroniğini her yerden duyar"], "en": ["I wish to be safe", "Nearest hiding spot unblocked", "Room lights shatter; ghost hears you and your electronics anywhere"] },
+          { "tr": ["I wish to leave", "Tüm çıkış kapıları açılır (av sırasında bile)", "Kısa süre yavaşlarsın, görüşün azalır"], "en": ["I wish to leave", "All exit doors unlock (even mid-hunt)", "Brief slowness and reduced vision"] },
+          { "tr": ["I wish for life", "Ölü bir oyuncu dirilir (biri ölü olmalı)", "%50 ihtimalle dilek tutan ölür"], "en": ["I wish for life", "Revives a dead player (someone must be dead)", "50% chance the wisher dies"] },
+          { "tr": ["I wish for knowledge", "Yanlış bir kanıtı ve ona bağlı hayaletleri eler", "Yakınında lanetli av; kalıcı görme/duyma bozulması"], "en": ["I wish for knowledge", "Removes one wrong evidence and its ghosts", "Cursed hunt near you; lasting sight/hearing impairment"] },
+          { "tr": ["I wish for [hava durumu]", "Havayı değiştirir", "%25 akıl sağlığı (en az %25 gerekir), kısa körlük"], "en": ["I wish for [weather]", "Changes the weather", "25% sanity (needs 25%+), brief blindness"] },
+          { "tr": ["I wish for anything", "Kullanılmamış rastgele bir dilek", "O dileğin bedeli"], "en": ["I wish for anything", "A random unused wish", "That wish's price"] }
+        ]
+      },
+      "tips": {
+        "tr": ["\"Knowledge\" dileğinden önce 3. seviye haç ve saklanma yeri hazırla; elenen kanıtı kanıt sekmesinde ✕ ile işaretle."],
+        "en": ["Before \"knowledge\", set up a Tier III crucifix and a hiding spot; mark the removed evidence ✕ in the Evidence tab."]
+      }
+    }
+  ]
+}

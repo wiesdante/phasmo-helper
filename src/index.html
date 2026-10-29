@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'">
+  <title>Phasmo Helper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="titlebar">
+    <span class="title" data-i18n="app.title">Phasmo Helper</span>
+    <div class="win-buttons">
+      <button id="btn-min" data-i18n-title="window.minimize">–</button>
+      <button id="btn-hide" data-i18n-title="window.hide">◐</button>
+      <button id="btn-quit" data-i18n-title="window.quit">×</button>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+  <main id="panels"></main>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="app-core.js"></script>
+  <script src="ghost-logic.js"></script>
+  <script src="modules/evidence.js"></script>
+  <script src="modules/ghosts.js"></script>
+  <script src="modules/timers.js"></script>
+  <script src="modules/speed.js"></script>
+  <script src="modules/cursed.js"></script>
+  <script src="modules/settings.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

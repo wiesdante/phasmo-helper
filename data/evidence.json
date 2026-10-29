@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "evidence": [
+    { "id": "emf",       "name": { "en": "EMF Level 5",           "tr": "EMF Seviye 5" },            "short": { "en": "EMF 5",    "tr": "EMF 5" } },
+    { "id": "spiritbox", "name": { "en": "Spirit Box",            "tr": "Spirit Box" },              "short": { "en": "Box",      "tr": "Box" } },
+    { "id": "uv",        "name": { "en": "Ultraviolet",           "tr": "Ultraviyole (Parmak İzi)" }, "short": { "en": "UV",       "tr": "UV" } },
+    { "id": "orb",       "name": { "en": "Ghost Orb",             "tr": "Hayalet Küresi (Orb)" },    "short": { "en": "Orb",      "tr": "Orb" } },
+    { "id": "writing",   "name": { "en": "Ghost Writing",         "tr": "Hayalet Yazısı" },          "short": { "en": "Writing",  "tr": "Yazı" } },
+    { "id": "freezing",  "name": { "en": "Freezing Temperatures", "tr": "Dondurucu Sıcaklık" },      "short": { "en": "Freezing", "tr": "Soğuk" } },
+    { "id": "dots",      "name": { "en": "D.O.T.S Projector",     "tr": "D.O.T.S Projektörü" },      "short": { "en": "DOTS",     "tr": "DOTS" } }
+  ]
+}

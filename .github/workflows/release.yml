@@ -1,0 +1,91 @@
+# package.json'daki sürüm numarası değişip main dalına gönderildiğinde Windows kurulum
+# dosyasını üretir ve GitHub Releases'e yayınlar (vX.Y.Z etiketini de kendisi oluşturur).
+# Kurulu uygulamalar bu sürümü otomatik olarak indirir.
+# Aynı sürüm zaten eksiksiz yayınlandıysa hiçbir şey yapmaz.
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Read version
+        id: ver
+        shell: bash
+        run: echo "tag=v$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      # Yarıda kalmış sürümler (kurulum dosyası veya latest.yml eksik) güncellemeyi bozar: etiketiyle birlikte sil.
+      - name: Remove incomplete releases
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/releases" --paginate \
+            -q '.[] | select(([.assets[].name | test("\\.exe$")] | any | not) or ([.assets[].name | test("^latest\\.yml$")] | any | not)) | .tag_name' |
+          while read -r tag; do
+            [ -z "$tag" ] && continue
+            echo "Deleting incomplete release $tag"
+            gh release delete "$tag" --cleanup-tag -y --repo "$GITHUB_REPOSITORY"
+          done
+
+      - name: Skip if already released
+        id: check
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "${{ steps.ver.outputs.tag }}" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            echo "Release ${{ steps.ver.outputs.tag }} already exists, skipping."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v5
+        if: steps.check.outputs.skip == 'false'
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        if: steps.check.outputs.skip == 'false'
+        run: npm install --no-audit --no-fund
+
+      - name: Build and publish
+        if: steps.check.outputs.skip == 'false'
+        shell: bash
+        run: |
+          set -o pipefail
+          npx electron-builder --win --publish always 2>&1 | tee build.log || {
+            # Hata ayrıntılarını uyarı notu olarak da yaz (log indirilemediğinde okunabilsin).
+            tail -n 25 build.log | sed 's/%/%25/g' | while IFS= read -r line; do echo "::error::$line"; done
+            exit 1
+          }
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify release assets
+        if: steps.check.outputs.skip == 'false'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          assets=$(gh release view "${{ steps.ver.outputs.tag }}" --repo "$GITHUB_REPOSITORY" --json assets -q '.assets[].name')
+          echo "$assets"
+          echo "$assets" | grep -q '\.exe$' || { echo "::error::Installer missing from release"; exit 1; }
+          echo "$assets" | grep -q '^latest\.yml$' || { echo "::error::latest.yml missing from release"; exit 1; }

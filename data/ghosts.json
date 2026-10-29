@@ -1,0 +1,1475 @@
+{
+  "schemaVersion": 1,
+  "gameVersion": "v0.18 (Ağustos 2026)",
+  "_format": {
+    "evidence": "3 gerçek kanıt (evidence.json id'leri)",
+    "forced": "Azaltılmış kanıtlı zorluklarda (Kabus/Delilik) her zaman gösterilen kanıt; yoksa null",
+    "fakeEvidence": "Gerçek kanıt sayısına dahil olmayan, her zaman görünen ek kanıt (sadece Mimic: orb)",
+    "hunt": "Avlanma eşiği (ortalama akıl sağlığı)",
+    "speed": "Av hızı",
+    "tells": "Ayırt edici, ölçülebilir davranışlar",
+    "rulesOut": "Bunu görürsen bu hayalet DEĞİLDİR",
+    "speedCheck": "Hız ölçer eşleştirmesi: values = tekil hızlar (m/s), ranges = [min,max] aralıkları, los = görüş hattında ×1,65'e kadar ivmelenir mi"
+  },
+  "ghosts": [
+    {
+      "id": "spirit",
+      "name": {
+        "en": "Spirit",
+        "tr": "Spirit"
+      },
+      "evidence": [
+        "emf",
+        "spiritbox",
+        "writing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s (görüş hattında hızlanır)",
+        "en": "1.7 m/s (speeds up with line of sight)"
+      },
+      "tells": {
+        "tr": [
+          "Tütsülendikten sonra 180 saniye avlanamaz (diğer hayaletlerde 90 sn)."
+        ],
+        "en": [
+          "After being incensed it cannot hunt for 180 seconds (90 s for other ghosts)."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Tütsüden sonra 180 saniye dolmadan avlanırsa Spirit değildir."
+        ],
+        "en": [
+          "If it hunts less than 180 s after incense, it is not a Spirit."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "wraith",
+      "name": {
+        "en": "Wraith",
+        "tr": "Wraith"
+      },
+      "evidence": [
+        "emf",
+        "spiritbox",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Tuza asla basmaz: tuz yığınını dağıtmaz ve UV ayak izi bırakmaz.",
+          "3. seviye tuz avda onu yavaşlatmaz.",
+          "Event dışında rastgele bir oyuncunun yanına ışınlanabilen tek hayalet; ışınlandığı yerde ayak hizasında EMF 2 (nadiren 5) bırakabilir."
+        ],
+        "en": [
+          "Never steps in salt: never disturbs a salt pile and leaves no UV footprints.",
+          "Tier 3 salt does not slow it during hunts.",
+          "Only ghost that teleports to a random player outside events; may leave EMF 2 (rarely 5) at foot height where it lands."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Tuza basarsa / tuzda ayak izi bırakırsa Wraith değildir."
+        ],
+        "en": [
+          "If it steps in salt / leaves footprints in salt, it is not a Wraith."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "phantom",
+      "name": {
+        "en": "Phantom",
+        "tr": "Phantom"
+      },
+      "evidence": [
+        "spiritbox",
+        "uv",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Fotoğrafı çekilince kaybolur ve fotoğrafta görünmez; event sırasında fotoğraf çekersen event erken biter. DOTS'ta da geçerli.",
+          "Avda daha seyrek görünür: yanıp sönerken 1 saniyeden uzun süre görünmez kalabilir.",
+          "Ona bakan oyuncu saniyede %0,5 akıl sağlığı kaybeder.",
+          "Bir oyuncunun yanına doğru gezinir ve başladığı noktada EMF 2 bırakır."
+        ],
+        "en": [
+          "Disappears when photographed and does not show in the photo; photographing it during an event ends the event early. Works on D.O.T.S too.",
+          "Less visible during hunts: can stay invisible for over a second between blinks.",
+          "Looking at it drains 0.5% sanity per second.",
+          "Can roam toward a player, leaving EMF 2 where it started."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Fotoğrafta net görünür ve fotoğraf çekilince kaybolmazsa Phantom değildir."
+        ],
+        "en": [
+          "If it stays visible after being photographed and appears in the photo, it is not a Phantom."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "poltergeist",
+      "name": {
+        "en": "Poltergeist",
+        "tr": "Poltergeist"
+      },
+      "evidence": [
+        "spiritbox",
+        "uv",
+        "writing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Avda her 0,5 saniyede bir eşya fırlatmayı dener ve her seferinde başarır (normal hayaletlerde %50).",
+          "Eşyaları daha sert fırlatır.",
+          "Patlama yeteneği: yakındaki birden çok eşyayı aynı anda fırlatır; bunu gören oyuncu fırlatılan eşya başına %2 akıl sağlığı kaybeder.",
+          "Test: odaya çok sayıda eşya yığ, ava girince ne kadar eşya uçtuğunu say."
+        ],
+        "en": [
+          "During hunts it tries to throw an item every 0.5 s with 100% success (50% for others).",
+          "Throws objects with more force.",
+          "Explosion ability: throws several nearby items at once; witnesses lose 2% sanity per thrown item.",
+          "Test: pile many items in its room and count throws during a hunt."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "banshee",
+      "name": {
+        "en": "Banshee",
+        "tr": "Banshee"
+      },
+      "evidence": [
+        "orb",
+        "uv",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50 (takımın ortalamasına değil, hedefinin akıl sağlığına bakar)",
+        "en": "50% (uses its target's sanity, not the team average)"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Tek bir hedef seçer; hedef binadayken avda sadece onu kovalar, diğer oyuncuları yok sayar.",
+          "Parabolik mikrofonda ya da ses kaydedicide %33 ihtimalle kendine özgü çığlık atar.",
+          "Şarkı söyleme event'inde hedef %15 akıl sağlığı kaybeder (normal %10).",
+          "Sık sık hedefine doğru gezinir.",
+          "Sadece kadın isim ve modeli olur."
+        ],
+        "en": [
+          "Picks one target; while the target is inside it only chases them during hunts and ignores others.",
+          "33% chance of a unique scream on the parabolic microphone or sound recorder.",
+          "Its singing event drains 15% from the target (normally 10%).",
+          "Frequently roams toward its target.",
+          "Female name and model only."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Erkek isim veya model ise Banshee değildir."
+        ],
+        "en": [
+          "Male name or model: not a Banshee."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "jinn",
+      "name": {
+        "en": "Jinn",
+        "tr": "Jinn"
+      },
+      "evidence": [
+        "emf",
+        "uv",
+        "freezing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s; sigorta açıkken 3 m'den uzaktaki oyuncuyu görürse sabit 2,5 m/s",
+        "en": "1.7 m/s; fixed 2.5 m/s when breaker is on and it sees a player more than 3 m away"
+      },
+      "tells": {
+        "tr": [
+          "Sigorta kutusunu asla kapatmaz.",
+          "Sigorta açıkken, kendisinden 3 m'den uzaktaki bir oyuncuyu görürse hızı sabit 2,5 m/s olur. 3 m içine girince normal hıza döner.",
+          "Sigorta kapalıyken yeteneği yoktur, sıradan bir hayalet gibi davranır.",
+          "Yetenek: 3 m içindeki ya da aynı odadaki oyuncudan bir anda %25 akıl sağlığı çeker; bunu yapınca sigorta kutusunda EMF 2 çıkar."
+        ],
+        "en": [
+          "Never turns the breaker off.",
+          "With the breaker on, if it sees a player over 3 m away it moves at a fixed 2.5 m/s; within 3 m it returns to normal speed.",
+          "With the breaker off it has no abilities.",
+          "Ability: drains 25% sanity at once from a player within 3 m or in the same room, leaving EMF 2 at the breaker."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Sigortayı kendisi kapatırsa Jinn değildir."
+        ],
+        "en": [
+          "If it turns off the breaker itself, it is not a Jinn."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7,
+          2.5
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "mare",
+      "name": {
+        "en": "Mare",
+        "tr": "Mare"
+      },
+      "evidence": [
+        "orb",
+        "spiritbox",
+        "writing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "Bulunduğu odanın ışığı kapalı veya kırıksa %60, açıksa %40",
+        "en": "60% if its current room's light is off or broken, 40% if on"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Işığı asla açmaz.",
+          "Bir oyuncu ışığı açtıktan hemen sonra kapatabilir.",
+          "Ampulleri patlatma ihtimali daha yüksektir.",
+          "Işığı açık odalara girmekten kaçınır; kendi odasının ışığı açıksa odadan daha sık çıkar."
+        ],
+        "en": [
+          "Never turns a light on.",
+          "Can turn a light off right after a player turns it on.",
+          "Higher chance to shatter light bulbs.",
+          "Avoids wandering into lit rooms; leaves its room more often when its light is on."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Işığı açarsa Mare değildir."
+        ],
+        "en": [
+          "If it turns a light on, it is not a Mare."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "revenant",
+      "name": {
+        "en": "Revenant",
+        "tr": "Revenant"
+      },
+      "evidence": [
+        "orb",
+        "writing",
+        "freezing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "Oyuncu algılamamışken 1 m/s, algılayınca 3 m/s",
+        "en": "1 m/s while searching, 3 m/s once it detects a player"
+      },
+      "tells": {
+        "tr": [
+          "Avda kimseyi algılamamışken çok yavaştır (1 m/s).",
+          "Bir oyuncuyu görünce, sesini duyunca ya da elektroniğini algılayınca anında 3 m/s'ye çıkar.",
+          "Son gördüğü noktaya varınca yavaş yavaş 1 m/s'ye düşer.",
+          "Normal hayaletler gibi görüş hattında kademeli hızlanmaz."
+        ],
+        "en": [
+          "Very slow (1 m/s) during hunts while it hasn't detected anyone.",
+          "Instantly jumps to 3 m/s on seeing, hearing or sensing a player's electronics.",
+          "Gradually returns to 1 m/s after reaching the last known position.",
+          "No gradual line-of-sight acceleration."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.0,
+          3.0
+        ],
+        "ranges": [],
+        "los": false
+      }
+    },
+    {
+      "id": "shade",
+      "name": {
+        "en": "Shade",
+        "tr": "Shade"
+      },
+      "evidence": [
+        "emf",
+        "writing",
+        "freezing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%35; odasında bir oyuncu varken hiç avlanamaz",
+        "en": "35%; cannot hunt while a player is in its room"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Odasında oyuncu varken avlanmaz, EMF oluşturan etkileşim yapmaz ve şarkı event'i yapmaz.",
+          "%100 akıl sağlığında hiç event yapmaz; %50'nin altına inince event ihtimali artar.",
+          "Event'lerde çoğunlukla gölge (siluet) formunda görünür.",
+          "Genel olarak çok az etkileşim yapar."
+        ],
+        "en": [
+          "While a player is in its room it won't hunt, cause EMF interactions, or do singing events.",
+          "No ghost events at 100% sanity; chance rises below 50%.",
+          "Usually appears as a shadow form during events.",
+          "Very low overall activity."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Ortalama akıl sağlığı %35'in üstündeyken avlanırsa (lanetli eşya hariç) Shade değildir."
+        ],
+        "en": [
+          "If it hunts above 35% average sanity (excluding cursed items), it is not a Shade."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "demon",
+      "name": {
+        "en": "Demon",
+        "tr": "Demon"
+      },
+      "evidence": [
+        "uv",
+        "writing",
+        "freezing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%70; yeteneğiyle nadiren her akıl sağlığında (%100'de bile)",
+        "en": "70%; rarely at any sanity via its ability (even 100%)"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Tütsüden 60 saniye sonra tekrar avlanabilir (normal 90 sn).",
+          "İki av arasındaki bekleme süresi 20 saniye (normal 25 sn).",
+          "Haç menzili %50 daha geniştir: seviyeye göre 4,5 / 6 / 7,5 m.",
+          "%70'in üstünde avlanması onu güçlü şekilde gösterir (Thaye, Yokai ve lanetli eşyaları ele)."
+        ],
+        "en": [
+          "Can hunt again 60 s after incense (normally 90 s).",
+          "20 s cooldown between hunts (normally 25 s).",
+          "Crucifix range is 50% larger: 4.5 / 6 / 7.5 m by tier.",
+          "Hunting above 70% strongly points to it (rule out Thaye, Yokai and cursed items)."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "yurei",
+      "name": {
+        "en": "Yurei",
+        "tr": "Yurei"
+      },
+      "evidence": [
+        "orb",
+        "freezing",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Yetenek: bir kapıyı sonuna kadar açar ya da kapatır ve 7,5 m içindeki oyunculardan %15 akıl sağlığı çeker.",
+          "Event ve av dışında çıkış kapısını hareket ettirebilen tek hayalettir.",
+          "Tütsülenince bir süre odasına hapsolur ve dışarı çıkamaz (kaynaklara göre 60–90 sn)."
+        ],
+        "en": [
+          "Ability: fully opens or closes a door and drains 15% sanity from players within 7.5 m.",
+          "Only ghost that can move the exit door outside events and hunts.",
+          "When incensed it is trapped in its room for a while (60–90 s depending on source)."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "oni",
+      "name": {
+        "en": "Oni",
+        "tr": "Oni"
+      },
+      "evidence": [
+        "emf",
+        "freezing",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Avda daha sık yanıp söner, yani daha çok görünür kalır.",
+          "Sis (airball/mist) event'i yapamaz.",
+          "Event sırasında hayalete dokunursan %20 akıl sağlığı kaybedersin (normal %10).",
+          "Yakında birden çok oyuncu varken daha aktiftir; event'lerde sıklıkla tam fiziksel formda görünür."
+        ],
+        "en": [
+          "Blinks more often during hunts, so it is more visible.",
+          "Cannot do the mist (airball) event.",
+          "Touching it during an event drains 20% sanity (normally 10%).",
+          "More active with several players nearby; often fully visible during events."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Sis/airball event'i yaparsa Oni değildir."
+        ],
+        "en": [
+          "If it does a mist/airball event, it is not an Oni."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "yokai",
+      "name": {
+        "en": "Yokai",
+        "tr": "Yokai"
+      },
+      "evidence": [
+        "orb",
+        "spiritbox",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50; yanında konuşulursa %80",
+        "en": "50%; 80% if players talk near it"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Avda sesleri ve elektronik cihazları yalnızca 2,5 m içinde algılar (normal 9 m ses, 7,5 m elektronik).",
+          "Yakınında konuşulunca daha aktif olur.",
+          "Müzik kutusu event'i 2,5 m'de başlar (normal 5 m)."
+        ],
+        "en": [
+          "During hunts it detects voices and electronics only within 2.5 m (normally 9 m voice, 7.5 m electronics).",
+          "More active when players talk nearby.",
+          "Music box event starts within 2.5 m (normally 5 m)."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Avda 2,5 m'den uzakta konuşan ya da elektronik tutan oyuncuyu duyup yönelirse Yokai değildir."
+        ],
+        "en": [
+          "If it detects a player talking or holding electronics from beyond 2.5 m, it is not a Yokai."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "hantu",
+      "name": {
+        "en": "Hantu",
+        "tr": "Hantu"
+      },
+      "evidence": [
+        "orb",
+        "uv",
+        "freezing"
+      ],
+      "forced": "freezing",
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "Odanın sıcaklığına göre 1,44 m/s (sıcak) – 2,7 m/s (dondurucu); görüş hattında hızlanmaz",
+        "en": "1.44 m/s (warm) to 2.7 m/s (freezing) depending on room temperature; no line-of-sight speed-up"
+      },
+      "tells": {
+        "tr": [
+          "Soğuk odalarda hızlanır, sıcak odalarda yavaşlar. Görüş hattında hızlanmaz.",
+          "Sigortayı asla açmaz; kapatma ihtimali daha yüksektir.",
+          "Sigorta kapalıyken avda ağzından buhar (soğuk nefes) çıktığı görülür.",
+          "Azaltılmış kanıtta dondurucu sıcaklık her zaman gösterilir."
+        ],
+        "en": [
+          "Faster in cold rooms, slower in warm ones; no line-of-sight acceleration.",
+          "Never turns the breaker on; more likely to turn it off.",
+          "With the breaker off, freezing breath is visible during hunts.",
+          "Freezing Temperatures is always shown on reduced evidence."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Sigortayı açarsa Hantu değildir.",
+          "Görüş hattında kademeli hızlanırsa Hantu değildir."
+        ],
+        "en": [
+          "If it turns the breaker on, it is not a Hantu.",
+          "If it gradually speeds up in line of sight, it is not a Hantu."
+        ]
+      },
+      "speedCheck": {
+        "values": [],
+        "ranges": [
+          [
+            1.4,
+            2.7
+          ]
+        ],
+        "los": false
+      }
+    },
+    {
+      "id": "goryo",
+      "name": {
+        "en": "Goryo",
+        "tr": "Goryo"
+      },
+      "evidence": [
+        "emf",
+        "uv",
+        "dots"
+      ],
+      "forced": "dots",
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "D.O.T.S siluetini yalnızca video kamerada ve odada kimse yokken gösterir; çıplak gözle görülmez.",
+          "Favori odasını asla değiştirmez (Maymun Pençesi dileği hariç).",
+          "Odasından çok az uzaklaşır.",
+          "Azaltılmış kanıtta D.O.T.S her zaman gösterilir."
+        ],
+        "en": [
+          "Its D.O.T.S silhouette shows only through a video camera with nobody in the room; never to the naked eye.",
+          "Never changes its favourite room (except via Monkey Paw wish).",
+          "Rarely roams far from its room.",
+          "D.O.T.S is always shown on reduced evidence."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "D.O.T.S siluetini çıplak gözle görürsen Goryo değildir.",
+          "Favori odası değişirse Goryo değildir."
+        ],
+        "en": [
+          "If you see the D.O.T.S silhouette with your own eyes, it is not a Goryo.",
+          "If its room changes, it is not a Goryo."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "myling",
+      "name": {
+        "en": "Myling",
+        "tr": "Myling"
+      },
+      "evidence": [
+        "emf",
+        "uv",
+        "writing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Avda ayak sesleri ve sesleri yalnızca yaklaşık 12 m içinde duyulur (normal 20 m). Bu yüzden elektronik cihazlar bozulmaya başladığında ayak seslerini henüz duymuyorsundur.",
+          "Parabolik mikrofonda daha sık ses çıkarır."
+        ],
+        "en": [
+          "During hunts its footsteps and vocals are only audible within about 12 m (normally 20 m), so electronics flicker before you hear footsteps.",
+          "Makes paranormal sounds on the parabolic mic more often."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Aynı katta, elektronikler bozulmadan önce uzaktan ayak seslerini duyarsan Myling değildir."
+        ],
+        "en": [
+          "If, on the same floor, you hear footsteps from far away before electronics flicker, it is not a Myling."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "onryo",
+      "name": {
+        "en": "Onryo",
+        "tr": "Onryo"
+      },
+      "evidence": [
+        "orb",
+        "spiritbox",
+        "freezing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%60; ayrıca her 3. alev söndürmede akıl sağlığından bağımsız avlanmayı dener",
+        "en": "60%; also attempts a hunt at any sanity after every 3rd flame it blows out"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Her 3 alev söndürmesinden sonra akıl sağlığına bakmadan avlanmayı dener.",
+          "4 m içindeki yanan bir alev avını haç gibi engeller ve haçtan önce harcanır.",
+          "Ateş yakmaz."
+        ],
+        "en": [
+          "Attempts a hunt regardless of sanity after every 3 flames it extinguishes.",
+          "A lit flame within 4 m blocks its hunt like a crucifix and is used before the crucifix.",
+          "Never lights fires."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Haçın üstüne yanan mum koy: haç yanarken mum hâlâ yanıyorsa Onryo değildir."
+        ],
+        "en": [
+          "Put a lit candle on a crucifix: if the crucifix burns while the candle stays lit, it is not an Onryo."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "twins",
+      "name": {
+        "en": "The Twins",
+        "tr": "The Twins"
+      },
+      "evidence": [
+        "emf",
+        "spiritbox",
+        "freezing"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "Avdan ava değişir: ~1,53 m/s (yavaş ikiz) veya ~1,87 m/s (hızlı ikiz)",
+        "en": "Varies per hunt: ~1.53 m/s (slow twin) or ~1.87 m/s (fast twin)"
+      },
+      "tells": {
+        "tr": [
+          "Bir avda normalden %10 yavaş, diğerinde %10 hızlı olabilir.",
+          "Birbirinden uzak iki yerde aynı anda iki etkileşim yapabilir.",
+          "Avı %50 ihtimalle son etkileşim yaptığı yerden başlatır; haç yalnızca gerçek konumunda işe yarar."
+        ],
+        "en": [
+          "One hunt can be 10% slower than normal, another 10% faster.",
+          "Can do two interactions at once in two distant places.",
+          "50% chance to start a hunt from its last interaction spot; crucifixes only work at its real location."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.53,
+          1.87
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "raiju",
+      "name": {
+        "en": "Raiju",
+        "tr": "Raiju"
+      },
+      "evidence": [
+        "emf",
+        "orb",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50; yakınında açık elektronik cihaz varsa %65",
+        "en": "50%; 65% when active electronics are nearby"
+      },
+      "speed": {
+        "tr": "1,7 m/s; açık elektronik yakınındayken 2,5 m/s",
+        "en": "1.7 m/s; 2.5 m/s near active electronics"
+      },
+      "tells": {
+        "tr": [
+          "Açık elektronik cihazların yakınındayken (harita büyüklüğüne göre 6 / 8 / 10 m) 2,5 m/s'ye çıkar.",
+          "Event ve avlarda elektronikleri 15 m'den bozar (normal 10 m). Bu yüzden ayak seslerini duymadan önce elektronikler bozulmaya başlar, Myling ile karışabilir."
+        ],
+        "en": [
+          "Moves at 2.5 m/s when near active electronics (6 / 8 / 10 m by map size).",
+          "Disrupts electronics from 15 m during events and hunts (normally 10 m), which can look like a Myling."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.7,
+          2.5
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "obake",
+      "name": {
+        "en": "Obake",
+        "tr": "Obake"
+      },
+      "evidence": [
+        "emf",
+        "orb",
+        "uv"
+      ],
+      "forced": "uv",
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,7 m/s",
+        "en": "1.7 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Dokunduğu yerlerde UV izi bırakma ihtimali %75'tir (diğer hayaletlerde %100).",
+          "Yaklaşık %16,7 ihtimalle özel iz bırakır: 6 parmaklı el izi, ışık düğmesinde 2 parmak izi, klavyede/hücre kapısında 5 parmak izi.",
+          "UV izleri normalden hızlı solar.",
+          "Avda en az bir kez, tek bir yanıp sönme boyunca başka bir hayalet modeline dönüşür.",
+          "Azaltılmış kanıtta Ultraviyole her zaman gösterilir."
+        ],
+        "en": [
+          "Leaves UV traces 75% of the time (100% for others).",
+          "~16.7% chance of a special print: six-fingered handprint, two fingerprints on a light switch, five on a keyboard/cell door.",
+          "UV prints fade faster than normal.",
+          "Shapeshifts into another ghost model for one blink at least once per hunt.",
+          "Ultraviolet is always shown on reduced evidence."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.7
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "mimic",
+      "name": {
+        "en": "The Mimic",
+        "tr": "The Mimic"
+      },
+      "evidence": [
+        "spiritbox",
+        "uv",
+        "freezing"
+      ],
+      "forced": null,
+      "fakeEvidence": "orb",
+      "hunt": {
+        "tr": "Taklit ettiği hayalete göre değişir",
+        "en": "Depends on the ghost it is copying"
+      },
+      "speed": {
+        "tr": "Taklit ettiği hayalete göre değişir",
+        "en": "Depends on the ghost it is copying"
+      },
+      "tells": {
+        "tr": [
+          "Ghost Orb her zaman görünür, 0 kanıtlı oyunda bile. Bu orb gerçek kanıt sayısına dahil değildir.",
+          "Diğer hayaletlerin davranışlarını, eşiklerini ve hızını taklit eder; taklit ettiği hayaleti 30 saniye ile 2 dakika arasında bir değiştirir (av sırasında değiştirmez).",
+          "Tek bir hayalete özgü davranışlar görsen bile Mimic olasılığını aklında tut."
+        ],
+        "en": [
+          "Ghost Orbs always appear, even on 0 evidence; they don't count toward the evidence total.",
+          "Copies other ghosts' behaviour, thresholds and speed, switching every 30 s to 2 min (never mid-hunt).",
+          "Even ghost-unique behaviour can be the Mimic."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Ghost Orb kesinlikle yoksa Mimic değildir."
+        ],
+        "en": [
+          "If there are definitely no Ghost Orbs, it is not the Mimic."
+        ]
+      },
+      "speedCheck": {
+        "values": [],
+        "ranges": [
+          [
+            0.4,
+            3.71
+          ]
+        ],
+        "los": true
+      }
+    },
+    {
+      "id": "moroi",
+      "name": {
+        "en": "Moroi",
+        "tr": "Moroi"
+      },
+      "evidence": [
+        "spiritbox",
+        "writing",
+        "freezing"
+      ],
+      "forced": "spiritbox",
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "Ortalama akıl sağlığına göre 1,5 m/s (%45 üstü) – 2,25 m/s (%0–5); görüş hattında ~3,71 m/s'ye kadar",
+        "en": "1.5 m/s (above 45% sanity) to 2.25 m/s (0–5%); up to ~3.71 m/s with line of sight"
+      },
+      "tells": {
+        "tr": [
+          "Akıl sağlığı düştükçe hızlanır; en düşük akıl sağlığında görüş hattında Revenant'tan bile hızlıdır.",
+          "Spirit Box ya da parabolik mikrofondan cevabını duyan oyuncuyu lanetler: o oyuncunun pasif akıl sağlığı kaybı 2 katına çıkar. Akıl sağlığı ilacı laneti kaldırır.",
+          "Avda tütsü onu 7,5 saniye kör eder (normal 5 sn).",
+          "Azaltılmış kanıtta Spirit Box her zaman gösterilir."
+        ],
+        "en": [
+          "Speeds up as sanity drops; at lowest sanity with line of sight it outruns a Revenant.",
+          "Curses players who hear its Spirit Box or parabolic response: their passive sanity drain doubles until they take sanity medication.",
+          "Incense blinds it for 7.5 s during hunts (normally 5 s).",
+          "Spirit Box is always shown on reduced evidence."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [],
+        "ranges": [
+          [
+            1.5,
+            2.25
+          ]
+        ],
+        "los": true
+      }
+    },
+    {
+      "id": "deogen",
+      "name": {
+        "en": "Deogen",
+        "tr": "Deogen"
+      },
+      "evidence": [
+        "spiritbox",
+        "writing",
+        "dots"
+      ],
+      "forced": "spiritbox",
+      "hunt": {
+        "tr": "%40",
+        "en": "40%"
+      },
+      "speed": {
+        "tr": "Uzaktayken (6 m+) 3 m/s, hedefine 2,5 m yaklaşınca 0,4 m/s",
+        "en": "3 m/s from 6 m+ away, 0.4 m/s within 2.5 m of its target"
+      },
+      "tells": {
+        "tr": [
+          "Avda her oyuncunun yerini her zaman bilir; saklanmak işe yaramaz, etrafında dönerek kaç.",
+          "Uzaktan çok hızlı gelir, yanına gelince neredeyse durur. Görüş hattında hızlanmaz.",
+          "Spirit Box'ta 1 m içindeysen %33 ihtimalle ağır nefes/hırıltı sesiyle cevap verir.",
+          "Azaltılmış kanıtta Spirit Box her zaman gösterilir."
+        ],
+        "en": [
+          "Always knows where every player is during hunts; hiding doesn't work, loop it instead.",
+          "Very fast from afar, nearly stops when close; no line-of-sight acceleration.",
+          "33% chance of a heavy-breathing Spirit Box response within 1 m.",
+          "Spirit Box is always shown on reduced evidence."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [],
+        "ranges": [
+          [
+            0.4,
+            3.0
+          ]
+        ],
+        "los": false
+      }
+    },
+    {
+      "id": "thaye",
+      "name": {
+        "en": "Thaye",
+        "tr": "Thaye"
+      },
+      "evidence": [
+        "orb",
+        "writing",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "Yaşına göre %75'ten %15'e (her yaşta −%6)",
+        "en": "75% down to 15% by age (−6% per age)"
+      },
+      "speed": {
+        "tr": "Yaşına göre 2,75 m/s'den 1 m/s'ye (her yaşta −0,175); görüş hattında hızlanmaz",
+        "en": "2.75 m/s down to 1 m/s by age (−0.175 per age); no line-of-sight speed-up"
+      },
+      "tells": {
+        "tr": [
+          "Yakınında oyuncu varken 1–2 dakikada bir yaşlanır. Yaşlandıkça yavaşlar, geç avlanır ve daha az aktif olur.",
+          "Başta çok hızlı ve çok aktiftir.",
+          "Ouija tahtasına yaşını sorabilirsin; her yaşlanmada cevap büyür.",
+          "Görüş hattında hızlanmaz."
+        ],
+        "en": [
+          "Ages every 1–2 minutes while players are near; gets slower, hunts later and is less active as it ages.",
+          "Very fast and active early on.",
+          "Ask its age on the Ouija board; the answer grows with each aging step.",
+          "No line-of-sight acceleration."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [],
+        "ranges": [
+          [
+            1.0,
+            2.75
+          ]
+        ],
+        "los": false
+      }
+    },
+    {
+      "id": "dayan",
+      "name": {
+        "en": "Dayan",
+        "tr": "Dayan"
+      },
+      "evidence": [
+        "emf",
+        "orb",
+        "spiritbox"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "10 m içinde hareket eden oyuncu varsa %65, hareketsiz oyuncu varsa %45, 10 m içinde kimse yoksa %50",
+        "en": "65% with a moving player within 10 m, 45% with a still player, 50% if nobody is within 10 m"
+      },
+      "speed": {
+        "tr": "10 m içinde hareket eden oyuncuya 2,25 m/s, duran oyuncuya 1,2 m/s, kimse yoksa 1,7 m/s",
+        "en": "2.25 m/s if a player within 10 m moves, 1.2 m/s if still, 1.7 m/s otherwise"
+      },
+      "tells": {
+        "tr": [
+          "Avda 10 m içindeyken tamamen durursan çok yavaşlar (1,2 m/s), hareket edersen hızlanır (2,25 m/s).",
+          "10 m içindeyken normal görüş hattı hızlanması olmaz.",
+          "Sadece kadın isim ve modeli olur."
+        ],
+        "en": [
+          "During a hunt within 10 m: stand completely still and it slows to 1.2 m/s, move and it speeds to 2.25 m/s.",
+          "No normal line-of-sight acceleration within 10 m.",
+          "Female name and model only."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Erkek isim veya model ise Dayan değildir."
+        ],
+        "en": [
+          "Male name or model: not a Dayan."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.2,
+          1.7,
+          2.25
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "gallu",
+      "name": {
+        "en": "Gallu",
+        "tr": "Gallu"
+      },
+      "evidence": [
+        "emf",
+        "uv",
+        "spiritbox"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "Normal %50, Öfkeli %60, Bitkin %40",
+        "en": "Normal 50%, Enraged 60%, Weakened 40%"
+      },
+      "speed": {
+        "tr": "Normal 1,7 m/s, Öfkeli ~1,96 m/s, Bitkin ~1,36 m/s",
+        "en": "Normal 1.7 m/s, Enraged ~1.96 m/s, Weakened ~1.36 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Üç hali vardır: Normal → Öfkeli → Bitkin.",
+          "Koruyucu ekipman (tuz, tütsü, haç) kullanılınca Öfkeli hale geçer.",
+          "Öfkeliyken: haç menzili 2 m kısalır, tütsü körlüğü 4 sn sürer (normal 5) ve tuza basmaz.",
+          "Öfkeli bir avdan sonra Bitkin olur: haç menzili 1 m artar, tütsü körlüğü 6 sn sürer.",
+          "Örüntü: koruma önce kötüleşir, sonra iyileşir."
+        ],
+        "en": [
+          "Three states: Normal → Enraged → Weakened.",
+          "Using protective gear (salt, incense, crucifix) makes it Enraged.",
+          "Enraged: crucifix range −2 m, incense blinds only 4 s (normally 5) and it won't step in salt.",
+          "After an enraged hunt it becomes Weakened: crucifix range +1 m, incense blind 6 s.",
+          "Pattern: protection gets worse, then better."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.36,
+          1.7,
+          1.96
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "obambo",
+      "name": {
+        "en": "Obambo",
+        "tr": "Obambo"
+      },
+      "evidence": [
+        "uv",
+        "writing",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "Sakin %10, Saldırgan %65",
+        "en": "Calm 10%, Aggressive 65%"
+      },
+      "speed": {
+        "tr": "Sakin ~1,45 m/s, Saldırgan ~1,96 m/s",
+        "en": "Calm ~1.45 m/s, Aggressive ~1.96 m/s"
+      },
+      "tells": {
+        "tr": [
+          "Sakin başlar, yaklaşık 1 dakika sonra Saldırgan olur, sonra 2 dakikada bir hal değiştirir.",
+          "Hal değişimi av sırasında da olabilir: aynı av içinde hızın aniden değişmesi neredeyse kesin işarettir.",
+          "Saldırganken başlayan avlar %20 daha kısa sürer.",
+          "Sakinken çok etkileşim yapar ama neredeyse hiç avlanmaz. Saldırganken sessizleşir ama erken ve hızlı avlanır."
+        ],
+        "en": [
+          "Starts Calm, turns Aggressive after about 1 minute, then switches every 2 minutes.",
+          "Can switch mid-hunt: a sudden speed change within one hunt is near-conclusive.",
+          "Hunts that start while Aggressive are 20% shorter.",
+          "Calm: many interactions but almost no hunts. Aggressive: quiet but hunts early and fast."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [
+          1.45,
+          1.96
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "aswang",
+      "name": {
+        "en": "Aswang",
+        "tr": "Aswang"
+      },
+      "evidence": [
+        "freezing",
+        "writing",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "1,53 m/s; görüş hattında normalden ~1,5 kat hızlı ivmelenir",
+        "en": "1.53 m/s; accelerates ~1.5x faster than normal in line of sight"
+      },
+      "tells": {
+        "tr": [
+          "Seni kovalarken resmi bir saklanma yerine (dolap, gardırop) girersen, oraya ulaştığı anda av biter ve ölmezsin.",
+          "Bir sonraki ava o oyuncunun saklandığı yere yürüyerek başlar.",
+          "Başlangıç hızı düşüktür ama seni görünce hızla ivmelenir; tepe hızı Revenant'tan düşüktür."
+        ],
+        "en": [
+          "If you reach an official hiding spot (locker, closet) while it chases you, the hunt ends the moment it reaches you and you survive.",
+          "Its next hunt starts by walking to that player's hiding spot.",
+          "Low base speed but accelerates fast once it sees you; top speed is below a Revenant's."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Resmi saklanma yerindeki bir oyuncuyu öldürürse Aswang değildir."
+        ],
+        "en": [
+          "If it kills a player inside an official hiding spot, it is not an Aswang."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.53
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "kormos",
+      "name": {
+        "en": "Kormos",
+        "tr": "Kormos"
+      },
+      "evidence": [
+        "orb",
+        "spiritbox",
+        "uv"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50; odasında koşan oyuncu varsa %70",
+        "en": "50%; 70% if a player sprints in its room"
+      },
+      "speed": {
+        "tr": "1,7 m/s; duyduğu sese giderken hızlanır (~2,2 m/s)",
+        "en": "1.7 m/s; faster when heading to a sound it heard (~2.2 m/s)"
+      },
+      "tells": {
+        "tr": [
+          "Kördür: hareket eden oyuncuyu sadece 5 m içinde görür. Önünde hareketsiz durursan seni kovalamaz.",
+          "Ayak seslerini aynı katta duyar: eğilerek yürürken 10 m, yürürken 15 m, koşarken 30 m.",
+          "Konuşmayı ve elinde tuttuğun elektroniği normal şekilde algılar.",
+          "Sis (mist) ve kovalama event'lerini yapamaz.",
+          "1,5 m içindeki oyuncuyu aynı katta öldürebilir."
+        ],
+        "en": [
+          "Blind: only sees moving players within 5 m. Stand still in front of it and it won't chase you.",
+          "Hears footsteps on the same floor: 10 m crouch-walking, 15 m walking, 30 m sprinting.",
+          "Detects voices and held electronics normally.",
+          "Cannot do mist or chasing events.",
+          "Can kill a player within 1.5 m on the same floor."
+        ]
+      },
+      "rulesOut": {
+        "tr": [
+          "Sis/kovalama event'i yaparsa Kormos değildir."
+        ],
+        "en": [
+          "If it does a mist or chasing event, it is not a Kormos."
+        ]
+      },
+      "speedCheck": {
+        "values": [
+          1.7,
+          2.21
+        ],
+        "ranges": [],
+        "los": true
+      }
+    },
+    {
+      "id": "deildegast",
+      "name": {
+        "en": "Deildegast",
+        "tr": "Deildegast"
+      },
+      "evidence": [
+        "emf",
+        "writing",
+        "dots"
+      ],
+      "forced": null,
+      "hunt": {
+        "tr": "%50",
+        "en": "50%"
+      },
+      "speed": {
+        "tr": "3,0 m/s; avlar arasında etkileşime girilen her farklı eşya için −0,1 m/s (en az 0,4 m/s)",
+        "en": "3.0 m/s; −0.1 m/s per unique item interacted with between hunts (min 0.4 m/s)"
+      },
+      "tells": {
+        "tr": [
+          "Varsayılan olarak çok hızlıdır (3,0 m/s) ve görüş hattında hızlanmaz.",
+          "İki av arasında evdeki farklı eşyaları alıp atarsanız bir sonraki av yavaşlar: her eşya −0,1 m/s, en az 0,4 m/s.",
+          "Ölü oyuncuların eşya etkileşimleri de sayılır.",
+          "Hız her avdan sonra sıfırlanır, eşyaları her av arasında tekrar atmanız gerekir. Kendi ekipmanınız sayılmaz."
+        ],
+        "en": [
+          "Very fast by default (3.0 m/s) with no line-of-sight speed-up.",
+          "Picking up/throwing different house items between hunts slows the next hunt: −0.1 m/s each, minimum 0.4 m/s.",
+          "Dead players' interactions count too.",
+          "Speed resets after every hunt; your own equipment doesn't count."
+        ]
+      },
+      "rulesOut": {
+        "tr": [],
+        "en": []
+      },
+      "speedCheck": {
+        "values": [],
+        "ranges": [
+          [
+            0.4,
+            3.0
+          ]
+        ],
+        "los": false
+      }
+    }
+  ]
+}
