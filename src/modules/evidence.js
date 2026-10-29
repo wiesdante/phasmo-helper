@@ -29,10 +29,13 @@ App.register({
   saveState() {
     try { localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.state)); } catch {}
   },
+  // Yeni kontrat: kanıtlar, elenenler ve hız ölçümü birlikte sıfırlanır
+  // (eski ölçüm yeni oyundaki hayaletleri yanlışlıkla soluk göstermesin).
   reset() {
     this.state = { ...this.defaultState(), count: this.state.count };
     this.expanded = null;
     this.saveState();
+    this.app.emit('speed:clear');
     this.render();
   },
 
@@ -87,19 +90,20 @@ App.register({
     }).join('');
 
     const sp = app.speed;
-    const speedOpts = { modifier: sp.modifier, los: sp.los };
+    const fmt2 = n => n.toLocaleString(app.lang() === 'tr' ? 'tr-TR' : 'en-US', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+    const speedOpts = { modifier: sp.modifier, bloodMoon: sp.bloodMoon };
     const ghostRow = (g, isOut, manual) => {
       const open = this.expanded === g.id;
-      const spHit = sp.value ? GhostLogic.speedMatches(g, sp.value, speedOpts) : null;
+      const spClass = sp.meas ? GhostLogic.classifySpeed(g, sp.meas, speedOpts) : null; // steady | reach | none
       const tags = g.evidence.map(id => {
         const ev = this.evidence.find(x => x.id === id);
         const cls = found.includes(id) ? 'hit' : this.state.ev[id] === 'out' ? 'miss' : '';
         return `<span class="mini ${cls}">${app.esc(app.pick(ev.short))}</span>`;
       }).join('');
       return `
-        <li class="ghost ${isOut ? 'out' : ''} ${open ? 'open' : ''} ${spHit === false ? 'speed-miss' : ''}">
+        <li class="ghost ${isOut ? 'out' : ''} ${open ? 'open' : ''} ${spClass === 'none' ? 'speed-miss' : ''}">
           <div class="ghost-row">
-            <button class="ghost-name" data-expand="${g.id}">${open ? '▾' : '▸'} ${app.esc(app.pick(g.name))}${spHit ? ' <span class="bolt" title="' + t('evidence.speedMatch') + '">⚡</span>' : ''}</button>
+            <button class="ghost-name" data-expand="${g.id}">${open ? '▾' : '▸'} ${app.esc(app.pick(g.name))}${spClass === 'steady' ? ' <span class="bolt" title="' + t('evidence.speedMatch') + '">⚡</span>' : ''}</button>
             <span class="ghost-tags">${tags}</span>
             ${(!isOut || manual) ? `<button class="elim" data-elim="${g.id}" title="${t(isOut ? 'evidence.restore' : 'evidence.eliminate')}">${isOut ? '↺' : '✕'}</button>` : '<span class="elim-placeholder"></span>'}
           </div>
@@ -119,7 +123,7 @@ App.register({
       ${note}
       <div class="ev-grid">${evRows}</div>
       <p class="hint">${t('evidence.howTo')}</p>
-      ${sp.value ? `<div class="speed-bar">⚡ ${app.esc(app.t('evidence.speedBar', { v: sp.value.toLocaleString(app.lang() === 'tr' ? 'tr-TR' : 'en-US', { maximumFractionDigits: 2, minimumFractionDigits: 2 }) }))}
+      ${sp.value ? `<div class="speed-bar">⚡ ${app.esc(app.t('evidence.speedBar', { v: fmt2(sp.meas.speed), lo: fmt2(sp.meas.lo), hi: fmt2(sp.meas.hi) }))}
         <button class="link" id="ev-speed-clear">${t('evidence.speedClear')}</button></div>` : ''}
       <h3>${app.esc(app.t('evidence.possible', { n: possible.length }))}</h3>
       <ul class="ghost-list">${possible.map(g => ghostRow(g, false)).join('') || `<li class="muted">${t('evidence.none')}</li>`}</ul>

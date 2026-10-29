@@ -9,7 +9,7 @@
     "speed": "Av hızı",
     "tells": "Ayırt edici, ölçülebilir davranışlar",
     "rulesOut": "Bunu görürsen bu hayalet DEĞİLDİR",
-    "speedCheck": "Hız ölçer eşleştirmesi: values = tekil hızlar (m/s), ranges = [min,max] aralıkları, los = görüş hattında ×1,65'e kadar ivmelenir mi"
+    "speedProfile": "Hız ölçer (m/s, oyun hızı %100): steady = hayaletin normalde sabit gittiği hızlar; steadyRanges = sürekli değişebilen sabit hız aralıkları (sıcaklık, mesafe, akıl sağlığı); reach = kovalama ivmesi (×1,65, 13 sn) ve sonrasındaki ~65 sn'lik yavaşlama ya da hal geçişleri dahil ulaşılabilen tüm hızlar. Ölçüm reach dışındaysa hayalet o hıza hiç çıkamaz."
   },
   "ghosts": [
     {
@@ -29,8 +29,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s (görüş hattında hızlanır)",
-        "en": "1.7 m/s (speeds up with line of sight)"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -48,12 +48,17 @@
           "If it hunts less than 180 s after incense, it is not a Spirit."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -73,8 +78,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -96,12 +101,17 @@
           "If it steps in salt / leaves footprints in salt, it is not a Wraith."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -121,8 +131,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -146,12 +156,17 @@
           "If it stays visible after being photographed and appears in the photo, it is not a Phantom."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -171,8 +186,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -192,12 +207,17 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -217,8 +237,8 @@
         "en": "50% (uses its target's sanity, not the team average)"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -244,12 +264,17 @@
           "Male name or model: not a Banshee."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -294,13 +319,18 @@
           "If it turns off the breaker itself, it is not a Jinn."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7,
           2.5
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -320,8 +350,8 @@
         "en": "60% if its current room's light is off or broken, 40% if on"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -345,12 +375,17 @@
           "If it turns a light on, it is not a Mare."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -391,13 +426,18 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.0,
           3.0
         ],
-        "ranges": [],
-        "los": false
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.0,
+            3.0
+          ]
+        ]
       }
     },
     {
@@ -417,8 +457,8 @@
         "en": "35%; cannot hunt while a player is in its room"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -442,12 +482,17 @@
           "If it hunts above 35% average sanity (excluding cursed items), it is not a Shade."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -467,8 +512,8 @@
         "en": "70%; rarely at any sanity via its ability (even 100%)"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -488,12 +533,17 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -513,8 +563,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -532,12 +582,17 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -557,8 +612,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -582,12 +637,17 @@
           "If it does a mist/airball event, it is not an Oni."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -607,8 +667,8 @@
         "en": "50%; 80% if players talk near it"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -630,12 +690,17 @@
           "If it detects a player talking or holding electronics from beyond 2.5 m, it is not a Yokai."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -655,8 +720,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "Odanın sıcaklığına göre 1,44 m/s (sıcak) – 2,7 m/s (dondurucu); görüş hattında hızlanmaz",
-        "en": "1.44 m/s (warm) to 2.7 m/s (freezing) depending on room temperature; no line-of-sight speed-up"
+        "tr": "Odanın sıcaklığına göre 1,4 m/s (15 °C üstü) – 2,7 m/s (0 °C altı); görüş hattında hızlanmaz",
+        "en": "1.4 m/s (above 15 °C) to 2.7 m/s (below 0 °C) depending on room temperature; no line-of-sight speed-up"
       },
       "tells": {
         "tr": [
@@ -682,15 +747,20 @@
           "If it gradually speeds up in line of sight, it is not a Hantu."
         ]
       },
-      "speedCheck": {
-        "values": [],
-        "ranges": [
+      "speedProfile": {
+        "steady": [],
+        "steadyRanges": [
           [
             1.4,
             2.7
           ]
         ],
-        "los": false
+        "reach": [
+          [
+            1.4,
+            2.7
+          ]
+        ]
       }
     },
     {
@@ -710,8 +780,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -737,12 +807,17 @@
           "If its room changes, it is not a Goryo."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -762,8 +837,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -783,12 +858,17 @@
           "If, on the same floor, you hear footsteps from far away before electronics flicker, it is not a Myling."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -808,8 +888,8 @@
         "en": "60%; also attempts a hunt at any sanity after every 3rd flame it blows out"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -831,12 +911,17 @@
           "Put a lit candle on a crucifix: if the crucifix burns while the candle stays lit, it is not an Onryo."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -875,13 +960,18 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.53,
           1.87
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.53,
+            3.086
+          ]
+        ]
       }
     },
     {
@@ -918,13 +1008,18 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7,
           2.5
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -944,8 +1039,8 @@
         "en": "50%"
       },
       "speed": {
-        "tr": "1,7 m/s",
-        "en": "1.7 m/s"
+        "tr": "1,7 m/s; birini görünce 13 sn içinde 2,8 m/s'ye kadar hızlanır, görmeyi bırakınca ~65 sn'de normale döner",
+        "en": "1.7 m/s; speeds up to 2.8 m/s over 13 s when it sees someone, returns to normal over ~65 s after losing them"
       },
       "tells": {
         "tr": [
@@ -967,12 +1062,17 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -1016,15 +1116,20 @@
           "If there are definitely no Ghost Orbs, it is not the Mimic."
         ]
       },
-      "speedCheck": {
-        "values": [],
-        "ranges": [
+      "speedProfile": {
+        "steady": [],
+        "steadyRanges": [
           [
             0.4,
             3.71
           ]
         ],
-        "los": true
+        "reach": [
+          [
+            0.4,
+            3.71
+          ]
+        ]
       }
     },
     {
@@ -1065,15 +1170,20 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [],
-        "ranges": [
+      "speedProfile": {
+        "steady": [],
+        "steadyRanges": [
           [
             1.5,
             2.25
           ]
         ],
-        "los": true
+        "reach": [
+          [
+            1.5,
+            3.71
+          ]
+        ]
       }
     },
     {
@@ -1114,15 +1224,20 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [],
-        "ranges": [
+      "speedProfile": {
+        "steady": [],
+        "steadyRanges": [
           [
             0.4,
             3.0
           ]
         ],
-        "los": false
+        "reach": [
+          [
+            0.4,
+            3.0
+          ]
+        ]
       }
     },
     {
@@ -1163,15 +1278,27 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [],
-        "ranges": [
+      "speedProfile": {
+        "steady": [
+          2.75,
+          2.575,
+          2.4,
+          2.225,
+          2.05,
+          1.875,
+          1.7,
+          1.525,
+          1.35,
+          1.175,
+          1.0
+        ],
+        "steadyRanges": [],
+        "reach": [
           [
             1.0,
             2.75
           ]
-        ],
-        "los": false
+        ]
       }
     },
     {
@@ -1214,14 +1341,19 @@
           "Male name or model: not a Dayan."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.2,
           1.7,
           2.25
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.2,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -1264,14 +1396,19 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.36,
           1.7,
-          1.96
+          1.955
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.36,
+            3.226
+          ]
+        ]
       }
     },
     {
@@ -1312,13 +1449,18 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [
-          1.45,
-          1.96
+      "speedProfile": {
+        "steady": [
+          1.445,
+          1.955
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.445,
+            3.226
+          ]
+        ]
       }
     },
     {
@@ -1361,12 +1503,17 @@
           "If it kills a player inside an official hiding spot, it is not an Aswang."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.53
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.53,
+            2.53
+          ]
+        ]
       }
     },
     {
@@ -1413,13 +1560,18 @@
           "If it does a mist or chasing event, it is not a Kormos."
         ]
       },
-      "speedCheck": {
-        "values": [
+      "speedProfile": {
+        "steady": [
           1.7,
           2.21
         ],
-        "ranges": [],
-        "los": true
+        "steadyRanges": [],
+        "reach": [
+          [
+            1.7,
+            2.805
+          ]
+        ]
       }
     },
     {
@@ -1460,15 +1612,20 @@
         "tr": [],
         "en": []
       },
-      "speedCheck": {
-        "values": [],
-        "ranges": [
+      "speedProfile": {
+        "steady": [],
+        "steadyRanges": [
           [
             0.4,
             3.0
           ]
         ],
-        "los": false
+        "reach": [
+          [
+            0.4,
+            3.0
+          ]
+        ]
       }
     }
   ]

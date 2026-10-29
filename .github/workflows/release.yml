@@ -66,6 +66,11 @@ jobs:
         if: steps.check.outputs.skip == 'false'
         run: npm install --no-audit --no-fund
 
+      # Testler geçmezse sürüm yayınlanmaz.
+      - name: Run tests
+        if: steps.check.outputs.skip == 'false'
+        run: npm test
+
       # electron-builder sadece dosyaları üretir; yüklemeyi gh yapar.
       - name: Build installer
         if: steps.check.outputs.skip == 'false'

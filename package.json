@@ -1,7 +1,7 @@
 {
   "name": "phasmo-helper",
   "productName": "Phasmo Helper",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Phasmophobia için her zaman üstte duran yardımcı overlay (resmi değildir)",
   "author": "wiesdante",
   "homepage": "https://github.com/wiesdante/phasmo-helper",
@@ -10,7 +10,8 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder --win --publish never",
-    "release": "electron-builder --win --publish always"
+    "release": "electron-builder --win --publish always",
+    "test": "node test/speed.test.js"
   },
   "dependencies": {
     "electron-updater": "^6.6.2"
