@@ -12,6 +12,9 @@ contextBridge.exposeInMainWorld('api', {
   onShortcut: (cb) => ipcRenderer.on('shortcut', (_e, action) => cb(action)),
   onSettingsChanged: (cb) => ipcRenderer.on('settings:changed', (_e, s) => cb(s)),
   getAppInfo: () => ipcRenderer.invoke('app:info'),
+  getDefaultShortcuts: () => ipcRenderer.invoke('shortcuts:defaults'),
+  pauseShortcuts: () => ipcRenderer.invoke('shortcuts:pause'),
+  resumeShortcuts: () => ipcRenderer.invoke('shortcuts:resume'),
   onUpdateReady: (cb) => ipcRenderer.on('update:ready', (_e, v) => cb(v)),
   onUpdateInstalled: (cb) => ipcRenderer.on('update:installed', (_e, v) => cb(v))
 });

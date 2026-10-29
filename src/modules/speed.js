@@ -80,10 +80,10 @@ App.register({
       <button class="speed-pad" id="sp-pad">
         <span class="sp-value" id="sp-value">— m/s</span>
         <span class="sp-sub" id="sp-sub"></span>
-        <span class="sp-hint">${t('speed.tapHint')}</span>
+        <span class="sp-hint">${app.esc(app.t('speed.tapHint', { key: app.key('speedTap') }))}</span>
       </button>
       <div class="row sp-actions">
-        <button class="link no-push" id="sp-reset">${t('speed.reset')}</button>
+        <button class="link no-push" id="sp-reset">${app.esc(app.t('speed.reset', { key: app.key('speedReset') }))}</button>
       </div>
 
       <div class="field">

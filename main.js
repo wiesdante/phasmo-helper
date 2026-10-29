@@ -111,9 +111,9 @@ function registerShortcuts() {
     if (!accel) continue;
     const handler = actions[action] || (() => sendToRenderer('shortcut', action));
     try {
-      if (!globalShortcut.register(accel, handler)) failed.push(accel);
+      if (!globalShortcut.register(accel, handler)) failed.push(action);
     } catch {
-      failed.push(accel);
+      failed.push(action);
     }
   }
   if (failed.length) console.warn('Kaydedilemeyen kısayollar:', failed.join(', '));
@@ -130,6 +130,7 @@ function createWindow() {
     alwaysOnTop: true,
     backgroundColor: '#14161a',
     title: 'Phasmo Helper',
+    icon: path.join(__dirname, 'assets', 'icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -175,6 +176,12 @@ ipcMain.handle('settings:set', (_e, partial) => {
   saveSettings();
   return { settings, failedShortcuts: failed };
 });
+
+// Kısayol düzenleme: tuş yakalanırken global kısayollar geçici olarak kapatılır,
+// yoksa basılan tuş (ör. F8) arayüze ulaşmadan kısayolu tetikler.
+ipcMain.handle('shortcuts:defaults', () => DEFAULT_SETTINGS.shortcuts);
+ipcMain.handle('shortcuts:pause', () => { globalShortcut.unregisterAll(); return true; });
+ipcMain.handle('shortcuts:resume', () => registerShortcuts());
 
 ipcMain.handle('data:get', (_e, name) => {
   if (!ALLOWED_DATA.includes(name)) throw new Error('Bilinmeyen veri: ' + name);

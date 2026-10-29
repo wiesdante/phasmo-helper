@@ -1,4 +1,4 @@
-# Phasmo Helper
+# <img src="build/icon.png" width="40" align="center"> Phasmo Helper
 
 **TR** · Phasmophobia oynarken oyunun üstünde duran, resmi olmayan küçük bir yardımcı pencere.
 **EN** · An unofficial, always-on-top companion overlay for Phasmophobia.
@@ -19,9 +19,10 @@ Download `Phasmo-Helper-Setup-x.y.z.exe` from the [**Releases**](https://github.
 - **Hayaletler / Ghosts:** 30 hayaletin ölçülebilir davranışları ve "bunu görürsen bu hayalet değil" kuralları.
 - **Süreler / Timers:** Tütsü (60/90/180 sn) ve av + bekleme süresi.
 - **Hız / Speed:** Ayak seslerine vurarak m/s ölçümü; uyan hayaletleri vurgular.
+- **Kısayollar / Shortcuts:** Ayarlardan tüm tuşlar değiştirilebilir. / Every key can be changed in Settings.
 - **Bilgi / Info:** 21 ekipmanın I/II/III seviye farkları; 7 lanetli eşya, maliyetler, tarot ve maymun pençesi tabloları.
 
-## Kısayollar / Shortcuts
+## Varsayılan kısayollar / Default shortcuts
 
 | Tuş / Key | İşlev / Action |
 |---|---|

@@ -1,7 +1,7 @@
 {
   "name": "phasmo-helper",
   "productName": "Phasmo Helper",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Phasmophobia için her zaman üstte duran yardımcı overlay (resmi değildir)",
   "author": "wiesdante",
   "homepage": "https://github.com/wiesdante/phasmo-helper",
@@ -28,10 +28,19 @@
       "package.json",
       "src/**/*",
       "data/**/*",
-      "i18n/**/*"
+      "i18n/**/*",
+      "assets/**/*"
     ],
     "win": {
-      "target": [{ "target": "nsis", "arch": ["x64"] }]
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
     },
     "nsis": {
       "oneClick": true,
@@ -39,7 +48,9 @@
       "artifactName": "Phasmo-Helper-Setup-${version}.${ext}",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Phasmo Helper"
+      "shortcutName": "Phasmo Helper",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
     },
     "publish": [
       {
@@ -48,6 +59,9 @@
         "repo": "phasmo-helper",
         "releaseType": "release"
       }
-    ]
+    ],
+    "directories": {
+      "buildResources": "build"
+    }
   }
 }

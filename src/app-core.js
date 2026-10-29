@@ -29,6 +29,12 @@ window.App = {
 
   lang() { return (this.settings && this.settings.language) || 'tr'; },
 
+  // Bir eylemin şu anki kısayolu, okunur biçimde (ör. "F9", "Ctrl + Num 1"); atanmamışsa "—".
+  key(action) {
+    const a = this.settings && this.settings.shortcuts && this.settings.shortcuts[action];
+    return a ? ShortcutKeys.format(a) : '—';
+  },
+
   // {tr, en} nesnesinden geçerli dildeki değeri seçer.
   pick(obj) { return obj ? (obj[this.lang()] ?? obj.en) : ''; },
 

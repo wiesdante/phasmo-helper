@@ -4,7 +4,7 @@
   },
   "window": {
     "minimize": "Küçült",
-    "hide": "Gizle (F8)",
+    "hide": "Gizle",
     "quit": "Kapat"
   },
   "tabs": {
@@ -34,8 +34,7 @@
     "language": "Dil",
     "opacity": "Şeffaflık",
     "sound": "Sesli uyarılar",
-    "shortcuts": "Kısayollar",
-    "shortcutsNote": "Kısayolları değiştirme ekranı ileride eklenecek."
+    "shortcuts": "Kısayollar"
   },
   "shortcuts": {
     "toggleWindow": "Pencereyi göster/gizle",
@@ -66,8 +65,8 @@
     "fakeHint": "Her zaman görünen sahte kanıt (kanıt sayısına dahil değil)"
   },
   "speed": {
-    "tapHint": "Her ayak sesinde F6'ya bas ya da buraya tıkla",
-    "reset": "Sıfırla (F7)",
+    "tapHint": "Her ayak sesinde {key} tuşuna bas ya da buraya tıkla",
+    "reset": "Sıfırla ({key})",
     "modifier": "Oyundaki hayalet hızı ayarı (%)",
     "los": "Kovalarken ölçtüm (hayalet beni görüyordu)",
     "losHint": "En doğru sonuç için hayalet seni görmüyorken ölç: görüş hattında çoğu hayalet 13 sn içinde %65'e kadar hızlanır.",
@@ -86,7 +85,7 @@
     "restart": "Yeniden",
     "stop": "Durdur",
     "normalGhosts": "normal",
-    "incenseIdle": "Hayaleti tütsüleyince F9'a bas.",
+    "incenseIdle": "Hayaleti tütsüleyince {key} tuşuna bas.",
     "incenseStarted": "Tütsü sayacı başladı",
     "incenseStatus": {
       "safeAll": "Hiçbir hayalet avlanamaz (lanetli eşya hariç).",
@@ -105,7 +104,7 @@
     "noteOver180": "Av tütsüden {s} sn sonra başladı; bu süre bir hayaleti elemez.",
     "huntStarted": "Av başladı",
     "huntEnded": "Av bitti",
-    "huntIdle": "Av başlayınca F10'a bas. Av erken biterse tekrar bas.",
+    "huntIdle": "Av başlayınca {key} tuşuna bas. Av erken biterse tekrar bas.",
     "huntRunning": "Av sürüyor. Sayaç bitince av biter (tahmini).",
     "cooldownAll": "Bekleme: hiçbir hayalet avlanamaz.",
     "cooldownDemon": "Demon tekrar avlanabilir (20 sn); diğerleri 25 sn'de.",
@@ -151,5 +150,19 @@
   "equipment": {
     "general": "Genel bilgiler ve elektronikler",
     "tips": "Hayalet tespiti için"
+  },
+  "shortcutEditor": {
+    "hint": "Değiştirmek için tıkla, sonra yeni tuşa bas. Esc: vazgeç · Backspace: kısayolu kaldır.",
+    "press": "Bir tuşa bas…",
+    "none": "—",
+    "reset": "Varsayılanlara dön",
+    "resetDone": "Kısayollar varsayılana döndü.",
+    "saved": "{name}: {key}",
+    "cleared": "{name}: kısayol kaldırıldı.",
+    "moved": "{key} önceden \"{other}\" için kullanılıyordu; oradan kaldırıldı.",
+    "risky": "Dikkat: {key} tek başına oyunda kullanılan bir tuş olabilir. Kısayol bu tuşu oyundan alır.",
+    "unsupported": "Bu tuş kısayol olarak kullanılamıyor.",
+    "failed": "Bu kısayollar başka bir uygulama tarafından kullanılıyor ve çalışmıyor: {list}",
+    "failedOne": "Bu tuş başka bir uygulama tarafından kullanılıyor"
   }
 }

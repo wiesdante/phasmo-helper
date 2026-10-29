@@ -4,7 +4,7 @@
   },
   "window": {
     "minimize": "Minimize",
-    "hide": "Hide (F8)",
+    "hide": "Hide",
     "quit": "Close"
   },
   "tabs": {
@@ -34,8 +34,7 @@
     "language": "Language",
     "opacity": "Opacity",
     "sound": "Sound alerts",
-    "shortcuts": "Shortcuts",
-    "shortcutsNote": "A screen for changing shortcuts will be added later."
+    "shortcuts": "Shortcuts"
   },
   "shortcuts": {
     "toggleWindow": "Show/hide window",
@@ -66,8 +65,8 @@
     "fakeHint": "Fake evidence that always appears (not counted)"
   },
   "speed": {
-    "tapHint": "Press F6 or click here on every footstep",
-    "reset": "Reset (F7)",
+    "tapHint": "Press {key} or click here on every footstep",
+    "reset": "Reset ({key})",
     "modifier": "In-game ghost speed setting (%)",
     "los": "Measured during a chase (ghost could see me)",
     "losHint": "For best results measure while the ghost can't see you: with line of sight most ghosts speed up to +65% over 13 s.",
@@ -86,7 +85,7 @@
     "restart": "Restart",
     "stop": "Stop",
     "normalGhosts": "normal",
-    "incenseIdle": "Press F9 when you incense the ghost.",
+    "incenseIdle": "Press {key} when you incense the ghost.",
     "incenseStarted": "Incense timer started",
     "incenseStatus": {
       "safeAll": "No ghost can hunt (except cursed hunts).",
@@ -105,7 +104,7 @@
     "noteOver180": "Hunt started {s} s after incense; this rules nothing out.",
     "huntStarted": "Hunt started",
     "huntEnded": "Hunt ended",
-    "huntIdle": "Press F10 when a hunt starts. Press again if it ends early.",
+    "huntIdle": "Press {key} when a hunt starts. Press again if it ends early.",
     "huntRunning": "Hunt in progress. It ends when the timer runs out (estimate).",
     "cooldownAll": "Cooldown: no ghost can hunt.",
     "cooldownDemon": "Demon can hunt again (20 s); others at 25 s.",
@@ -151,5 +150,19 @@
   "equipment": {
     "general": "General info & electronics",
     "tips": "For ghost identification"
+  },
+  "shortcutEditor": {
+    "hint": "Click to change, then press the new key. Esc: cancel · Backspace: remove shortcut.",
+    "press": "Press a key…",
+    "none": "—",
+    "reset": "Reset to defaults",
+    "resetDone": "Shortcuts reset to defaults.",
+    "saved": "{name}: {key}",
+    "cleared": "{name}: shortcut removed.",
+    "moved": "{key} was used for \"{other}\"; removed there.",
+    "risky": "Careful: {key} on its own may be a key you use in the game. The shortcut takes it away from the game.",
+    "unsupported": "This key can't be used as a shortcut.",
+    "failed": "These shortcuts are taken by another app and don't work: {list}",
+    "failedOne": "This key is taken by another app"
   }
 }

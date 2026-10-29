@@ -1,4 +1,4 @@
-// Ayarlar: dil, şeffaflık, ses, kısayol listesi. (Kısayolları değiştirme ekranı sonra eklenecek.)
+// Ayarlar: dil, şeffaflık, ses, düzenlenebilir kısayollar, hakkında.
 App.register({
   id: 'settings',
   icon: '⚙',
@@ -15,10 +15,19 @@ App.register({
     this.info = await window.api.getAppInfo();
     this.render();
   },
+  failed: [],     // kaydedilemeyen (başka uygulamanın kullandığı) kısayol eylemleri
+  capturing: null, // tuşu yakalanan eylem
+
   render() {
     const s = this.app.settings;
+    const e = v => this.app.esc(v);
     const rows = Object.entries(s.shortcuts)
-      .map(([action, key]) => `<tr><td data-i18n="shortcuts.${action}"></td><td><kbd>${String(key).replace(/^num(\d)$/, 'Num $1')}</kbd></td></tr>`)
+      .map(([action, key]) => {
+        const bad = this.failed.includes(action);
+        return `<tr><td data-i18n="shortcuts.${action}"></td>
+          <td><button class="key-btn ${key ? '' : 'empty'} ${bad ? 'bad' : ''}" data-edit="${action}"
+            ${bad ? `title="${e(this.app.t('shortcutEditor.failedOne'))}"` : ''}>${bad ? '⚠ ' : ''}${e(key ? ShortcutKeys.format(key) : '—')}</button></td></tr>`;
+      })
       .join('');
 
     this.panel.innerHTML = `
@@ -46,8 +55,10 @@ App.register({
 
       <div class="field">
         <label data-i18n="settings.shortcuts"></label>
+        <p class="hint" data-i18n="shortcutEditor.hint"></p>
         <table class="shortcut-list">${rows}</table>
-        <p class="muted" data-i18n="settings.shortcutsNote"></p>
+        <p class="sc-status" id="sc-status"></p>
+        <button class="link no-push" id="sc-reset" data-i18n="shortcutEditor.reset"></button>
       </div>
 
       <div class="field about">
@@ -74,7 +85,91 @@ App.register({
     opacity.oninput = () => this.save({ opacity: Number(opacity.value) });
     sound.onchange = () => this.save({ sound: sound.checked });
 
+    this.panel.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => this.startCapture(b.dataset.edit));
+    this.panel.querySelector('#sc-reset').onclick = () => this.resetShortcuts();
+
     this.app.translateDom(this.panel);
+    if (this.failed.length) {
+      const names = this.failed.map(a => this.app.t(`shortcuts.${a}`)).join(', ');
+      this.setStatus(this.app.t('shortcutEditor.failed', { list: names }), 'warn');
+    }
+  },
+
+  setStatus(msg, kind = '') {
+    const el = this.panel.querySelector('#sc-status');
+    if (!el) return;
+    el.textContent = msg || '';
+    el.className = 'sc-status ' + kind;
+  },
+
+  // --- Kısayol yakalama ---
+  async startCapture(action) {
+    if (this.capturing) this.stopCapture();
+    this.capturing = action;
+    await window.api.pauseShortcuts();   // yoksa basılan kısayol arayüze ulaşmaz
+    const btn = this.panel.querySelector(`[data-edit="${action}"]`);
+    if (btn) { btn.textContent = this.app.t('shortcutEditor.press'); btn.classList.add('capturing'); }
+    this.setStatus('');
+    this._onKey = ev => this.onCaptureKey(ev);
+    this._onBlur = () => this.finishCapture(null, { cancel: true });
+    window.addEventListener('keydown', this._onKey, true);
+    window.addEventListener('blur', this._onBlur);
+  },
+
+  stopCapture() {
+    window.removeEventListener('keydown', this._onKey, true);
+    window.removeEventListener('blur', this._onBlur);
+    this.capturing = null;
+  },
+
+  onCaptureKey(ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+    if (ev.code === 'Escape') return this.finishCapture(null, { cancel: true });
+    if (ev.code === 'Backspace') return this.finishCapture('');
+    const r = ShortcutKeys.fromEvent(ev);
+    if (r.modifierOnly) return;                       // ana tuşu bekle
+    if (r.unsupported) { this.setStatus(this.app.t('shortcutEditor.unsupported'), 'warn'); return; }
+    this.finishCapture(r.accel);
+  },
+
+  async finishCapture(accel, { cancel = false } = {}) {
+    const action = this.capturing;
+    if (!action) return;
+    this.stopCapture();
+    const app = this.app;
+    const name = app.t(`shortcuts.${action}`);
+    let msg = '', kind = '';
+
+    if (!cancel) {
+      const change = { [action]: accel };
+      // Aynı tuş başka bir eylemdeyse oradan kaldır.
+      const other = accel && Object.keys(app.settings.shortcuts)
+        .find(a => a !== action && app.settings.shortcuts[a] === accel);
+      if (other) change[other] = '';
+      await this.save({ shortcuts: change });
+
+      if (!accel) msg = app.t('shortcutEditor.cleared', { name });
+      else {
+        msg = app.t('shortcutEditor.saved', { name, key: ShortcutKeys.format(accel) });
+        if (other) msg += ' ' + app.t('shortcutEditor.moved', { key: ShortcutKeys.format(accel), other: app.t(`shortcuts.${other}`) });
+        if (ShortcutKeys.isRisky(accel)) { msg += ' ' + app.t('shortcutEditor.risky', { key: ShortcutKeys.format(accel) }); kind = 'warn'; }
+      }
+    }
+    this.failed = await window.api.resumeShortcuts() || [];
+    this.render();
+    this.app.modules.forEach(m => m !== this && m.onLanguageChange && m.onLanguageChange()); // kısayol ipuçlarını güncelle
+    if (msg && !this.failed.includes(action)) { this.setStatus(msg, kind); app.toast(msg, kind ? 5000 : 2500); }
+  },
+
+  async resetShortcuts() {
+    if (this.capturing) this.stopCapture();
+    const defaults = await window.api.getDefaultShortcuts();
+    await this.save({ shortcuts: defaults });
+    this.failed = await window.api.resumeShortcuts() || [];
+    this.render();
+    this.app.modules.forEach(m => m !== this && m.onLanguageChange && m.onLanguageChange());
+    if (!this.failed.length) this.setStatus(this.app.t('shortcutEditor.resetDone'));
   },
   async save(partial) {
     const res = await window.api.setSettings(partial);
@@ -86,5 +181,5 @@ App.register({
     if (el) el.textContent = Math.round(this.app.settings.opacity * 100) + '%';
   },
   onLanguageChange() { this.render(); },
-  onSettingsChanged() { this.render(); } // örn. Ctrl+F8 / Shift+F8 ile şeffaflık değişince
+  onSettingsChanged() { if (!this.capturing) this.render(); } // örn. kısayolla şeffaflık değişince
 });

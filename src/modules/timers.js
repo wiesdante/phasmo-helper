@@ -122,7 +122,7 @@ App.register({
 
     this.panel.innerHTML = `
       <section class="tm-card">
-        <div class="tm-head"><span>${t('timers.incenseTitle')} <kbd>F9</kbd></span>
+        <div class="tm-head"><span>${t('timers.incenseTitle')} <kbd>${app.esc(app.key('smudgeTimer'))}</kbd></span>
           <span class="tm-actions">
             <button class="link no-push" id="tm-inc-start">${t(this.incense ? 'timers.restart' : 'timers.start')}</button>
             ${this.incense ? `<button class="link no-push" id="tm-inc-stop">${t('timers.stop')}</button>` : ''}
@@ -136,14 +136,14 @@ App.register({
       </section>
 
       <section class="tm-card">
-        <div class="tm-head"><span>${t('timers.huntTitle')} <kbd>F10</kbd></span>
+        <div class="tm-head"><span>${t('timers.huntTitle')} <kbd>${app.esc(app.key('huntTimer'))}</kbd></span>
           <span class="tm-actions">
             <button class="link no-push" id="tm-hunt-btn">${t(this.hunt && this.hunt.phase === 'hunt' ? 'timers.huntEnded' : 'timers.huntStarted')}</button>
             ${this.hunt ? `<button class="link no-push" id="tm-hunt-stop">${t('timers.stop')}</button>` : ''}
           </span></div>
         <div class="tm-big" id="tm-hunt-time">—</div>
         <div class="tm-bar"><div class="tm-fill" id="tm-hunt-fill"></div></div>
-        <p class="hint" id="tm-hunt-status">${t('timers.huntIdle')}</p>
+        <p class="hint" id="tm-hunt-status">${app.esc(app.t('timers.huntIdle', { key: app.key('huntTimer') }))}</p>
         ${this.lastHuntNote ? `<p class="tm-note">${app.esc(this.lastHuntNote)}</p>` : ''}
         <div class="tm-opts">
           <select id="tm-diff">${diffs}</select>
@@ -186,7 +186,7 @@ App.register({
     } else {
       $('#tm-inc-time').textContent = '—';
       $('#tm-inc-fill').style.width = '0%';
-      $('#tm-inc-status').textContent = app.t('timers.incenseIdle');
+      $('#tm-inc-status').textContent = app.t('timers.incenseIdle', { key: app.key('smudgeTimer') });
     }
 
     // Av / bekleme
