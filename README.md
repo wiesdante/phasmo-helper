@@ -42,8 +42,8 @@ npm start          # çalıştır / run
 npm run dist       # Windows kurulumu üret / build installer (dist/)
 ```
 
-Yeni sürüm yayınlamak / Publishing a release: `package.json` sürümünü artırıp main dalına gönder; GitHub Actions kurulumu üretir, `vX.Y.Z` etiketini oluşturur ve Releases'e yükler.
-Bump the `package.json` version and push to `main`; GitHub Actions builds the installer, creates the `vX.Y.Z` tag and publishes it to Releases.
+Yeni sürüm yayınlamak / Publishing a release: `CHANGELOG.md`'ye sürüm notunu ekle, `package.json` sürümünü artırıp main dalına gönder; GitHub Actions kurulumu üretir, `vX.Y.Z` etiketini oluşturur ve Releases'e yükler.
+Add the version's notes to `CHANGELOG.md`, bump the `package.json` version and push to `main`; GitHub Actions builds the installer, creates the `vX.Y.Z` tag and publishes it to Releases.
 
 ## Kaynaklar ve yasal not / Sources & legal
 

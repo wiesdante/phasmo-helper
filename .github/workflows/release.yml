@@ -1,7 +1,8 @@
 # package.json'daki sürüm numarası değişip main dalına gönderildiğinde Windows kurulum
 # dosyasını üretir ve GitHub Releases'e yayınlar (vX.Y.Z etiketini de kendisi oluşturur).
 # Kurulu uygulamalar bu sürümü otomatik olarak indirir.
-# Aynı sürüm zaten eksiksiz yayınlandıysa hiçbir şey yapmaz.
+# Aynı sürüm zaten eksiksiz yayınlandıysa yeniden derlemez.
+# Sürüm notları CHANGELOG.md'den alınır; notu olmayan sürüm yayınlanmaz.
 name: Release
 
 on:
@@ -9,6 +10,7 @@ on:
     branches: [main]
     paths:
       - 'package.json'
+      - 'CHANGELOG.md'
       - '.github/workflows/release.yml'
   workflow_dispatch:
 
@@ -44,6 +46,21 @@ jobs:
             gh release delete "$tag" --cleanup-tag -y --repo "$GITHUB_REPOSITORY"
           done
 
+      # Yayınlanmış sürümlerin notlarını CHANGELOG.md ile eşitle (notlar sonradan düzeltilebilsin).
+      - name: Sync release notes from changelog
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/releases" --paginate -q '.[].tag_name' | while read -r tag; do
+            [ -z "$tag" ] && continue
+            if node scripts/release-notes.js "$tag" > "notes-$tag.md" 2>/dev/null; then
+              gh release edit "$tag" --repo "$GITHUB_REPOSITORY" --notes-file "notes-$tag.md" && echo "Updated notes for $tag"
+            else
+              echo "No changelog entry for $tag, leaving notes as they are"
+            fi
+          done
+
       - name: Skip if already released
         id: check
         shell: bash
@@ -65,6 +82,15 @@ jobs:
       - name: Install dependencies
         if: steps.check.outputs.skip == 'false'
         run: npm install --no-audit --no-fund
+
+      # Bu sürümün CHANGELOG.md notu yoksa yayınlanmaz.
+      - name: Release notes
+        if: steps.check.outputs.skip == 'false'
+        shell: bash
+        run: |
+          node scripts/release-notes.js "${{ steps.ver.outputs.tag }}" > release-notes.md || {
+            echo "::error::CHANGELOG.md has no entry for ${{ steps.ver.outputs.tag }}"; exit 1; }
+          cat release-notes.md
 
       # Testler geçmezse sürüm yayınlanmaz.
       - name: Run tests
@@ -95,7 +121,7 @@ jobs:
             dist/*.exe dist/*.exe.blockmap dist/latest.yml \
             --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
             --title "Phasmo Helper $TAG" \
-            --notes "Kurulum: Phasmo-Helper-Setup-${TAG#v}.exe dosyasını indirip çalıştırın. Uygulama sonraki sürümlere kendiliğinden güncellenir. / Download and run Phasmo-Helper-Setup-${TAG#v}.exe. The app updates itself automatically."
+            --notes-file release-notes.md
 
       - name: Verify release assets
         if: steps.check.outputs.skip == 'false'
