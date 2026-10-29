@@ -276,3 +276,11 @@ button.link.no-push { margin-left: 0; }
 .about a { color: var(--accent); }
 .about-links { margin: 2px 0 6px; padding-left: 16px; font-size: 12px; }
 .about-links li { margin: 2px 0; }
+
+/* --- Bilgi sekmesi --- */
+.info-seg { margin-bottom: 10px; }
+.info-section[hidden] { display: none; }
+.info-section h3:first-of-type { margin-top: 10px; }
+.tier-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tier-table th { width: 30px; text-align: left; color: #e2b93b; font-weight: 600; padding: 4px; vertical-align: top; border-bottom: 1px solid var(--border); }
+.tier-table td { padding: 4px; border-bottom: 1px solid var(--border); }

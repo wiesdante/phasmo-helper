@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 1,
+  "general": {
+    "tr": [
+      "Her ekipmanın 3 seviyesi (I/II/III) vardır; üst seviyeler oyuncu seviyesiyle açılır ve satın alınır. Kilit seviyeleri ve fiyatlar sürümlerle değiştiği için burada gösterilmez.",
+      "Avda, elinde tuttuğun açık elektronik cihazlar hayaletin seni 7,5 m içinden (aynı katta) bulmasını sağlar; Yokai'de bu mesafe 2,5 m'dir. Saklanırken kapat ya da yere bırak.",
+      "Hayalet event'lerinde ve avlarda 10 m içindeki elektronikler bozulur (Raiju'da 15 m)."
+    ],
+    "en": [
+      "Each item has 3 tiers (I/II/III); higher tiers unlock with player level and are bought. Unlock levels and prices change between versions, so they're not shown here.",
+      "During hunts, active electronics you hold let the ghost find you within 7.5 m (same floor); for a Yokai it's 2.5 m. Turn them off or drop them while hiding.",
+      "Electronics within 10 m malfunction during events and hunts (15 m for a Raiju)."
+    ]
+  },
+  "categories": [
+    {
+      "id": "evidence",
+      "name": {
+        "tr": "Kanıt ekipmanı",
+        "en": "Evidence equipment"
+      }
+    },
+    {
+      "id": "protection",
+      "name": {
+        "tr": "Koruma ve akıl sağlığı",
+        "en": "Protection & sanity"
+      }
+    },
+    {
+      "id": "tools",
+      "name": {
+        "tr": "Diğer araçlar",
+        "en": "Other tools"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "emf",
+      "category": "evidence",
+      "name": {
+        "tr": "EMF Okuyucu",
+        "en": "EMF Reader"
+      },
+      "summary": {
+        "tr": "Hayalet etkileşimlerinin EMF seviyesini gösterir; EMF 5 kanıttır.",
+        "en": "Shows the EMF level of ghost interactions; EMF 5 is evidence."
+      },
+      "tiers": [
+        {
+          "tr": "1,7 m menzil; kadranlı gösterge.",
+          "en": "1.7 m range; dial display."
+        },
+        {
+          "tr": "2 m menzil; LED ışıklar algılanan en yüksek seviyeyi gösterir.",
+          "en": "2 m range; LEDs show the highest level detected."
+        },
+        {
+          "tr": "3,5 m menzil; ekranda 3 etkileşime kadar uzaklık ve yön.",
+          "en": "3.5 m range; screen shows up to 3 interactions with distance and direction."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "EMF 2 sıradan etkileşimdir; EMF 5 sadece kanıtı olan hayalette çıkar.",
+          "Jinn'in yeteneği sigorta kutusunda EMF 2 bırakır; Phantom ve Wraith gezindikleri/ışınlandıkları yerde EMF bırakabilir."
+        ],
+        "en": [
+          "EMF 2 is a normal interaction; EMF 5 only appears if it's the ghost's evidence.",
+          "Jinn's ability leaves EMF 2 at the breaker; Phantom and Wraith can leave EMF where they roam/teleport."
+        ]
+      }
+    },
+    {
+      "id": "spiritbox",
+      "category": "evidence",
+      "name": {
+        "tr": "Spirit Box",
+        "en": "Spirit Box"
+      },
+      "summary": {
+        "tr": "Hayalete soru sorup sesli cevap almaya çalışırsın.",
+        "en": "Ask the ghost questions and listen for a voice response."
+      },
+      "tiers": [
+        {
+          "tr": "3 m menzil; düşük ses kalitesi ve cevap oranı.",
+          "en": "3 m range; low audio quality and response rate."
+        },
+        {
+          "tr": "4 m menzil; orta kalite; sesi duyunca ekranda X belirir.",
+          "en": "4 m range; medium quality; shows an X when it hears you."
+        },
+        {
+          "tr": "5 m menzil; yüksek kalite ve cevap oranı; aynı anda iki kanal tarar.",
+          "en": "5 m range; high quality and response rate; scans two channels at once."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Işıklar kapalıyken ve hayaletin yakınında sor. Bazı hayaletler sadece tek başınayken cevap verir.",
+          "1 m içinde ağır nefes/hırıltı cevabı → Deogen. Moroi cevabını duyanı lanetler.",
+          "Azaltılmış kanıtta Deogen ve Moroi'de Spirit Box her zaman vardır."
+        ],
+        "en": [
+          "Ask with the lights off and close to the ghost. Some ghosts only answer when you're alone.",
+          "Heavy-breathing answer within 1 m → Deogen. A Moroi curses whoever hears its answer.",
+          "On reduced evidence, Deogen and Moroi always have Spirit Box."
+        ]
+      }
+    },
+    {
+      "id": "uv",
+      "category": "evidence",
+      "name": {
+        "tr": "UV Işık",
+        "en": "UV Light"
+      },
+      "summary": {
+        "tr": "Parmak/el izlerini ve tuzdaki ayak izlerini görünür yapar.",
+        "en": "Reveals finger/handprints and footprints in salt."
+      },
+      "tiers": [
+        {
+          "tr": "İzi 10 sn'de belirginleştirir; dar ışık.",
+          "en": "Charges a print in 10 s; narrow beam."
+        },
+        {
+          "tr": "İzi 5 sn'de belirginleştirir; dar ışık.",
+          "en": "Charges a print in 5 s; narrow beam."
+        },
+        {
+          "tr": "İzi 1,5 sn'de belirginleştirir; geniş ışık.",
+          "en": "Charges a print in 1.5 s; wide beam."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Kapılar, ışık düğmeleri, pencereler, klavyeler ve tuz yığınları iyi yerlerdir.",
+          "6 parmaklı el izi / ışık düğmesinde 2 parmak → Obake. Tuzda hiç ayak izi yoksa ama tuz dağılmamışsa Wraith olabilir.",
+          "Obake'de azaltılmış kanıtta UV her zaman vardır."
+        ],
+        "en": [
+          "Doors, light switches, windows, keyboards and salt piles are good spots.",
+          "Six-fingered handprint / 2 prints on a switch → Obake. Undisturbed salt with no footprints can mean a Wraith.",
+          "On reduced evidence, Obake always has UV."
+        ]
+      }
+    },
+    {
+      "id": "book",
+      "category": "evidence",
+      "name": {
+        "tr": "Hayalet Yazısı Defteri",
+        "en": "Ghost Writing Book"
+      },
+      "summary": {
+        "tr": "Hayalet odasına koyarsın; hayalet içine yazar ya da çizer.",
+        "en": "Place it in the ghost room; the ghost may write or draw in it."
+      },
+      "tiers": [
+        {
+          "tr": "3 m; düşük etkileşim ihtimali.",
+          "en": "3 m; low interaction chance."
+        },
+        {
+          "tr": "4 m; orta etkileşim ihtimali.",
+          "en": "4 m; medium interaction chance."
+        },
+        {
+          "tr": "5 m; yüksek etkileşim ihtimali.",
+          "en": "5 m; high interaction chance."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Yazı kanıtı olmayan hayalet defteri fırlatabilir ama içine yazmaz. Poltergeist defteri fırlatamaz.",
+          "Vudu bebeği defteri tetiklemez."
+        ],
+        "en": [
+          "A ghost without writing evidence may throw the book but never writes in it. A Poltergeist can't throw the book.",
+          "The Voodoo Doll doesn't trigger the book."
+        ]
+      }
+    },
+    {
+      "id": "dots",
+      "category": "evidence",
+      "name": {
+        "tr": "D.O.T.S Projektörü",
+        "en": "D.O.T.S Projector"
+      },
+      "summary": {
+        "tr": "Lazer noktalarında hayaletin silueti görünür.",
+        "en": "The ghost's silhouette shows in the laser grid."
+      },
+      "tiers": [
+        {
+          "tr": "Elde tutulan dar lazer, 5 m.",
+          "en": "Handheld narrow laser, 5 m."
+        },
+        {
+          "tr": "Yere konur; 2,5 m yarıçap.",
+          "en": "Placeable; 2.5 m radius."
+        },
+        {
+          "tr": "Yere konur; 7 m geniş tarayan ışın.",
+          "en": "Placeable; 7 m wide sweeping scan."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Goryo'nun siluetini sadece video kamerada ve odada kimse yokken görürsün; azaltılmış kanıtta Goryo'da D.O.T.S her zaman vardır.",
+          "Phantom D.O.T.S'ta fotoğraflanınca kaybolur."
+        ],
+        "en": [
+          "A Goryo's silhouette shows only on video camera with nobody in the room; on reduced evidence Goryo always has D.O.T.S.",
+          "A Phantom vanishes if photographed in D.O.T.S."
+        ]
+      }
+    },
+    {
+      "id": "thermometer",
+      "category": "evidence",
+      "name": {
+        "tr": "Termometre",
+        "en": "Thermometer"
+      },
+      "summary": {
+        "tr": "Oda sıcaklığını ölçer; 0 °C altı dondurucu sıcaklık kanıtıdır.",
+        "en": "Measures room temperature; below 0 °C is freezing evidence."
+      },
+      "tiers": [
+        {
+          "tr": "Orta doğruluk, yavaş ölçüm.",
+          "en": "Medium accuracy, slow sampling."
+        },
+        {
+          "tr": "Daha doğru, orta hızda ölçüm.",
+          "en": "More accurate, medium sampling speed."
+        },
+        {
+          "tr": "Yüksek doğruluk, hızlı ölçüm; odaları çabuk taramak için ideal.",
+          "en": "High accuracy, fast sampling; ideal for sweeping rooms quickly."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Kanıt için 0 °C (32 °F) altı okuma gerekir; hayalet odası genelde evin en soğuk odasıdır.",
+          "Dondurucu odada nefesin buhar olarak görünür. Hantu'da azaltılmış kanıtta dondurucu sıcaklık her zaman vardır."
+        ],
+        "en": [
+          "Evidence needs a reading below 0 °C (32 °F); the ghost room is usually the coldest.",
+          "In a freezing room your breath is visible. On reduced evidence Hantu always has freezing."
+        ]
+      }
+    },
+    {
+      "id": "camera",
+      "category": "evidence",
+      "name": {
+        "tr": "Video Kamera",
+        "en": "Video Camera"
+      },
+      "summary": {
+        "tr": "Gece görüşüyle Ghost Orb'ları görmeni sağlar.",
+        "en": "Lets you spot Ghost Orbs with night vision."
+      },
+      "tiers": [
+        {
+          "tr": "Düşük görüntü kalitesi, yüksek parazit.",
+          "en": "Low image quality, high interference."
+        },
+        {
+          "tr": "Orta kalite, orta parazit; orb'lar için daha iyi gece görüşü.",
+          "en": "Medium quality and interference; better night vision for orbs."
+        },
+        {
+          "tr": "Yüksek kalite, düşük parazit; omuza takılan büyük kamera.",
+          "en": "High quality, low interference; shoulder-mounted."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Orb'u kamyondaki ekrandan ya da kameranın ekranından izle. Mimic'te orb her zaman görünür.",
+          "Goryo D.O.T.S'unu görmek için kamerayı D.O.T.S'a çevirip odayı boşalt."
+        ],
+        "en": [
+          "Watch for orbs on the truck monitor or the camera screen. The Mimic always shows orbs.",
+          "To see a Goryo's D.O.T.S, aim a camera at the projector and leave the room."
+        ]
+      }
+    },
+    {
+      "id": "crucifix",
+      "category": "protection",
+      "name": {
+        "tr": "Haç",
+        "en": "Crucifix"
+      },
+      "summary": {
+        "tr": "Menzilinde başlayan avı engeller ve yanar.",
+        "en": "Prevents a hunt that starts in range, burning a charge."
+      },
+      "tiers": [
+        {
+          "tr": "1 kullanım; 3 m (Demon'a 4,5 m).",
+          "en": "1 use; 3 m (4.5 m vs Demon)."
+        },
+        {
+          "tr": "2 kullanım; 4 m (Demon'a 6 m).",
+          "en": "2 uses; 4 m (6 m vs Demon)."
+        },
+        {
+          "tr": "2 kullanım; 5 m (Demon'a 7,5 m); 2 hakkı varken lanetli avı da durdurabilir.",
+          "en": "2 uses; 5 m (7.5 m vs Demon); with 2 charges it can also stop a cursed hunt."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Hayaletin odasının ortasına koy. Twins'te haç sadece gerçek konumunda işe yarar.",
+          "Onryo'da 4 m içindeki yanan alev haçtan önce harcanır. Gallu öfkeliyken menzil 2 m kısalır."
+        ],
+        "en": [
+          "Place it in the middle of the ghost room. For the Twins it only works at its real location.",
+          "For an Onryo, a lit flame within 4 m is used before the crucifix. An enraged Gallu shrinks the range by 2 m."
+        ]
+      }
+    },
+    {
+      "id": "incense",
+      "category": "protection",
+      "name": {
+        "tr": "Tütsü",
+        "en": "Incense"
+      },
+      "summary": {
+        "tr": "Avdan önce yakınca avı geciktirir; av sırasında hayaleti kör eder.",
+        "en": "Before a hunt it delays hunting; during a hunt it blinds the ghost."
+      },
+      "tiers": [
+        {
+          "tr": "3 m; avda 5 sn kör eder.",
+          "en": "3 m; blinds for 5 s in a hunt."
+        },
+        {
+          "tr": "4 m; 6 sn kör eder ve 5 sn yavaşlatır.",
+          "en": "4 m; blinds 6 s and slows it for 5 s."
+        },
+        {
+          "tr": "5 m; 7 sn kör eder ve 5 sn durdurur.",
+          "en": "5 m; blinds 7 s and stops it for 5 s."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Avdan önce hayalete denk gelirse 90 sn avlanamaz (Spirit 180 sn, Demon 60 sn). Süreler sekmesindeki F9 sayacını kullan.",
+          "Moroi'yi %50 daha uzun kör eder. Yurei'yi bir süre odasına hapseder. Lanetli avı engellemez."
+        ],
+        "en": [
+          "If it hits the ghost before a hunt, it can't hunt for 90 s (Spirit 180 s, Demon 60 s). Use the F9 timer in the Timers tab.",
+          "Blinds a Moroi 50% longer. Traps a Yurei in its room for a while. Doesn't prevent cursed hunts."
+        ]
+      }
+    },
+    {
+      "id": "salt",
+      "category": "protection",
+      "name": {
+        "tr": "Tuz",
+        "en": "Salt"
+      },
+      "summary": {
+        "tr": "Yere dökülür; hayalet basınca dağılır ve UV'de ayak izi bırakır.",
+        "en": "Pour on the floor; the ghost disturbs it and leaves UV footprints."
+      },
+      "tiers": [
+        {
+          "tr": "2 kullanım.",
+          "en": "2 uses."
+        },
+        {
+          "tr": "3 kullanım; çizgi hâlinde dökülebilir.",
+          "en": "3 uses; can be poured as a line."
+        },
+        {
+          "tr": "3 kullanım; basan hayaleti avda 2 sn yavaşlatır.",
+          "en": "3 uses; slows a ghost that steps in it for 2 s during hunts."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Wraith tuza asla basmaz. Öfkeli Gallu da tuza basmaz.",
+          "Tuza basmak Gallu'yu öfkelendirir."
+        ],
+        "en": [
+          "A Wraith never steps in salt. An enraged Gallu doesn't either.",
+          "Stepping in salt enrages a Gallu."
+        ]
+      }
+    },
+    {
+      "id": "firelight",
+      "category": "protection",
+      "name": {
+        "tr": "Mum / Fener",
+        "en": "Firelight"
+      },
+      "summary": {
+        "tr": "Yanarken yakındaki oyuncuların akıl sağlığı kaybını azaltır.",
+        "en": "While lit it reduces sanity drain for nearby players."
+      },
+      "tiers": [
+        {
+          "tr": "Mum; 3 dk yanar; akıl sağlığı kaybı %33 az.",
+          "en": "Candle; burns 3 min; 33% less sanity drain."
+        },
+        {
+          "tr": "Mum; 5 dk yanar; %50 az.",
+          "en": "Candle; burns 5 min; 50% less."
+        },
+        {
+          "tr": "Gaz lambası; sınırsız, suya dayanıklı; %66 az.",
+          "en": "Gas lantern; unlimited, waterproof; 66% less."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Onryo her 3 alev söndürmede avlanmayı dener; 4 m içindeki yanan alev Onryo'nun avını engeller.",
+          "Yakmak için çakmak ya da yanan başka bir mum gerekir."
+        ],
+        "en": [
+          "An Onryo tries to hunt after every 3 flames it blows out; a lit flame within 4 m blocks its hunt.",
+          "Needs an igniter or another lit firelight."
+        ]
+      }
+    },
+    {
+      "id": "igniter",
+      "category": "protection",
+      "name": {
+        "tr": "Çakmak",
+        "en": "Igniter"
+      },
+      "summary": {
+        "tr": "Mumları, tütsüyü ve çağırma çemberini yakar.",
+        "en": "Lights firelights, incense and the summoning circle."
+      },
+      "tiers": [
+        {
+          "tr": "Kibrit kutusu; 10 kibrit, her biri 10 sn.",
+          "en": "Matchbox; 10 matches, 10 s each."
+        },
+        {
+          "tr": "Çakmak; 5 dk yakıt.",
+          "en": "Lighter; 5 min of fuel."
+        },
+        {
+          "tr": "Suya dayanıklı; 10 dk yakıt.",
+          "en": "Waterproof; 10 min of fuel."
+        }
+      ],
+      "tips": {
+        "tr": [],
+        "en": []
+      }
+    },
+    {
+      "id": "meds",
+      "category": "protection",
+      "name": {
+        "tr": "Akıl Sağlığı İlacı",
+        "en": "Sanity Medication"
+      },
+      "summary": {
+        "tr": "Akıl sağlığını geri yükler; miktar zorluğa göre değişir.",
+        "en": "Restores sanity; the amount depends on difficulty."
+      },
+      "tiers": [
+        {
+          "tr": "30 sn içinde yavaşça yükler.",
+          "en": "Restores over 30 s."
+        },
+        {
+          "tr": "20 sn içinde yükler.",
+          "en": "Restores over 20 s."
+        },
+        {
+          "tr": "10 sn içinde yükler + 10 sn sınırsız koşu.",
+          "en": "Restores over 10 s + 10 s of unlimited sprint."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Moroi lanetini kaldırır.",
+          "Hayaletin avlanma eşiğini test ederken ilaçla akıl sağlığını yukarıda tutabilirsin."
+        ],
+        "en": [
+          "Removes a Moroi's curse.",
+          "Use it to keep sanity high when testing a ghost's hunt threshold."
+        ]
+      }
+    },
+    {
+      "id": "flashlight",
+      "category": "tools",
+      "name": {
+        "tr": "El Feneri",
+        "en": "Flashlight"
+      },
+      "summary": {
+        "tr": "Avda yanıp söner; hayalet yakındayken uyarı verir.",
+        "en": "Flickers during hunts; warns you the ghost is near."
+      },
+      "tiers": [
+        {
+          "tr": "Dar, zayıf ışık.",
+          "en": "Narrow, weak beam."
+        },
+        {
+          "tr": "Dar, orta güçte ışık.",
+          "en": "Narrow, medium beam."
+        },
+        {
+          "tr": "Geniş, güçlü ışık.",
+          "en": "Wide, strong beam."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Açık fener elektronik sayılır: avda saklanırken kapat."
+        ],
+        "en": [
+          "A lit flashlight counts as electronics: turn it off while hiding."
+        ]
+      }
+    },
+    {
+      "id": "parabolic",
+      "category": "tools",
+      "name": {
+        "tr": "Parabolik Mikrofon",
+        "en": "Parabolic Microphone"
+      },
+      "summary": {
+        "tr": "Uzaktaki paranormal sesleri duyar; hayaletin yerini bulmaya yarar.",
+        "en": "Picks up distant paranormal sounds; helps locate the ghost."
+      },
+      "tiers": [
+        {
+          "tr": "20 m menzil.",
+          "en": "20 m range."
+        },
+        {
+          "tr": "30 m menzil; ekranlı.",
+          "en": "30 m range; with a screen."
+        },
+        {
+          "tr": "30 m menzil; ekranda sesin uzaklığı ve yönü.",
+          "en": "30 m range; screen shows distance and direction."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Banshee %33 ihtimalle kendine özgü çığlık atar. Myling daha sık ses çıkarır.",
+          "Moroi cevabını duyanı lanetleyebilir."
+        ],
+        "en": [
+          "A Banshee has a 33% chance of a unique scream. A Myling makes sounds more often.",
+          "A Moroi can curse whoever hears its response."
+        ]
+      }
+    },
+    {
+      "id": "recorder",
+      "category": "tools",
+      "name": {
+        "tr": "Ses Kaydedici",
+        "en": "Sound Recorder"
+      },
+      "summary": {
+        "tr": "Paranormal sesleri kaydeder; kayıtlar ödül kazandırır.",
+        "en": "Records paranormal sounds; recordings earn rewards."
+      },
+      "tiers": [
+        {
+          "tr": "Temel kaydedici.",
+          "en": "Basic recorder."
+        },
+        {
+          "tr": "Daha iyi kayıt kalitesi.",
+          "en": "Better recording quality."
+        },
+        {
+          "tr": "Ekranda sesin uzaklığı ve yönü.",
+          "en": "Display shows distance and direction of sounds."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Elektroniktir; avda kapatılabilir. Banshee çığlığı burada da duyulabilir."
+        ],
+        "en": [
+          "It's electronic; can be switched off during hunts. A Banshee's scream can be heard on it too."
+        ]
+      }
+    },
+    {
+      "id": "soundsensor",
+      "category": "tools",
+      "name": {
+        "tr": "Ses Sensörü",
+        "en": "Sound Sensor"
+      },
+      "summary": {
+        "tr": "Yerleştirdiğin alandaki sesleri kamyondaki haritada gösterir.",
+        "en": "Shows sounds in the covered area on the truck map."
+      },
+      "tiers": [
+        {
+          "tr": "5 / 10 m menzil; daire alan.",
+          "en": "5 / 10 m range; circle area."
+        },
+        {
+          "tr": "5 / 10 / 15 m menzil; daire alan.",
+          "en": "5 / 10 / 15 m range; circle area."
+        },
+        {
+          "tr": "5 / 10 / 15 m; daire, koni ve yan alan seçenekleri.",
+          "en": "5 / 10 / 15 m; circle, cone and side shapes."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Hayalet odasını bulmak için birkaç odaya dağıt."
+        ],
+        "en": [
+          "Spread them across rooms to find the ghost room."
+        ]
+      }
+    },
+    {
+      "id": "motion",
+      "category": "tools",
+      "name": {
+        "tr": "Hareket Sensörü",
+        "en": "Motion Sensor"
+      },
+      "summary": {
+        "tr": "Önünden geçeni algılar ve haritada işaretler.",
+        "en": "Detects movement and marks it on the map."
+      },
+      "tiers": [
+        {
+          "tr": "Çizgi şeklinde algılama.",
+          "en": "Line detection."
+        },
+        {
+          "tr": "Çizgi veya koni; ışık ve ses uyarısı.",
+          "en": "Line or cone; light and sound alerts."
+        },
+        {
+          "tr": "Yerde 1,5 m daire; sadece hayalet tetikler (oyuncular tetiklemez).",
+          "en": "1.5 m floor circle; only the ghost triggers it (not players)."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Wraith testi: altına tuz dök; sensör öterse ama tuz dağılmazsa Wraith olabilir.",
+          "Twins'te sensör sadece gerçek konumunda tetiklenir."
+        ],
+        "en": [
+          "Wraith test: pour salt under it; if it triggers but the salt stays untouched, suspect a Wraith.",
+          "For the Twins it triggers only at its real location."
+        ]
+      }
+    },
+    {
+      "id": "photo",
+      "category": "tools",
+      "name": {
+        "tr": "Fotoğraf Makinesi",
+        "en": "Photo Camera"
+      },
+      "summary": {
+        "tr": "Hayalet, iz ve etkileşimlerin fotoğrafı ödül kazandırır.",
+        "en": "Photos of the ghost, prints and interactions earn rewards."
+      },
+      "tiers": [
+        {
+          "tr": "Fotoğraflar arası uzun bekleme.",
+          "en": "Long time between photos."
+        },
+        {
+          "tr": "Orta bekleme; ekranlı.",
+          "en": "Medium time between photos; with a screen."
+        },
+        {
+          "tr": "Kısa bekleme (~1 sn).",
+          "en": "Short time between photos (~1 s)."
+        }
+      ],
+      "tips": {
+        "tr": [
+          "Phantom fotoğrafı çekilince kaybolur ve fotoğrafta görünmez.",
+          "Çağırma çemberinden sonra hayalet 5 sn hareketsizdir: ideal fotoğraf anı."
+        ],
+        "en": [
+          "A Phantom vanishes when photographed and doesn't appear in the photo.",
+          "After the summoning circle the ghost stands still for 5 s: a perfect photo."
+        ]
+      }
+    },
+    {
+      "id": "tripod",
+      "category": "tools",
+      "name": {
+        "tr": "Tripod",
+        "en": "Tripod"
+      },
+      "summary": {
+        "tr": "Video kamerayı sabit tutar.",
+        "en": "Holds a video camera steady."
+      },
+      "tiers": [
+        {
+          "tr": "Orta devrilme ihtimali.",
+          "en": "Medium knock-over chance."
+        },
+        {
+          "tr": "Döndürme kontrolü; orta devrilme ihtimali.",
+          "en": "Rotation control; medium knock-over chance."
+        },
+        {
+          "tr": "Döndürme kontrolü; düşük devrilme ihtimali.",
+          "en": "Rotation control; low knock-over chance."
+        }
+      ],
+      "tips": {
+        "tr": [],
+        "en": []
+      }
+    },
+    {
+      "id": "headgear",
+      "category": "tools",
+      "name": {
+        "tr": "Kafa Ekipmanı",
+        "en": "Head Gear"
+      },
+      "summary": {
+        "tr": "Kafaya takılır; envanterde yer kaplamaz (T ile aç/kapat).",
+        "en": "Worn on the head; takes no inventory slot (toggle with T)."
+      },
+      "tiers": [
+        {
+          "tr": "Kafa kamerası: kamyondan izlenebilir.",
+          "en": "Head camera: viewable from the truck."
+        },
+        {
+          "tr": "Dar, zayıf LED kafa feneri.",
+          "en": "Narrow, low-intensity LED head torch."
+        },
+        {
+          "tr": "Gece görüş gözlüğü; avda bulanıklaşabilir.",
+          "en": "Night-vision goggles; may blur during hunts."
+        }
+      ],
+      "tips": {
+        "tr": [],
+        "en": []
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-// Lanetli eşyalar: genel kurallar + her eşya için açılır kart (kullanım, tehlike, tablo, ipuçları).
-App.register({
+// Lanetli eşyalar (Bilgi sekmesinin alt bölümü): genel kurallar + her eşya için açılır kart.
+App.registerSection({
   id: 'cursed',
   async mount(panel, app) {
     this.panel = panel;

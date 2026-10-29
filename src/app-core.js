@@ -6,6 +6,10 @@ window.App = {
 
   register(mod) { this.modules.push(mod); },
 
+  // Bilgi sekmesinin alt bölümleri (Ekipman, Lanetli, ...).
+  sections: [],
+  registerSection(sec) { this.sections.push(sec); },
+
   // Modüller arası basit olay sistemi (ör. hız ölçer → kanıt takipçisi).
   _listeners: {},
   on(name, fn) { (this._listeners[name] = this._listeners[name] || []).push(fn); },

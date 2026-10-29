@@ -13,7 +13,7 @@
     "timers": "Süreler",
     "speed": "Hız",
     "settings": "Ayarlar",
-    "cursed": "Lanetli"
+    "info": "Bilgi"
   },
   "evidence": {
     "count": "Kanıt sayısı",
@@ -143,5 +143,13 @@
   "update": {
     "ready": "Yeni sürüm (v{v}) indirildi. Uygulamayı kapatıp açınca yüklenecek.",
     "installed": "Phasmo Helper v{v} sürümüne güncellendi."
+  },
+  "info": {
+    "equipment": "Ekipman",
+    "cursed": "Lanetli"
+  },
+  "equipment": {
+    "general": "Genel bilgiler ve elektronikler",
+    "tips": "Hayalet tespiti için"
   }
 }

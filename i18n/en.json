@@ -13,7 +13,7 @@
     "timers": "Timers",
     "speed": "Speed",
     "settings": "Settings",
-    "cursed": "Cursed"
+    "info": "Info"
   },
   "evidence": {
     "count": "Evidence count",
@@ -143,5 +143,13 @@
   "update": {
     "ready": "New version (v{v}) downloaded. It will install when you restart the app.",
     "installed": "Phasmo Helper updated to v{v}."
+  },
+  "info": {
+    "equipment": "Equipment",
+    "cursed": "Cursed"
+  },
+  "equipment": {
+    "general": "General info & electronics",
+    "tips": "For ghost identification"
   }
 }

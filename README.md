@@ -19,7 +19,7 @@ Download `Phasmo-Helper-Setup-x.y.z.exe` from the [**Releases**](https://github.
 - **Hayaletler / Ghosts:** 30 hayaletin ölçülebilir davranışları ve "bunu görürsen bu hayalet değil" kuralları.
 - **Süreler / Timers:** Tütsü (60/90/180 sn) ve av + bekleme süresi.
 - **Hız / Speed:** Ayak seslerine vurarak m/s ölçümü; uyan hayaletleri vurgular.
-- **Lanetli / Cursed:** 7 lanetli eşya, maliyetler, tarot ve maymun pençesi tabloları.
+- **Bilgi / Info:** 21 ekipmanın I/II/III seviye farkları; 7 lanetli eşya, maliyetler, tarot ve maymun pençesi tabloları.
 
 ## Kısayollar / Shortcuts
 
