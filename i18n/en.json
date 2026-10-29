@@ -28,7 +28,8 @@
     "speedBar": "Measured speed: {v} m/s ({lo}–{hi}). ⚡ matches a normal speed; dimmed ghosts can never reach it.",
     "speedClear": "Clear",
     "speedMatch": "One of its normal speeds matches the measurement",
-    "resetToast": "Evidence reset"
+    "resetToast": "Evidence reset",
+    "bloodMoon": "Blood Moon on: speed readings assume ghosts are 15% faster. Resetting for a new contract turns it off."
   },
   "settings": {
     "language": "Language",
@@ -68,25 +69,20 @@
     "tapHint": "Press {key} or click here on every footstep",
     "reset": "Reset ({key})",
     "modifier": "In-game ghost speed setting (%)",
-    "bloodMoon": "Blood Moon weather (ghosts 15% faster)",
+    "bloodMoon": "Blood Moon",
     "needMore": "{n} more taps…",
     "detail": "{spm} steps/min · {n} taps · range {lo}–{hi} m/s",
     "irregular": "Your tap rhythm varies a lot: the ghost's speed probably changed while measuring. Reset and measure a steady stretch.",
     "steadyTitle": "Matches a normal speed ({n})",
-    "steadyHint": "One of these ghosts' normal speeds matches the measurement.",
-    "reachTitle": "Can only reach this while chasing / transitioning ({n})",
-    "reachHint": "Possible if the ghost saw someone in the last ~minute (13 s to speed up, ~65 s to slow down) or while changing state. Don't use this to rule them out.",
+    "reachTitle": "Could also be this fast: if it saw someone recently ({n})",
+    "reachHint": "A ghost speeds up when it sees someone and stays fast for ~1 minute after. That's why you can measure a high speed even while hiding. Don't rule these out by speed.",
     "noneTitle": "Can never reach this speed ({n})",
-    "howTitle": "How to measure accurately",
-    "how1": "The most reliable reading is early in a hunt, before the ghost has seen anyone.",
-    "how2": "A ghost that sees someone speeds up to +65% over 13 s and takes ~65 s to slow back down. So readings above 1.7 m/s rarely rule a ghost out on their own.",
-    "how3": "Readings below 1.7 m/s are the most informative: they separate Revenant, Dayan, Gallu, Obambo, Moroi, Twins, Aswang, Hantu, Thaye and Deildegast.",
-    "how4": "Tap every footstep, at least 5–6 taps. With speed-changing ghosts (Dayan, Revenant) don't change your own movement while measuring.",
     "refTitle": "Reference: speed → steps/min",
     "spm": "steps/min",
     "standard": "most ghosts",
-    "chaseMax": "chase top speed (1.7 × 1.65)",
-    "resetToast": "Speed measurement reset"
+    "chaseMax": "top speed after seeing someone (1.7 × 1.65)",
+    "resetToast": "Speed measurement reset",
+    "how": "Most reliable: measure while hiding, early in a hunt. Tick the box if the map has a Blood Moon."
   },
   "timers": {
     "incenseTitle": "Incense",

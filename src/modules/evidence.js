@@ -35,7 +35,7 @@ App.register({
     this.state = { ...this.defaultState(), count: this.state.count };
     this.expanded = null;
     this.saveState();
-    this.app.emit('speed:clear');
+    this.app.emit('contract:new');
     this.render();
   },
 
@@ -121,6 +121,7 @@ App.register({
         <button class="link" id="ev-reset">${t('evidence.reset')}</button>
       </div>
       ${note}
+      ${sp.bloodMoon ? `<div class="blood-bar">🌕 ${t('evidence.bloodMoon')}</div>` : ''}
       <div class="ev-grid">${evRows}</div>
       <p class="hint">${t('evidence.howTo')}</p>
       ${sp.value ? `<div class="speed-bar">⚡ ${app.esc(app.t('evidence.speedBar', { v: fmt2(sp.meas.speed), lo: fmt2(sp.meas.lo), hi: fmt2(sp.meas.hi) }))}

@@ -24,6 +24,13 @@ App.register({
       if (o) { app.speed.modifier = o.modifier || 1; app.speed.bloodMoon = !!o.bloodMoon; }
     } catch {}
     app.on('speed:clear', () => this.reset());
+    app.on('contract:new', () => {
+      this.app.speed.bloodMoon = false;
+      this.saveOptions();
+      this.taps = [];
+      this.render();
+      this.update();
+    });
     this.render();
   },
 
@@ -79,26 +86,17 @@ App.register({
       </button>
       <div class="row sp-actions">
         <button class="link no-push" id="sp-reset">${app.esc(app.t('speed.reset', { key: app.key('speedReset') }))}</button>
+        <label class="check sp-blood ${app.speed.bloodMoon ? 'on' : ''}"><input type="checkbox" id="sp-blood" ${app.speed.bloodMoon ? 'checked' : ''}> 🌕 ${t('speed.bloodMoon')}</label>
       </div>
+      <p class="hint">${t('speed.how')}</p>
       <p class="sp-warn" id="sp-warn" hidden></p>
 
       <div id="sp-results"></div>
-
-      <details class="sp-ref" ${this.howOpen ? 'open' : ''} id="sp-how">
-        <summary>${t('speed.howTitle')}</summary>
-        <ul class="sp-how">
-          <li>${t('speed.how1')}</li>
-          <li>${t('speed.how2')}</li>
-          <li>${t('speed.how3')}</li>
-          <li>${t('speed.how4')}</li>
-        </ul>
-      </details>
 
       <div class="field sp-settings">
         <label>${t('speed.modifier')}</label>
         <div class="seg seg-wide">${mods}</div>
       </div>
-      <label class="check"><input type="checkbox" id="sp-blood" ${app.speed.bloodMoon ? 'checked' : ''}> ${t('speed.bloodMoon')}</label>
 
       <details class="sp-ref">
         <summary>${t('speed.refTitle')}</summary>
@@ -120,8 +118,6 @@ App.register({
       this.render();
       this.update();
     };
-    const how = this.panel.querySelector('#sp-how');
-    how.ontoggle = () => { this.howOpen = how.open; };
     this.renderResult(GhostLogic.measureTaps(this.taps));
   },
 
@@ -157,13 +153,16 @@ App.register({
 
     results.innerHTML = `
       <h3>⚡ ${app.esc(app.t('speed.steadyTitle', { n: groups.steady.length }))}</h3>
-      <p class="hint">${app.esc(app.t('speed.steadyHint'))}</p>
       <div class="sp-matches">${list(groups.steady, true) || `<span class="muted">—</span>`}</div>
-      <h3>${app.esc(app.t('speed.reachTitle', { n: groups.reach.length }))}</h3>
-      <p class="hint">${app.esc(app.t('speed.reachHint'))}</p>
-      <p class="sp-names">${list(groups.reach, false) || '—'}</p>
+      <details class="sp-reach" ${this.reachOpen ? 'open' : ''}>
+        <summary>${app.esc(app.t('speed.reachTitle', { n: groups.reach.length }))}</summary>
+        <p class="hint">${app.esc(app.t('speed.reachHint'))}</p>
+        <p class="sp-names">${list(groups.reach, false) || '—'}</p>
+      </details>
       <h3 class="muted">${app.esc(app.t('speed.noneTitle', { n: groups.none.length }))}</h3>
       <p class="sp-names muted">${list(groups.none, false) || '—'}</p>`;
+    const det = results.querySelector('.sp-reach');
+    det.ontoggle = () => { this.reachOpen = det.open; };
   },
 
   onShortcut(action) {
