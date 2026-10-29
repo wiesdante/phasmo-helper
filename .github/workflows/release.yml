@@ -66,18 +66,31 @@ jobs:
         if: steps.check.outputs.skip == 'false'
         run: npm install --no-audit --no-fund
 
-      - name: Build and publish
+      # electron-builder sadece dosyaları üretir; yüklemeyi gh yapar.
+      - name: Build installer
         if: steps.check.outputs.skip == 'false'
         shell: bash
         run: |
           set -o pipefail
-          npx electron-builder --win --publish always 2>&1 | tee build.log || {
-            # Hata ayrıntılarını uyarı notu olarak da yaz (log indirilemediğinde okunabilsin).
-            tail -n 25 build.log | sed 's/%/%25/g' | while IFS= read -r line; do echo "::error::$line"; done
+          npx electron-builder --win --publish never 2>&1 | tee build.log || {
+            # Hata satırlarını uyarı notu olarak yaz (log indirilemediğinde okunabilsin).
+            grep -nE "⨯|[Ee]rror|failed|cannot" build.log | head -n 10 | sed 's/%/%25/g' | while IFS= read -r line; do echo "::error::$line"; done
             exit 1
           }
+          ls -la dist
+
+      - name: Publish release
+        if: steps.check.outputs.skip == 'false'
+        shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.ver.outputs.tag }}"
+          gh release create "$TAG" \
+            dist/*.exe dist/*.exe.blockmap dist/latest.yml \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title "Phasmo Helper $TAG" \
+            --notes "Kurulum: Phasmo-Helper-Setup-${TAG#v}.exe dosyasını indirip çalıştırın. Uygulama sonraki sürümlere kendiliğinden güncellenir. / Download and run Phasmo-Helper-Setup-${TAG#v}.exe. The app updates itself automatically."
 
       - name: Verify release assets
         if: steps.check.outputs.skip == 'false'
