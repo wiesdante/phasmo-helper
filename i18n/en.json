@@ -177,19 +177,8 @@
   },
   "maps": {
     "general": "General info",
-    "size": "Size",
-    "layout": "Layout",
-    "fuse": "Fuse box",
     "unknown": "No info in sources",
-    "cursedTitle": "Cursed possession locations",
-    "useInTimers": "Use in Timers",
-    "usedInTimers": "Timers: map size set to {size}",
     "sameAs": "Same locations as {name}.",
-    "sameAsUnverified": "No separate source; showing {name} locations, which may differ.",
-    "group": {
-      "s": "Small maps",
-      "m": "Medium maps",
-      "l": "Large maps"
-    }
+    "sameAsUnverified": "No separate source; showing {name} locations, which may differ."
   }
 }

@@ -2,42 +2,25 @@
   "schemaVersion": 1,
   "gameVersion": "v0.19 (Eylül 2026)",
   "_format": {
-    "size": "s / m / l — av süresini belirler (Süreler sekmesi)",
-    "fuse": "Sigorta kutusunun çıkabileceği yerler; kaynağı olmayan haritalarda null",
-    "cursed": "Lanetli eşya konumları (cursed.json id'leri). Normal kontratta bunlardan yalnızca biri çıkar."
+    "cursed": "Lanetli eşya konumları (cursed.json id'leri). Normal kontratta bunlardan yalnızca biri çıkar.",
+    "cursedSameAs": "Konumları başka bir haritayla aynı olan varyantlar"
   },
   "general": {
     "tr": [
       "Varsayılan zorluklarda her kontratta 7 lanetli eşyadan yalnızca biri çıkar (Delilik'te hiç çıkmaz); her eşyanın her haritada tek bir sabit yeri vardır.",
-      "Harita büyüklüğü avın ne kadar süreceğini belirler. Bir haritanın kartındaki düğmeyle Süreler sekmesindeki büyüklüğü ayarlayabilirsin.",
-      "Restricted haritalar (Ağustos–Eylül 2026) normal haritaların küçültülmüş, bazı bölümleri kapalı versiyonlarıdır; düzen her oyunda değişebilir.",
-      "Haritalar güncellemelerle yenilenebilir; konumlar son yenilemeye göredir."
+      "Restricted haritalar normal haritaların küçültülmüş versiyonlarıdır; bazılarında eşyalar farklı yerdedir.",
+      "Konumlar haritaların son yenilemesine göredir."
     ],
     "en": [
       "On default difficulties only one of the 7 cursed possessions spawns per contract (none on Insanity); each item has one fixed spot per map.",
-      "Map size sets how long hunts last. Use the button on a map card to set the size in the Timers tab.",
-      "Restricted maps (Aug–Sep 2026) are smaller versions of normal maps with parts closed off; the layout can change every game.",
-      "Maps get reworked in updates; locations reflect the latest rework."
+      "Restricted maps are smaller versions of normal maps; some have items in different spots.",
+      "Locations follow each map's latest rework."
     ]
   },
   "maps": [
     {
       "id": "tanglewood",
       "name": "6 Tanglewood Drive",
-      "size": "s",
-      "floors": {
-        "tr": "Zemin kat + bodrum, garaj",
-        "en": "Ground floor + basement, garage"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Mart 2026'da yenilendi (eski bebek odası artık çocuk odası)."
-        ],
-        "en": [
-          "Reworked in March 2026 (the old nursery is now a children's bedroom)."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Oturma odası, pembe lambanın ve ev telefonunun yanındaki yan sehpa",
@@ -72,23 +55,6 @@
     {
       "id": "edgefield",
       "name": "42 Edgefield Road",
-      "size": "s",
-      "floors": {
-        "tr": "2 kat + bodrum",
-        "en": "2 floors + basement"
-      },
-      "fuse": {
-        "tr": "Bodrum, garaj ya da üst kat koridorundaki depo",
-        "en": "Basement, garage, or upstairs hallway storage"
-      },
-      "notes": {
-        "tr": [
-          "Dar ve sıkışık; döngü yapılabilecek yer çok az (oturma odası kanepesi)."
-        ],
-        "en": [
-          "Cramped; very few loops (living room couch)."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Ön kapının yanında, anahtar kâsesinin olduğu küçük masa",
@@ -123,23 +89,6 @@
     {
       "id": "ridgeview",
       "name": "10 Ridgeview Court",
-      "size": "s",
-      "floors": {
-        "tr": "2 kat + bodrum, garaj",
-        "en": "2 floors + basement, garage"
-      },
-      "fuse": {
-        "tr": "Garaj, bodrum ya da üst kat koridoru",
-        "en": "Garage, basement, or top-floor hallway"
-      },
-      "notes": {
-        "tr": [
-          "Yemek masası iyi bir döngü noktası."
-        ],
-        "en": [
-          "The dining table is a good loop."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Ön kapının yanında, anahtar kâsesinin olduğu küçük masa",
@@ -174,25 +123,6 @@
     {
       "id": "willow",
       "name": "13 Willow Street",
-      "size": "s",
-      "floors": {
-        "tr": "Zemin kat + bodrum",
-        "en": "Ground floor + basement"
-      },
-      "fuse": {
-        "tr": "Spor odası (eski garaj), kapının hemen sağındaki duvar; ya da bodrumda merdivenden inince sağda, oyun odasının yanı",
-        "en": "Gym (old garage), wall right of the door; or in the basement, right at the bottom of the stairs by the games room"
-      },
-      "notes": {
-        "tr": [
-          "Temmuz 2026'da yenilendi: garaj artık spor odası, bodrum oyun/bar odası.",
-          "8 saklanma yeri; merdivenin altı ve sanat odasındaki tablonun arkası dahil."
-        ],
-        "en": [
-          "Reworked in July 2026: the garage is now a gym, the basement a bar/games room.",
-          "8 hiding spots, including under the stairs and behind the painting in the art room."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Bodrum, bar/oyun odasındaki kart masası (\"Never back down\" posterinin altı)",
@@ -227,20 +157,6 @@
     {
       "id": "grafton",
       "name": "Grafton Farmhouse",
-      "size": "s",
-      "floors": {
-        "tr": "Zemin kat, üst kat, çatı katı",
-        "en": "Ground floor, upper floor, attic"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Ağustos 2025'te yenilendi."
-        ],
-        "en": [
-          "Reworked in August 2025."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Zemin kat, dağınık kütüphane: siyah daktilonun yanındaki masa",
@@ -275,20 +191,6 @@
     {
       "id": "bleasdale",
       "name": "Bleasdale Farmhouse",
-      "size": "m",
-      "floors": {
-        "tr": "Zemin kat, üst kat, çatı katı",
-        "en": "Ground floor, upper floor, attic"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Mart 2025'te yenilendi; karmaşık, labirent gibi bir düzen."
-        ],
-        "en": [
-          "Reworked in March 2025; a confusing, maze-like layout."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Çatı katı yatak odası, alt bölüm (çatı alanından doğuya, sonra aşağı)",
@@ -323,23 +225,6 @@
     {
       "id": "diner",
       "name": "Nell's Diner",
-      "size": "s",
-      "floors": {
-        "tr": "Tek kat",
-        "en": "Single floor"
-      },
-      "fuse": {
-        "tr": "Temizlik dolabı (sigorta açılınca soğuk hava deposu soğur)",
-        "en": "Janitor's closet (turning it on cools the cooler room)"
-      },
-      "notes": {
-        "tr": [
-          "2025'te eklendi; seviye 5'te açılır."
-        ],
-        "en": [
-          "Added in 2025; unlocks at level 5."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Tezgâhın arkası, gri yazar kasanın solu, yemek servis penceresinin altı",
@@ -374,20 +259,6 @@
     {
       "id": "woodwind",
       "name": "Camp Woodwind",
-      "size": "s",
-      "floors": {
-        "tr": "Açık hava kamp alanı",
-        "en": "Outdoor campsite"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Kamp ateşi etrafında dönen dairesel düzen; seviye 13'te açılır."
-        ],
-        "en": [
-          "Circular layout around the campfire; unlocks at level 13."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Girişten sola dönünce ikinci piknik masası, kitapların yanı",
@@ -422,20 +293,6 @@
     {
       "id": "pointhope",
       "name": "Point Hope",
-      "size": "m",
-      "floors": {
-        "tr": "10 katlı deniz feneri",
-        "en": "10-storey lighthouse"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Dikey düzen, tek yol: döngü yapmak zor; 11 saklanma yeri."
-        ],
-        "en": [
-          "Vertical layout with one route: hard to loop; 11 hiding spots."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "1. kat oturma odası, yeşil koltukların arasındaki masa",
@@ -470,20 +327,6 @@
     {
       "id": "pointhope-r",
       "name": "Point Hope Restricted",
-      "size": "s",
-      "floors": {
-        "tr": "Sadece 3 kat açık (oturma odası, mutfak, yemek odası)",
-        "en": "Only 3 floors open (living room, kitchen, dining room)"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Ağustos 2026'da eklendi; bazı eşyalar normal Point Hope'tan farklı yerde."
-        ],
-        "en": [
-          "Added in August 2026; some items are in different spots than normal Point Hope."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "1. kat oturma odası, iki koyu yeşil kanepe arasındaki yan sehpa",
@@ -518,22 +361,6 @@
     {
       "id": "maple",
       "name": "Maple Lodge Campsite",
-      "size": "m",
-      "floors": {
-        "tr": "Açık hava, iki kamp alanı, göl kenarı kulübesi",
-        "en": "Outdoor, two campgrounds, lakeside cabin"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Yağmur açık alevleri söndürebilir.",
-          "Göl kenarı kulübesinin anahtarı paspasın altında."
-        ],
-        "en": [
-          "Rain can put out open flames.",
-          "The lakeside cabin key is under the doormat."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Göl kenarı kulübesinin dışındaki ilk piknik masası (oyun kartlarının olduğu)",
@@ -568,22 +395,6 @@
     {
       "id": "prison",
       "name": "Prison",
-      "size": "m",
-      "floors": {
-        "tr": "2 kat, iki hücre bloğu, avlu",
-        "en": "2 floors, two cell blocks, courtyard"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Tüm lanetli eşyalar giriş/güvenlik bölümünde.",
-          "Eylül 2026: kamyon ana girişe yaklaştırıldı."
-        ],
-        "en": [
-          "All cursed possessions are in the entrance/security area.",
-          "September 2026: the truck was moved closer to the main entrance."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Güvenlik noktası, soldaki masada beyaz/gri tepsi",
@@ -618,27 +429,6 @@
     {
       "id": "prison-r",
       "name": "Prison Restricted",
-      "size": "s",
-      "sizeNote": {
-        "tr": "Düzene göre küçük ya da orta",
-        "en": "Small or medium depending on layout"
-      },
-      "floors": {
-        "tr": "Giriş ve üst kat bölümleri; hücre blokları kapalı, düzen rastgele",
-        "en": "Entrance and upstairs areas; cell blocks closed, random layout"
-      },
-      "fuse": {
-        "tr": "Ziyaretçi güvenlik odası (lobiden sola, koridordaki ilk kapı), üst kattaki müdür odası ya da üst kattaki baş güvenlik amiri odası",
-        "en": "Visitation security room (left from the lobby, first door), the warden's office upstairs, or the chief security officer's room upstairs"
-      },
-      "notes": {
-        "tr": [
-          "Ağustos 2026'da eklendi."
-        ],
-        "en": [
-          "Added in August 2026."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Kapının solundaki delil masası",
@@ -673,22 +463,6 @@
     {
       "id": "brownstone",
       "name": "Brownstone High School",
-      "size": "l",
-      "floors": {
-        "tr": "2 kat, 5 çıkış kapısı",
-        "en": "2 floors, 5 exit doors"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Tüm lanetli eşyalar giriş lobisinde.",
-          "Eylül 2026: kamyon ana girişe yaklaştırıldı."
-        ],
-        "en": [
-          "All cursed possessions are in the entrance lobby.",
-          "September 2026: the truck was moved closer to the main entrance."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Lobi, sol taraftaki ikinci bank",
@@ -723,45 +497,12 @@
     {
       "id": "brownstone-r",
       "name": "Brownstone High School Restricted",
-      "size": "m",
-      "floors": {
-        "tr": "4 rastgele düzenden biri",
-        "en": "One of four random layouts"
-      },
-      "fuse": null,
-      "notes": {
-        "tr": [
-          "Ağustos 2026'da eklendi. Bu varyant için ayrı bir konum kaynağı yok; giriş lobisi açık kaldığından normal haritadaki lobi konumlarına bak."
-        ],
-        "en": [
-          "Added in August 2026. No separate location source exists for this variant; the lobby stays open, so check the normal map's lobby spots."
-        ]
-      },
       "cursedSameAs": "brownstone",
       "cursedUnverified": true
     },
     {
       "id": "sunny",
       "name": "Sunny Meadows Mental Institution",
-      "size": "l",
-      "floors": {
-        "tr": "2 kat, 69 oda, 5 kanat (Avlu, Erkek, Kadın, Hastane, Kısıtlı)",
-        "en": "2 floors, 69 rooms, 5 wings (Courtyard, Male, Female, Hospital, Restricted)"
-      },
-      "fuse": {
-        "tr": "Giriş holü, hizmet odası, avlu, kazan dairesi ya da bodrum koridoru",
-        "en": "Foyer, utility room, courtyard, boiler house, or basement corridor"
-      },
-      "notes": {
-        "tr": [
-          "Tüm lanetli eşyalar şapelde, sahnedeki çemberin etrafında.",
-          "En büyük harita; 28 saklanma yeri."
-        ],
-        "en": [
-          "All cursed possessions are in the chapel, around the circle on the stage.",
-          "The largest map; 28 hiding spots."
-        ]
-      },
       "cursed": {
         "tarot": {
           "tr": "Şapel sahnesi, çemberin etrafındaki yerlerden biri",
@@ -796,23 +537,6 @@
     {
       "id": "sunny-r",
       "name": "Sunny Meadows Restricted",
-      "size": "m",
-      "floors": {
-        "tr": "Giriş, şapel ve rastgele bir kanat",
-        "en": "Entrance, chapel and one random wing"
-      },
-      "fuse": {
-        "tr": "Düzene göre avlu, giriş holü ya da bodrum koridoru (merdivenin yanı)",
-        "en": "Courtyard, foyer, or basement corridor by the stairs, depending on layout"
-      },
-      "notes": {
-        "tr": [
-          "Lanetli eşyalar normal Sunny Meadows'taki gibi şapelde."
-        ],
-        "en": [
-          "Cursed possessions are in the chapel, same as normal Sunny Meadows."
-        ]
-      },
       "cursedSameAs": "sunny"
     }
   ]

@@ -177,19 +177,8 @@
   },
   "maps": {
     "general": "Genel bilgiler",
-    "size": "Büyüklük",
-    "layout": "Düzen",
-    "fuse": "Sigorta",
     "unknown": "Kaynaklarda bilgi yok",
-    "cursedTitle": "Lanetli eşya konumları",
-    "useInTimers": "Süreler'de kullan",
-    "usedInTimers": "Süreler: harita büyüklüğü {size} olarak ayarlandı",
     "sameAs": "Konumlar {name} ile aynı.",
-    "sameAsUnverified": "Ayrı kaynak yok; {name} konumları gösteriliyor, farklı olabilir.",
-    "group": {
-      "s": "Küçük haritalar",
-      "m": "Orta haritalar",
-      "l": "Büyük haritalar"
-    }
+    "sameAsUnverified": "Ayrı kaynak yok; {name} konumları gösteriliyor, farklı olabilir."
   }
 }

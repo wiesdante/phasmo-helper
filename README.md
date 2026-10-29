@@ -20,7 +20,7 @@ Download `Phasmo-Helper-Setup-x.y.z.exe` from the [**Releases**](https://github.
 - **Süreler / Timers:** Tütsü (60/90/180 sn) ve av + bekleme süresi.
 - **Hız / Speed:** Ayak seslerine vurarak m/s ölçümü; uyan hayaletleri vurgular.
 - **Kısayollar / Shortcuts:** Ayarlardan tüm tuşlar değiştirilebilir. / Every key can be changed in Settings.
-- **Bilgi / Info:** 17 haritada lanetli eşya konumları, sigorta yerleri ve büyüklük; 21 ekipmanın I/II/III seviye farkları; 7 lanetli eşya, maliyetler, tarot ve maymun pençesi tabloları.
+- **Bilgi / Info:** 17 haritada lanetli eşya konumları; 21 ekipmanın I/II/III seviye farkları; 7 lanetli eşya, maliyetler, tarot ve maymun pençesi tabloları.
 
 ## Varsayılan kısayollar / Default shortcuts
 

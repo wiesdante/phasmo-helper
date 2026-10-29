@@ -1,5 +1,13 @@
 # Değişiklik günlüğü / Changelog
 
+## 0.4.2 — 2026-10-29
+
+**Türkçe**
+- Haritalar bölümü sadeleşti: artık sadece lanetli eşya konumları gösteriliyor (büyüklük, düzen ve sigorta bilgileri kaldırıldı).
+
+**English**
+- Simpler Maps section: it now shows only cursed possession locations (size, layout and fuse box info removed).
+
 ## 0.4.1 — 2026-10-29
 
 **Türkçe**

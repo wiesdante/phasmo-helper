@@ -317,15 +317,6 @@ button.link.no-push { margin-left: 0; }
 .sp-reach summary { cursor: pointer; font-size: 13px; font-weight: 600; padding: 4px 0; }
 
 /* --- Haritalar --- */
-.map-head { flex-direction: row; align-items: center; justify-content: space-between; }
-.size-badge { font-size: 10.5px; font-weight: 600; padding: 1px 7px; border-radius: 10px; border: 1px solid var(--border); color: var(--muted); }
-.size-badge.size-s { color: var(--good); border-color: #6fcf9766; }
-.size-badge.size-m { color: #e2b93b; border-color: #e2b93b66; }
-.size-badge.size-l { color: var(--bad); border-color: #eb575766; }
-.map-facts { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 0 0 6px; }
-.map-facts dt { color: var(--muted); }
-.map-facts dd { margin: 0; }
-.map-use { font-size: 11.5px; margin-left: 6px; }
 .map-cursed { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
 .map-cursed th { width: 32%; text-align: left; vertical-align: top; color: #e2b93b; font-weight: 600; padding: 4px; border-bottom: 1px solid var(--border); }
 .map-cursed td { padding: 4px; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
