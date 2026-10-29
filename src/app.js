@@ -60,7 +60,30 @@
   });
 
   // Otomatik güncelleme bildirimleri
-  window.api.onUpdateReady(v => App.toast(App.t('update.ready', { v }), 6000));
+  // Üstteki güncelleme şeridi: indiriliyor (%) → hazır [Şimdi güncelle] → kuruluyor
+  const bar = document.getElementById('update-bar');
+  const renderUpdate = s => {
+    if (!s || s.status === 'idle') { bar.hidden = true; return; }
+    bar.hidden = false;
+    bar.className = 'update-bar ' + s.status;
+    if (s.status === 'downloading') {
+      bar.innerHTML = `<span>${App.esc(App.t('update.downloading', { v: s.version || '', p: s.percent || 0 }))}</span>
+        <span class="update-progress"><i></i></span>`;
+      bar.querySelector('.update-progress i').style.width = (s.percent || 0) + '%';
+    } else if (s.status === 'ready') {
+      bar.innerHTML = `<span>${App.esc(App.t('update.ready', { v: s.version }))}</span>
+        <button id="update-now">${App.esc(App.t('update.installNow'))}</button>`;
+      bar.querySelector('#update-now').onclick = async e => {
+        e.target.disabled = true;
+        e.target.textContent = App.t('update.installing');
+        await window.api.installUpdate();
+      };
+    } else if (s.status === 'installing') {
+      bar.innerHTML = `<span>${App.esc(App.t('update.installing'))}</span>`;
+    }
+  };
+  window.api.onUpdateState(renderUpdate);
+  renderUpdate(await window.api.getUpdateState());
   window.api.onUpdateInstalled(v => App.toast(App.t('update.installed', { v }), 6000));
 
   window.api.onSettingsChanged(s => {

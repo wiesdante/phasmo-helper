@@ -203,7 +203,24 @@ ipcMain.on('app:quit', () => app.quit());
 // --- Otomatik güncelleme (sessiz) ---
 // GitHub Releases'teki en son sürümü kontrol eder, arka planda indirir,
 // uygulama kapatılınca kurar. Bir sonraki açılışta "güncellendi" bildirimi gösterilir.
-const UPDATE_CHECK_INTERVAL = 2 * 60 * 60 * 1000; // 2 saat
+const UPDATE_CHECK_INTERVAL = 15 * 60 * 1000; // 15 dakika
+
+// Arayüzün gösterdiği güncelleme durumu: idle | downloading | ready | installing
+let updateState = { status: 'idle', version: null, percent: 0 };
+let autoUpdaterRef = null;
+function setUpdateState(patch) {
+  updateState = { ...updateState, ...patch };
+  sendToRenderer('update:state', updateState);
+}
+ipcMain.handle('update:get-state', () => updateState);
+// "Şimdi güncelle": uygulamayı kapatır, sessizce kurar ve yeni sürümü kendiliğinden açar.
+ipcMain.handle('update:install', () => {
+  if (!autoUpdaterRef || updateState.status !== 'ready') return false;
+  setUpdateState({ status: 'installing' });
+  globalShortcut.unregisterAll();
+  setImmediate(() => autoUpdaterRef.quitAndInstall(true, true));
+  return true;
+});
 
 function setupAutoUpdate() {
   // Sürüm değiştiyse (güncelleme kurulduysa) arayüze bildir.
@@ -221,11 +238,20 @@ function setupAutoUpdate() {
     console.warn('electron-updater yüklenemedi:', err.message);
     return;
   }
+  autoUpdaterRef = autoUpdater;
   autoUpdater.autoDownload = true;
-  autoUpdater.autoInstallOnAppQuit = true;
-  autoUpdater.on('update-downloaded', info => sendToRenderer('update:ready', info.version));
-  autoUpdater.on('error', err => console.warn('Güncelleme hatası:', err && err.message));
-  const check = () => autoUpdater.checkForUpdates().catch(err => console.warn('Güncelleme kontrolü başarısız:', err.message));
+  autoUpdater.autoInstallOnAppQuit = true; // düğmeye basılmazsa: uygulama kapanınca sessizce kurulur
+  autoUpdater.on('update-available', info => setUpdateState({ status: 'downloading', version: info.version, percent: 0 }));
+  autoUpdater.on('download-progress', p => setUpdateState({ status: 'downloading', percent: Math.round(p.percent || 0) }));
+  autoUpdater.on('update-downloaded', info => setUpdateState({ status: 'ready', version: info.version, percent: 100 }));
+  autoUpdater.on('error', err => {
+    console.warn('Güncelleme hatası:', err && err.message);
+    if (updateState.status === 'downloading') setUpdateState({ status: 'idle' }); // bir sonraki kontrolde yeniden denenir
+  });
+  const check = () => {
+    if (updateState.status === 'ready' || updateState.status === 'installing') return; // zaten indirildi
+    autoUpdater.checkForUpdates().catch(err => console.warn('Güncelleme kontrolü başarısız:', err.message));
+  };
   check();
   setInterval(check, UPDATE_CHECK_INTERVAL);
 }

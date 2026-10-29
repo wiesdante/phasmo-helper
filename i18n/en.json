@@ -143,10 +143,13 @@
     "project": "Project page",
     "disclaimer": "An unofficial, fan-made helper tool. Not affiliated with Kinetic Games. Phasmophobia is a trademark of Kinetic Games.",
     "sources": "Ghost and item info is compiled from community sources and may change with game updates:",
-    "updates": "The app downloads new versions automatically and installs them when you restart it."
+    "updates": "The app downloads new versions itself; \"Update now\" at the top updates and restarts it in a few seconds. If you don't click it, the update installs when you close the app."
   },
   "update": {
-    "ready": "New version (v{v}) downloaded. It will install when you restart the app.",
+    "downloading": "Downloading update (v{v})… {p}%",
+    "ready": "v{v} is ready. Click to update; the app restarts in a few seconds.",
+    "installNow": "Update now",
+    "installing": "Updating, the app will reopen shortly…",
     "installed": "Phasmo Helper updated to v{v}."
   },
   "info": {

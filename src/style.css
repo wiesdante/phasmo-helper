@@ -329,3 +329,19 @@ button.link.no-push { margin-left: 0; }
 .map-cursed { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
 .map-cursed th { width: 32%; text-align: left; vertical-align: top; color: #e2b93b; font-weight: 600; padding: 4px; border-bottom: 1px solid var(--border); }
 .map-cursed td { padding: 4px; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+
+/* Güncelleme şeridi */
+.update-bar {
+  display: flex; align-items: center; gap: 8px; padding: 6px 10px;
+  font-size: 12px; border-bottom: 1px solid var(--border); background: #7fb8ff14; color: var(--text);
+}
+.update-bar[hidden] { display: none; }
+.update-bar span:first-child { flex: 1; }
+.update-bar.ready { background: #6fcf9722; border-bottom-color: #6fcf9766; }
+.update-bar button {
+  flex-shrink: 0; padding: 4px 10px; border: 0; border-radius: 4px;
+  background: var(--good); color: #0b1a10; font: inherit; font-weight: 600; cursor: pointer;
+}
+.update-bar button:disabled { opacity: .6; cursor: default; }
+.update-progress { flex: 0 0 70px; height: 4px; border-radius: 2px; background: var(--border); overflow: hidden; }
+.update-progress i { display: block; height: 100%; width: 0; background: var(--accent); }

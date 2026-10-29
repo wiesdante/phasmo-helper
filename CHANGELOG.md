@@ -1,5 +1,17 @@
 # Değişiklik günlüğü / Changelog
 
+## 0.4.1 — 2026-10-29
+
+**Türkçe**
+- Daha akıcı güncelleme: uygulama açıkken 15 dakikada bir yeni sürüm kontrol ediliyor (önceden 2 saat).
+- İndirme sırasında üstte ilerleme çubuğu; indirme bitince "Şimdi güncelle" düğmesi. Tıklayınca uygulama birkaç saniyede güncellenip kendiliğinden yeniden açılıyor; kapatıp açmana ya da beklemene gerek yok.
+- Düğmeye basmazsan güncelleme uygulamayı kapattığında sessizce kuruluyor.
+
+**English**
+- Smoother updates: while the app is open it checks for a new version every 15 minutes (was 2 hours).
+- A progress bar at the top while downloading, then an "Update now" button. Clicking it updates the app and reopens it on its own in a few seconds; no need to close, wait and reopen.
+- If you don't click it, the update installs quietly when you close the app.
+
 ## 0.4.0 — 2026-10-29
 
 **Türkçe**

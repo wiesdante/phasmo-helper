@@ -143,10 +143,13 @@
     "project": "Proje sayfası",
     "disclaimer": "Resmi olmayan, hayranlar tarafından yapılmış bir yardımcı araçtır. Kinetic Games ile bağlantısı yoktur. Phasmophobia, Kinetic Games'in ticari markasıdır.",
     "sources": "Hayalet ve eşya bilgileri topluluk kaynaklarından derlenmiştir; oyun güncellemeleriyle değişebilir:",
-    "updates": "Uygulama yeni sürümleri otomatik olarak indirir ve kapatıp açınca kurar."
+    "updates": "Uygulama yeni sürümleri kendisi indirir; üstte çıkan \"Şimdi güncelle\" ile birkaç saniyede güncellenip yeniden açılır. Düğmeye basmazsan uygulamayı kapattığında kurulur."
   },
   "update": {
-    "ready": "Yeni sürüm (v{v}) indirildi. Uygulamayı kapatıp açınca yüklenecek.",
+    "downloading": "Güncelleme indiriliyor (v{v})… %{p}",
+    "ready": "v{v} hazır. Tıklayınca uygulama birkaç saniyede güncellenip yeniden açılır.",
+    "installNow": "Şimdi güncelle",
+    "installing": "Güncelleniyor, uygulama birazdan yeniden açılacak…",
     "installed": "Phasmo Helper v{v} sürümüne güncellendi."
   },
   "info": {

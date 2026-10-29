@@ -15,6 +15,8 @@ contextBridge.exposeInMainWorld('api', {
   getDefaultShortcuts: () => ipcRenderer.invoke('shortcuts:defaults'),
   pauseShortcuts: () => ipcRenderer.invoke('shortcuts:pause'),
   resumeShortcuts: () => ipcRenderer.invoke('shortcuts:resume'),
-  onUpdateReady: (cb) => ipcRenderer.on('update:ready', (_e, v) => cb(v)),
+  getUpdateState: () => ipcRenderer.invoke('update:get-state'),
+  installUpdate: () => ipcRenderer.invoke('update:install'),
+  onUpdateState: (cb) => ipcRenderer.on('update:state', (_e, s) => cb(s)),
   onUpdateInstalled: (cb) => ipcRenderer.on('update:installed', (_e, v) => cb(v))
 });
