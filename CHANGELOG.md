@@ -1,5 +1,19 @@
 # Değişiklik günlüğü / Changelog
 
+## 0.4.0 — 2026-10-29
+
+**Türkçe**
+- Yeni: Bilgi > Haritalar. 17 harita (Restricted versiyonlar dahil) büyüklüğe göre gruplu.
+- Her haritada 7 lanetli eşyanın tam konumu, düzen ve kat bilgisi, bilinen sigorta kutusu yerleri ve notlar.
+- Konumlar son yenilemelere göre: Tanglewood (Mart 2026), Willow Street (Temmuz 2026), Grafton (Ağustos 2025), Bleasdale (Mart 2025), Point Hope / Prison Restricted (Ağustos 2026).
+- "Süreler'de kullan" düğmesi haritanın büyüklüğünü Süreler sekmesine aktarır (av süresi buna göre hesaplanır).
+
+**English**
+- New: Info > Maps. 17 maps (including Restricted variants) grouped by size.
+- Exact spots of all 7 cursed possessions on every map, layout and floors, known fuse box spots and notes.
+- Locations follow the latest reworks: Tanglewood (Mar 2026), Willow Street (Jul 2026), Grafton (Aug 2025), Bleasdale (Mar 2025), Point Hope / Prison Restricted (Aug 2026).
+- "Use in Timers" sends the map's size to the Timers tab (hunt length follows it).
+
 ## 0.3.2 — 2026-10-29
 
 **Türkçe**

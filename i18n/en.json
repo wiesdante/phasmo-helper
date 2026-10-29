@@ -151,7 +151,8 @@
   },
   "info": {
     "equipment": "Equipment",
-    "cursed": "Cursed"
+    "cursed": "Cursed",
+    "maps": "Maps"
   },
   "equipment": {
     "general": "General info & electronics",
@@ -170,5 +171,22 @@
     "unsupported": "This key can't be used as a shortcut.",
     "failed": "These shortcuts are taken by another app and don't work: {list}",
     "failedOne": "This key is taken by another app"
+  },
+  "maps": {
+    "general": "General info",
+    "size": "Size",
+    "layout": "Layout",
+    "fuse": "Fuse box",
+    "unknown": "No info in sources",
+    "cursedTitle": "Cursed possession locations",
+    "useInTimers": "Use in Timers",
+    "usedInTimers": "Timers: map size set to {size}",
+    "sameAs": "Same locations as {name}.",
+    "sameAsUnverified": "No separate source; showing {name} locations, which may differ.",
+    "group": {
+      "s": "Small maps",
+      "m": "Medium maps",
+      "l": "Large maps"
+    }
   }
 }

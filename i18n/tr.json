@@ -151,7 +151,8 @@
   },
   "info": {
     "equipment": "Ekipman",
-    "cursed": "Lanetli"
+    "cursed": "Lanetli",
+    "maps": "Haritalar"
   },
   "equipment": {
     "general": "Genel bilgiler ve elektronikler",
@@ -170,5 +171,22 @@
     "unsupported": "Bu tuş kısayol olarak kullanılamıyor.",
     "failed": "Bu kısayollar başka bir uygulama tarafından kullanılıyor ve çalışmıyor: {list}",
     "failedOne": "Bu tuş başka bir uygulama tarafından kullanılıyor"
+  },
+  "maps": {
+    "general": "Genel bilgiler",
+    "size": "Büyüklük",
+    "layout": "Düzen",
+    "fuse": "Sigorta",
+    "unknown": "Kaynaklarda bilgi yok",
+    "cursedTitle": "Lanetli eşya konumları",
+    "useInTimers": "Süreler'de kullan",
+    "usedInTimers": "Süreler: harita büyüklüğü {size} olarak ayarlandı",
+    "sameAs": "Konumlar {name} ile aynı.",
+    "sameAsUnverified": "Ayrı kaynak yok; {name} konumları gösteriliyor, farklı olabilir.",
+    "group": {
+      "s": "Küçük haritalar",
+      "m": "Orta haritalar",
+      "l": "Büyük haritalar"
+    }
   }
 }

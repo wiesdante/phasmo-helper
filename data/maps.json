@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 1,
+  "gameVersion": "v0.19 (Eylül 2026)",
+  "_format": {
+    "size": "s / m / l — av süresini belirler (Süreler sekmesi)",
+    "fuse": "Sigorta kutusunun çıkabileceği yerler; kaynağı olmayan haritalarda null",
+    "cursed": "Lanetli eşya konumları (cursed.json id'leri). Normal kontratta bunlardan yalnızca biri çıkar."
+  },
+  "general": {
+    "tr": [
+      "Varsayılan zorluklarda her kontratta 7 lanetli eşyadan yalnızca biri çıkar (Delilik'te hiç çıkmaz); her eşyanın her haritada tek bir sabit yeri vardır.",
+      "Harita büyüklüğü avın ne kadar süreceğini belirler. Bir haritanın kartındaki düğmeyle Süreler sekmesindeki büyüklüğü ayarlayabilirsin.",
+      "Restricted haritalar (Ağustos–Eylül 2026) normal haritaların küçültülmüş, bazı bölümleri kapalı versiyonlarıdır; düzen her oyunda değişebilir.",
+      "Haritalar güncellemelerle yenilenebilir; konumlar son yenilemeye göredir."
+    ],
+    "en": [
+      "On default difficulties only one of the 7 cursed possessions spawns per contract (none on Insanity); each item has one fixed spot per map.",
+      "Map size sets how long hunts last. Use the button on a map card to set the size in the Timers tab.",
+      "Restricted maps (Aug–Sep 2026) are smaller versions of normal maps with parts closed off; the layout can change every game.",
+      "Maps get reworked in updates; locations reflect the latest rework."
+    ]
+  },
+  "maps": [
+    {
+      "id": "tanglewood",
+      "name": "6 Tanglewood Drive",
+      "size": "s",
+      "floors": {
+        "tr": "Zemin kat + bodrum, garaj",
+        "en": "Ground floor + basement, garage"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Mart 2026'da yenilendi (eski bebek odası artık çocuk odası)."
+        ],
+        "en": [
+          "Reworked in March 2026 (the old nursery is now a children's bedroom)."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Oturma odası, pembe lambanın ve ev telefonunun yanındaki yan sehpa",
+          "en": "Living room, side table by the pink lamp and home phone"
+        },
+        "ouija": {
+          "tr": "Bodrum, tren setinin kontrol masasının altındaki alçak raf",
+          "en": "Basement, low shelf under the train set's control table"
+        },
+        "musicbox": {
+          "tr": "Ana yatak odası giyinme dolabı, kasanın yanındaki şifonyerin kenarı",
+          "en": "Master bedroom closet, edge of the dresser by the safe"
+        },
+        "monkeypaw": {
+          "tr": "Garaj (çamaşır odasından geçilir), toprak torbasının üstünde, eldivenin yanında",
+          "en": "Garage (via the laundry room), on a bag of soil by a glove"
+        },
+        "mirror": {
+          "tr": "Ana yatak odası kapısının hemen dışındaki duvar",
+          "en": "Wall just outside the master bedroom door"
+        },
+        "circle": {
+          "tr": "Bodrum zemini, tren setini geçince sağ arka köşe",
+          "en": "Basement floor, back right corner past the train set"
+        },
+        "voodoo": {
+          "tr": "Çocuk odası, sağ köşedeki büyük kahverengi ayıcığın yanı",
+          "en": "Children's bedroom, by the big brown teddy bear in the right corner"
+        }
+      }
+    },
+    {
+      "id": "edgefield",
+      "name": "42 Edgefield Road",
+      "size": "s",
+      "floors": {
+        "tr": "2 kat + bodrum",
+        "en": "2 floors + basement"
+      },
+      "fuse": {
+        "tr": "Bodrum, garaj ya da üst kat koridorundaki depo",
+        "en": "Basement, garage, or upstairs hallway storage"
+      },
+      "notes": {
+        "tr": [
+          "Dar ve sıkışık; döngü yapılabilecek yer çok az (oturma odası kanepesi)."
+        ],
+        "en": [
+          "Cramped; very few loops (living room couch)."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Ön kapının yanında, anahtar kâsesinin olduğu küçük masa",
+          "en": "By the front door, small table with the key bowl"
+        },
+        "ouija": {
+          "tr": "Mutfağın arkasındaki çamaşır odası, rafların altında yerde",
+          "en": "Laundry room behind the kitchen, on the floor under the shelves"
+        },
+        "musicbox": {
+          "tr": "Girişte soldaki ilk oda (oturma odası), lambanın yanındaki küçük masa/komodin",
+          "en": "First room on the left (living room), small table/dresser by the lamp"
+        },
+        "monkeypaw": {
+          "tr": "Üst kat turuncu yatak odası, alt değiştirme masası",
+          "en": "Upstairs orange bedroom, changing table"
+        },
+        "mirror": {
+          "tr": "Ön kapının yanında, merdivenin dibindeki duvar",
+          "en": "By the front door, wall at the foot of the stairs"
+        },
+        "circle": {
+          "tr": "Bodrumun arkası, raflar arasında (olası sigorta yerinin yanı)",
+          "en": "Back of the basement, between the shelves (next to a possible fuse box spot)"
+        },
+        "voodoo": {
+          "tr": "Üst kat mavi yatak odası, yatağın üstü",
+          "en": "Upstairs blue bedroom, on the bed"
+        }
+      }
+    },
+    {
+      "id": "ridgeview",
+      "name": "10 Ridgeview Court",
+      "size": "s",
+      "floors": {
+        "tr": "2 kat + bodrum, garaj",
+        "en": "2 floors + basement, garage"
+      },
+      "fuse": {
+        "tr": "Garaj, bodrum ya da üst kat koridoru",
+        "en": "Garage, basement, or top-floor hallway"
+      },
+      "notes": {
+        "tr": [
+          "Yemek masası iyi bir döngü noktası."
+        ],
+        "en": [
+          "The dining table is a good loop."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Ön kapının yanında, anahtar kâsesinin olduğu küçük masa",
+          "en": "By the front door, small table with the key bowl"
+        },
+        "ouija": {
+          "tr": "Sol koridordaki çamaşır odası, raflar",
+          "en": "Laundry room down the left hall, shelves"
+        },
+        "musicbox": {
+          "tr": "Üst kat mor yatak odası, kapının yanındaki küçük masa/şifonyer",
+          "en": "Upstairs purple bedroom, small table/dresser by the door"
+        },
+        "monkeypaw": {
+          "tr": "Üst kat mavi-yeşil yatak odası, çalışma masası",
+          "en": "Upstairs blue/green bedroom, desk"
+        },
+        "mirror": {
+          "tr": "Bodrum merdiveninin karşısındaki duvar",
+          "en": "Wall opposite the basement stairs"
+        },
+        "circle": {
+          "tr": "Bodrumun ortası, merdivenin dibi",
+          "en": "Middle of the basement, at the bottom of the stairs"
+        },
+        "voodoo": {
+          "tr": "Piyanonun yanındaki bank",
+          "en": "Bench next to the piano"
+        }
+      }
+    },
+    {
+      "id": "willow",
+      "name": "13 Willow Street",
+      "size": "s",
+      "floors": {
+        "tr": "Zemin kat + bodrum",
+        "en": "Ground floor + basement"
+      },
+      "fuse": {
+        "tr": "Spor odası (eski garaj), kapının hemen sağındaki duvar; ya da bodrumda merdivenden inince sağda, oyun odasının yanı",
+        "en": "Gym (old garage), wall right of the door; or in the basement, right at the bottom of the stairs by the games room"
+      },
+      "notes": {
+        "tr": [
+          "Temmuz 2026'da yenilendi: garaj artık spor odası, bodrum oyun/bar odası.",
+          "8 saklanma yeri; merdivenin altı ve sanat odasındaki tablonun arkası dahil."
+        ],
+        "en": [
+          "Reworked in July 2026: the garage is now a gym, the basement a bar/games room.",
+          "8 hiding spots, including under the stairs and behind the painting in the art room."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Bodrum, bar/oyun odasındaki kart masası (\"Never back down\" posterinin altı)",
+          "en": "Basement, card table in the bar/games room (under the \"Never back down\" poster)"
+        },
+        "ouija": {
+          "tr": "Bodrum, merdivenden inince sağda, çamaşır odası girişindeki küçük masa/dolabın üstü",
+          "en": "Basement, right at the bottom of the stairs, small table/cupboard by the laundry room entrance"
+        },
+        "musicbox": {
+          "tr": "Oturma odası, uzun kitaplığın ortasındaki bölme (cam kapıları geçince sağda)",
+          "en": "Living room, middle cubby of the tall bookshelf (right after the glass doors)"
+        },
+        "monkeypaw": {
+          "tr": "Sanat odası, sağdaki raf ünitesi (kitaplarla kutu arası)",
+          "en": "Art room, shelving unit on the right (between books and a box)"
+        },
+        "mirror": {
+          "tr": "Spor odası (eski garaj), banyo kemerinin yanındaki beyaz masanın üstünde asılı",
+          "en": "Gym (old garage), hanging over the white table by the bathroom archway"
+        },
+        "circle": {
+          "tr": "Mutfak/yemek alanı girişinin ortasında, yerde",
+          "en": "On the floor in the middle of the kitchen/dining entrance"
+        },
+        "voodoo": {
+          "tr": "Yatak odası, köşedeki beyaz sandalyenin arkasındaki açık mavi kedi yatağı",
+          "en": "Bedroom, on the light blue cat bed behind the white chair in the corner"
+        }
+      }
+    },
+    {
+      "id": "grafton",
+      "name": "Grafton Farmhouse",
+      "size": "s",
+      "floors": {
+        "tr": "Zemin kat, üst kat, çatı katı",
+        "en": "Ground floor, upper floor, attic"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Ağustos 2025'te yenilendi."
+        ],
+        "en": [
+          "Reworked in August 2025."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Zemin kat, dağınık kütüphane: siyah daktilonun yanındaki masa",
+          "en": "Ground floor, cluttered library: desk by the black typewriter"
+        },
+        "ouija": {
+          "tr": "Çatı katı, soldaki koridor boyunca, örtülü eşyalara/kutulara yaslı",
+          "en": "Attic, along the left corridor, leaning against sheet-covered furniture/boxes"
+        },
+        "musicbox": {
+          "tr": "Üst kat, çatı merdiveninden önce soldaki küçük yatak odası (arka duvarı yıkık), yatak başı sehpası",
+          "en": "Upper floor, small bedroom left before the attic stairs (back wall broken), bedside table"
+        },
+        "monkeypaw": {
+          "tr": "Zemin kat, girişten düz ilerideki oda (yemek odası), vazoların yanındaki dolap/yan masa",
+          "en": "Ground floor, room straight ahead from the entrance (dining room), side table/cabinet by the vases"
+        },
+        "mirror": {
+          "tr": "Üst kat, merdivenden çıkınca soldaki ana yatak odası, arka duvardaki masa/dolap",
+          "en": "Upper floor, master bedroom left of the stairs, table/cabinet at the back wall"
+        },
+        "circle": {
+          "tr": "Üst kat, koridorun sonundaki bebek odası, yuvarlak desenli halının üstü",
+          "en": "Upper floor, doll room at the end of the corridor, on the round patterned rug"
+        },
+        "voodoo": {
+          "tr": "Zemin kat, mankenlerin olduğu terzi atölyesi, malzemelerin üstünde",
+          "en": "Ground floor, seamstress workshop with mannequins, on top of the supplies"
+        }
+      }
+    },
+    {
+      "id": "bleasdale",
+      "name": "Bleasdale Farmhouse",
+      "size": "m",
+      "floors": {
+        "tr": "Zemin kat, üst kat, çatı katı",
+        "en": "Ground floor, upper floor, attic"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Mart 2025'te yenilendi; karmaşık, labirent gibi bir düzen."
+        ],
+        "en": [
+          "Reworked in March 2025; a confusing, maze-like layout."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Çatı katı yatak odası, alt bölüm (çatı alanından doğuya, sonra aşağı)",
+          "en": "Attic bedroom, lower section (east through the attic space, then down)"
+        },
+        "ouija": {
+          "tr": "Zemin kat, oturma odası, kanepenin yanındaki masa",
+          "en": "Ground floor, living room, table beside the couch"
+        },
+        "musicbox": {
+          "tr": "Zemin kat, çay odası, kuzey duvarındaki duvar rafı",
+          "en": "Ground floor, tea room, wall stand on the north wall"
+        },
+        "monkeypaw": {
+          "tr": "Üst kat, çalışma odası, batı duvarındaki duvar rafı",
+          "en": "Upper floor, study, wall stand on the west wall"
+        },
+        "mirror": {
+          "tr": "Üst kat, güneydeki av trofesi odası, duvarda asılı",
+          "en": "Upper floor, trophy room on the south side, hanging on the wall"
+        },
+        "circle": {
+          "tr": "Zemin kat, kiler/hizmet odası, batı tarafı",
+          "en": "Ground floor, utility room, west side"
+        },
+        "voodoo": {
+          "tr": "Üst kat, büyük ana yatak odası, batı tarafındaki masa",
+          "en": "Upper floor, large master bedroom, table on the west side"
+        }
+      }
+    },
+    {
+      "id": "diner",
+      "name": "Nell's Diner",
+      "size": "s",
+      "floors": {
+        "tr": "Tek kat",
+        "en": "Single floor"
+      },
+      "fuse": {
+        "tr": "Temizlik dolabı (sigorta açılınca soğuk hava deposu soğur)",
+        "en": "Janitor's closet (turning it on cools the cooler room)"
+      },
+      "notes": {
+        "tr": [
+          "2025'te eklendi; seviye 5'te açılır."
+        ],
+        "en": [
+          "Added in 2025; unlocks at level 5."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Tezgâhın arkası, gri yazar kasanın solu, yemek servis penceresinin altı",
+          "en": "Behind the front counter, left of the grey cash register, under the food window"
+        },
+        "ouija": {
+          "tr": "Temizlik dolabı, duvara yaslı karton kutunun üstü",
+          "en": "Janitor's closet, on top of a cardboard box against the wall"
+        },
+        "musicbox": {
+          "tr": "Müdür odası, girince sağdaki masa (kahve makinesinin yanı)",
+          "en": "Manager's office, table on the right inside the door (by the coffee machine)"
+        },
+        "monkeypaw": {
+          "tr": "Mutfak, ortadaki adada büyük bıçağın yanındaki kesme tahtası",
+          "en": "Kitchen, chopping board by a large knife on the middle island"
+        },
+        "mirror": {
+          "tr": "Mola odası, sağdaki koyu kırmızı içecek makinesinin arkasında köşedeki sandalye",
+          "en": "Break room, chair in the corner behind the dark red vending machine on the right"
+        },
+        "circle": {
+          "tr": "Arka koridorun sonundaki erkekler tuvaleti, sol köşe, yerde",
+          "en": "Men's bathroom at the end of the back hallway, left corner, on the floor"
+        },
+        "voodoo": {
+          "tr": "Yemek salonu, sol arkada pencereye bakan kırmızı loca (köşeden hemen önce)",
+          "en": "Dining area, back left red booth by the window (just before the corner)"
+        }
+      }
+    },
+    {
+      "id": "woodwind",
+      "name": "Camp Woodwind",
+      "size": "s",
+      "floors": {
+        "tr": "Açık hava kamp alanı",
+        "en": "Outdoor campsite"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Kamp ateşi etrafında dönen dairesel düzen; seviye 13'te açılır."
+        ],
+        "en": [
+          "Circular layout around the campfire; unlocks at level 13."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Girişten sola dönünce ikinci piknik masası, kitapların yanı",
+          "en": "Turn left from the gate, second picnic table, by some books"
+        },
+        "ouija": {
+          "tr": "Sağ taraftaki ilk beyaz tente, arka ortadaki beyaz masa (bovling setinin yanı)",
+          "en": "First white canopy on the right, central white table at the back (by the bowling set)"
+        },
+        "musicbox": {
+          "tr": "Soldaki büyük sarı çadır, girince sağdaki küçük beyaz masa",
+          "en": "Large yellow tent on the left, small white table on the right inside"
+        },
+        "monkeypaw": {
+          "tr": "Haritanın arkasındaki \"Lovers Bench\" bölümü, kırmızı ve turkuaz çadırlar arasında",
+          "en": "\"Lovers Bench\" area at the back, between the red and turquoise tents"
+        },
+        "mirror": {
+          "tr": "Ortadaki ışıklı büyük ağacın dibine yaslı",
+          "en": "Leaning against the base of the big string-lit tree in the middle"
+        },
+        "circle": {
+          "tr": "Sağ taraftaki ikinci beyaz tentenin altındaki çadırın girişi, yerde",
+          "en": "Entrance of the tent under the second white canopy on the right, on the ground"
+        },
+        "voodoo": {
+          "tr": "Büyük kırmızı çadırın solundaki küçük turkuaz çadırın önü",
+          "en": "In front of the small turquoise tent left of the big red tent"
+        }
+      }
+    },
+    {
+      "id": "pointhope",
+      "name": "Point Hope",
+      "size": "m",
+      "floors": {
+        "tr": "10 katlı deniz feneri",
+        "en": "10-storey lighthouse"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Dikey düzen, tek yol: döngü yapmak zor; 11 saklanma yeri."
+        ],
+        "en": [
+          "Vertical layout with one route: hard to loop; 11 hiding spots."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "1. kat oturma odası, yeşil koltukların arasındaki masa",
+          "en": "Floor 1 living room, table between the green chairs"
+        },
+        "ouija": {
+          "tr": "4. kat, ortadaki sütundaki raf",
+          "en": "Floor 4, shelf on the central pillar"
+        },
+        "musicbox": {
+          "tr": "6. kat yatak odası, makyaj masası",
+          "en": "Floor 6 bedroom, dressing table"
+        },
+        "monkeypaw": {
+          "tr": "8. kat atölye, sallanan atın olduğu masa",
+          "en": "Floor 8 workshop, desk with the rocking horse"
+        },
+        "mirror": {
+          "tr": "3. kat, merdivenin altındaki dolap",
+          "en": "Floor 3, cabinet under the stairs"
+        },
+        "circle": {
+          "tr": "5. kat ana banyo, ortada",
+          "en": "Floor 5 main bathroom, in the middle"
+        },
+        "voodoo": {
+          "tr": "7. kat mavi yatak odası, şifonyer",
+          "en": "Floor 7 blue bedroom, dresser"
+        }
+      }
+    },
+    {
+      "id": "pointhope-r",
+      "name": "Point Hope Restricted",
+      "size": "s",
+      "floors": {
+        "tr": "Sadece 3 kat açık (oturma odası, mutfak, yemek odası)",
+        "en": "Only 3 floors open (living room, kitchen, dining room)"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Ağustos 2026'da eklendi; bazı eşyalar normal Point Hope'tan farklı yerde."
+        ],
+        "en": [
+          "Added in August 2026; some items are in different spots than normal Point Hope."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "1. kat oturma odası, iki koyu yeşil kanepe arasındaki yan sehpa",
+          "en": "1st floor living room, end table between the two dark green couches"
+        },
+        "ouija": {
+          "tr": "3. kat yemek odası, tabak rafının altındaki koyu mavi oturağın altında, yerde",
+          "en": "3rd floor dining room, on the floor under the dark blue seat below the plate shelf"
+        },
+        "musicbox": {
+          "tr": "3. kat yemek odası, merdivenin yanındaki uzun kahverengi masa",
+          "en": "3rd floor dining room, long brown table by the stairs"
+        },
+        "monkeypaw": {
+          "tr": "1. kat oturma odası, tarot ile aynı yan sehpa",
+          "en": "1st floor living room, same end table as the tarot cards"
+        },
+        "mirror": {
+          "tr": "3. kat yemek odası, arka duvardaki dolaba yaslı",
+          "en": "3rd floor dining room, leaning against the cabinet at the back wall"
+        },
+        "circle": {
+          "tr": "2. kat mutfak, lavabonun yanında yerde",
+          "en": "2nd floor kitchen, on the floor by the sink"
+        },
+        "voodoo": {
+          "tr": "1. kat, merdivenin yanındaki hasır sepetin üstü",
+          "en": "1st floor, on the wicker basket by the stairs"
+        }
+      }
+    },
+    {
+      "id": "maple",
+      "name": "Maple Lodge Campsite",
+      "size": "m",
+      "floors": {
+        "tr": "Açık hava, iki kamp alanı, göl kenarı kulübesi",
+        "en": "Outdoor, two campgrounds, lakeside cabin"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Yağmur açık alevleri söndürebilir.",
+          "Göl kenarı kulübesinin anahtarı paspasın altında."
+        ],
+        "en": [
+          "Rain can put out open flames.",
+          "The lakeside cabin key is under the doormat."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Göl kenarı kulübesinin dışındaki ilk piknik masası (oyun kartlarının olduğu)",
+          "en": "First picnic table outside the lakeside cabin (with playing cards)"
+        },
+        "ouija": {
+          "tr": "Tuvalet binasının arkasındaki dar geçit, temizlik malzemelerinin arasındaki raf",
+          "en": "Narrow alley behind the restroom building, shelf among cleaning supplies"
+        },
+        "musicbox": {
+          "tr": "Resepsiyondan arka kapıdan çık, totem direğinin yanındaki kamp ateşi, kırmızı ve mavi çadır arasındaki küçük masa",
+          "en": "Out the back of reception, campfire by the totem pole, small table between the red and blue tents"
+        },
+        "monkeypaw": {
+          "tr": "Sağdaki kamp alanı (iki büyük beyaz çadır), mavi tuvalet bloğunun karşısındaki varilin üstü",
+          "en": "Right campground (two big white tents), on a barrel opposite the blue toilet block"
+        },
+        "mirror": {
+          "tr": "Resepsiyon binası, girince sol duvarda kırmızı kanepenin üstünde",
+          "en": "Reception building, left wall above the red couch"
+        },
+        "circle": {
+          "tr": "Göl kenarı kulübesi, zemin kat, merdivenin önü",
+          "en": "Lakeside cabin ground floor, in front of the stairs"
+        },
+        "voodoo": {
+          "tr": "Soldaki büyük kamp ateşi, tuvaletlere bakan kütüğün önünde yerde",
+          "en": "Left big campfire, on the ground in front of the log facing the toilets"
+        }
+      }
+    },
+    {
+      "id": "prison",
+      "name": "Prison",
+      "size": "m",
+      "floors": {
+        "tr": "2 kat, iki hücre bloğu, avlu",
+        "en": "2 floors, two cell blocks, courtyard"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Tüm lanetli eşyalar giriş/güvenlik bölümünde.",
+          "Eylül 2026: kamyon ana girişe yaklaştırıldı."
+        ],
+        "en": [
+          "All cursed possessions are in the entrance/security area.",
+          "September 2026: the truck was moved closer to the main entrance."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Güvenlik noktası, soldaki masada beyaz/gri tepsi",
+          "en": "Security checkpoint, white/grey tray on the left table"
+        },
+        "ouija": {
+          "tr": "Giriş odasının sol köşesi, masanın arkası",
+          "en": "Left corner of the entry room, behind the table"
+        },
+        "musicbox": {
+          "tr": "Güvenlik noktası, soldaki masada siyah tepsi",
+          "en": "Security checkpoint, black tray on the left table"
+        },
+        "monkeypaw": {
+          "tr": "Soldaki masa, metal dedektörün yanı",
+          "en": "Left table, next to the metal detector"
+        },
+        "mirror": {
+          "tr": "Bekleme salonu, sağdaki sandalye sırasının altında",
+          "en": "Waiting area, under the right row of chairs"
+        },
+        "circle": {
+          "tr": "Güvenlik koridorunun sonu, çift kapıdan önce",
+          "en": "End of the checkpoint corridor, before the double doors"
+        },
+        "voodoo": {
+          "tr": "Soldaki masa, açıkta",
+          "en": "Left table, in the open"
+        }
+      }
+    },
+    {
+      "id": "prison-r",
+      "name": "Prison Restricted",
+      "size": "s",
+      "sizeNote": {
+        "tr": "Düzene göre küçük ya da orta",
+        "en": "Small or medium depending on layout"
+      },
+      "floors": {
+        "tr": "Giriş ve üst kat bölümleri; hücre blokları kapalı, düzen rastgele",
+        "en": "Entrance and upstairs areas; cell blocks closed, random layout"
+      },
+      "fuse": {
+        "tr": "Ziyaretçi güvenlik odası (lobiden sola, koridordaki ilk kapı), üst kattaki müdür odası ya da üst kattaki baş güvenlik amiri odası",
+        "en": "Visitation security room (left from the lobby, first door), the warden's office upstairs, or the chief security officer's room upstairs"
+      },
+      "notes": {
+        "tr": [
+          "Ağustos 2026'da eklendi."
+        ],
+        "en": [
+          "Added in August 2026."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Kapının solundaki delil masası",
+          "en": "Evidence table left of the door"
+        },
+        "ouija": {
+          "tr": "Aynı masanın yanında, yerde",
+          "en": "On the floor by that same table"
+        },
+        "musicbox": {
+          "tr": "Kapının solundaki delil masası",
+          "en": "Evidence table left of the door"
+        },
+        "monkeypaw": {
+          "tr": "Kapının solundaki delil masası",
+          "en": "Evidence table left of the door"
+        },
+        "mirror": {
+          "tr": "Lobi zemini, en sağdaki sandalye sırasının yanı",
+          "en": "Lobby floor, by the far right row of chairs"
+        },
+        "circle": {
+          "tr": "Lobinin en uzak ucu",
+          "en": "Far end of the lobby"
+        },
+        "voodoo": {
+          "tr": "Kapının solundaki delil masası",
+          "en": "Evidence table left of the door"
+        }
+      }
+    },
+    {
+      "id": "brownstone",
+      "name": "Brownstone High School",
+      "size": "l",
+      "floors": {
+        "tr": "2 kat, 5 çıkış kapısı",
+        "en": "2 floors, 5 exit doors"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Tüm lanetli eşyalar giriş lobisinde.",
+          "Eylül 2026: kamyon ana girişe yaklaştırıldı."
+        ],
+        "en": [
+          "All cursed possessions are in the entrance lobby.",
+          "September 2026: the truck was moved closer to the main entrance."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Lobi, sol taraftaki ikinci bank",
+          "en": "Lobby, second bench on the left"
+        },
+        "ouija": {
+          "tr": "Lobi, sol sütunun arkasında yerde",
+          "en": "Lobby, on the floor behind the left pillar"
+        },
+        "musicbox": {
+          "tr": "Lobi, sağ taraftaki ikinci bank",
+          "en": "Lobby, second bench on the right"
+        },
+        "monkeypaw": {
+          "tr": "Lobi, sağ sütunun önündeki karton kutunun üstü",
+          "en": "Lobby, on a box in front of the right pillar"
+        },
+        "mirror": {
+          "tr": "Lobi, sağ sütunun arkasına yaslı",
+          "en": "Lobby, leaning against the back of the right pillar"
+        },
+        "circle": {
+          "tr": "Ön kapıdan düz ileride, ıslak zemin tabelasının yanı",
+          "en": "Straight back from the front door, by the wet floor sign"
+        },
+        "voodoo": {
+          "tr": "Düz ileride, ıslak zemin tabelasının yanındaki bank",
+          "en": "Straight back, bench next to the wet floor sign"
+        }
+      }
+    },
+    {
+      "id": "brownstone-r",
+      "name": "Brownstone High School Restricted",
+      "size": "m",
+      "floors": {
+        "tr": "4 rastgele düzenden biri",
+        "en": "One of four random layouts"
+      },
+      "fuse": null,
+      "notes": {
+        "tr": [
+          "Ağustos 2026'da eklendi. Bu varyant için ayrı bir konum kaynağı yok; giriş lobisi açık kaldığından normal haritadaki lobi konumlarına bak."
+        ],
+        "en": [
+          "Added in August 2026. No separate location source exists for this variant; the lobby stays open, so check the normal map's lobby spots."
+        ]
+      },
+      "cursedSameAs": "brownstone",
+      "cursedUnverified": true
+    },
+    {
+      "id": "sunny",
+      "name": "Sunny Meadows Mental Institution",
+      "size": "l",
+      "floors": {
+        "tr": "2 kat, 69 oda, 5 kanat (Avlu, Erkek, Kadın, Hastane, Kısıtlı)",
+        "en": "2 floors, 69 rooms, 5 wings (Courtyard, Male, Female, Hospital, Restricted)"
+      },
+      "fuse": {
+        "tr": "Giriş holü, hizmet odası, avlu, kazan dairesi ya da bodrum koridoru",
+        "en": "Foyer, utility room, courtyard, boiler house, or basement corridor"
+      },
+      "notes": {
+        "tr": [
+          "Tüm lanetli eşyalar şapelde, sahnedeki çemberin etrafında.",
+          "En büyük harita; 28 saklanma yeri."
+        ],
+        "en": [
+          "All cursed possessions are in the chapel, around the circle on the stage.",
+          "The largest map; 28 hiding spots."
+        ]
+      },
+      "cursed": {
+        "tarot": {
+          "tr": "Şapel sahnesi, çemberin etrafındaki yerlerden biri",
+          "en": "Chapel stage, one of the spots around the circle"
+        },
+        "ouija": {
+          "tr": "Şapel sahnesi, çemberin etrafındaki yerlerden biri",
+          "en": "Chapel stage, one of the spots around the circle"
+        },
+        "musicbox": {
+          "tr": "Şapel, sahnenin sağı, mum standlarının yanı",
+          "en": "Chapel, right of the stage by the candle stands"
+        },
+        "monkeypaw": {
+          "tr": "Şapel sahnesi, haçın dibinde, çemberin yanı",
+          "en": "Chapel stage, at the base of the cross next to the circle"
+        },
+        "mirror": {
+          "tr": "Şapel sahnesi, çemberin etrafındaki yerlerden biri",
+          "en": "Chapel stage, one of the spots around the circle"
+        },
+        "circle": {
+          "tr": "Şapel sahnesi, kırmızı çemberin içi",
+          "en": "Chapel stage, inside the red circle"
+        },
+        "voodoo": {
+          "tr": "Şapel sahnesi, kırmızı direğin önünde yerde",
+          "en": "Chapel stage, on the floor in front of the red post"
+        }
+      }
+    },
+    {
+      "id": "sunny-r",
+      "name": "Sunny Meadows Restricted",
+      "size": "m",
+      "floors": {
+        "tr": "Giriş, şapel ve rastgele bir kanat",
+        "en": "Entrance, chapel and one random wing"
+      },
+      "fuse": {
+        "tr": "Düzene göre avlu, giriş holü ya da bodrum koridoru (merdivenin yanı)",
+        "en": "Courtyard, foyer, or basement corridor by the stairs, depending on layout"
+      },
+      "notes": {
+        "tr": [
+          "Lanetli eşyalar normal Sunny Meadows'taki gibi şapelde."
+        ],
+        "en": [
+          "Cursed possessions are in the chapel, same as normal Sunny Meadows."
+        ]
+      },
+      "cursedSameAs": "sunny"
+    }
+  ]
+}

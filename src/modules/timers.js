@@ -25,6 +25,7 @@ App.register({
     this.incense = null;   // { start }
     this.hunt = null;      // { phase: 'hunt'|'cooldown', start, end }
     this.lastHuntNote = '';
+    app.on('timers:setSize', i => { this.opts.size = i; this.saveOpts(); this.render(); });
     this.render();
     this.timer = setInterval(() => this.tick(), 200);
   },

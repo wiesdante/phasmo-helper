@@ -30,7 +30,7 @@ const DEFAULT_SETTINGS = {
   }
 };
 
-const ALLOWED_DATA = ['ghosts', 'evidence', 'cursed', 'equipment'];
+const ALLOWED_DATA = ['ghosts', 'evidence', 'cursed', 'equipment', 'maps'];
 const ALLOWED_LOCALES = ['tr', 'en'];
 
 let win = null;
