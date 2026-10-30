@@ -1,6 +1,6 @@
 # Değişiklik günlüğü / Changelog
 
-## Yayınlanmadı / Unreleased
+## 0.4.3 — 2026-10-30
 
 **Türkçe**
 - Kaç kişinin kullandığını görebilmek için isimsiz kullanım sayacı: uygulama açıldığında sadece sürüm, Windows sürümü ve dil bilgisiyle tek bir sayım gönderilir. Ayarlar'dan kapatılabilir.
