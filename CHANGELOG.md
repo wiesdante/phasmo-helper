@@ -1,6 +1,6 @@
 # Değişiklik günlüğü / Changelog
 
-## Yayınlanmadı / Unreleased
+## 1.0.1 — 2026-10-31
 
 **Türkçe**
 - Oturuma katılırken çıkan "bağlantı sunucusuna ulaşılamadı" hatası düzeltildi; artık katılma birkaç saniyede gerçekleşiyor.
