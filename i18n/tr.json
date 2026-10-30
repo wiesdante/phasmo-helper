@@ -13,7 +13,8 @@
     "timers": "Süreler",
     "speed": "Hız",
     "settings": "Ayarlar",
-    "info": "Bilgi"
+    "info": "Bilgi",
+    "session": "Oturum"
   },
   "evidence": {
     "count": "Kanıt sayısı",
@@ -182,5 +183,42 @@
     "unknown": "Kaynaklarda bilgi yok",
     "sameAs": "Konumlar {name} ile aynı.",
     "sameAsUnverified": "Ayrı kaynak yok; {name} konumları gösteriliyor, farklı olabilir."
+  },
+  "session": {
+    "name": "Adın (oturumdaki herkes görür)",
+    "namePlaceholder": "ör. Ayşe",
+    "hostTitle": "Oturum aç",
+    "hostDesc": "Bir kod alırsın; arkadaşların bu kodla katılır. Senin kanıtların herkese aktarılır.",
+    "host": "Host ol",
+    "joinTitle": "Oturuma katıl",
+    "joinDesc": "Host'un verdiği 6 haneli kodu gir. Kanıtların host'unkilerle değiştirilir.",
+    "join": "Katıl",
+    "codePlaceholder": "KOD",
+    "connecting": "Bağlanıyor…",
+    "cancel": "Vazgeç",
+    "codeLabel": "Oturum kodu",
+    "copy": "Kodu kopyala",
+    "copied": "Kod kopyalandı",
+    "shareHint": "Bu kodu arkadaşlarına gönder.",
+    "members": "Oturumdakiler ({n})",
+    "hostTag": "host",
+    "you": "(sen)",
+    "hostNote": "Kanıtlar, elemeler ve Kanlı Ay herkesle ortak. Uygulamayı kapatırsan oturum biter.",
+    "joinNote": "Kanıtlar, elemeler ve Kanlı Ay herkesle ortak. Host çıkarsa oturum biter.",
+    "end": "Oturumu kapat",
+    "leave": "Oturumdan ayrıl",
+    "banner": "Oturum {code} · {n} kişi",
+    "joinedToast": "{name} oturuma katıldı",
+    "err": {
+      "noName": "Önce adını yaz.",
+      "badCode": "Kod 6 karakter olmalı (harf ve rakam).",
+      "notFound": "Bu kodla açık bir oturum bulunamadı. Kodu ve host'un uygulamasının açık olduğunu kontrol et.",
+      "timeout": "Bağlantı kurulamadı. Ağın doğrudan bağlantıyı engelliyor olabilir; tekrar dene.",
+      "server": "Bağlantı sunucusuna ulaşılamadı. İnternet bağlantını kontrol edip tekrar dene.",
+      "lost": "Oturum bağlantısı koptu.",
+      "full": "Oturum dolu (en fazla 8 kişi).",
+      "version": "Host farklı bir uygulama sürümü kullanıyor. İkiniz de uygulamayı güncelleyin.",
+      "ended": "Host oturumu kapattı."
+    }
   }
 }

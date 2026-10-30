@@ -13,7 +13,8 @@
     "timers": "Timers",
     "speed": "Speed",
     "settings": "Settings",
-    "info": "Info"
+    "info": "Info",
+    "session": "Session"
   },
   "evidence": {
     "count": "Evidence count",
@@ -182,5 +183,42 @@
     "unknown": "No info in sources",
     "sameAs": "Same locations as {name}.",
     "sameAsUnverified": "No separate source; showing {name} locations, which may differ."
+  },
+  "session": {
+    "name": "Your name (everyone in the session sees it)",
+    "namePlaceholder": "e.g. Alex",
+    "hostTitle": "Start a session",
+    "hostDesc": "You get a code; your friends join with it. Your evidence is shared with everyone.",
+    "host": "Host",
+    "joinTitle": "Join a session",
+    "joinDesc": "Enter the 6-character code from the host. Your evidence is replaced with the host's.",
+    "join": "Join",
+    "codePlaceholder": "CODE",
+    "connecting": "Connecting…",
+    "cancel": "Cancel",
+    "codeLabel": "Session code",
+    "copy": "Copy code",
+    "copied": "Code copied",
+    "shareHint": "Send this code to your friends.",
+    "members": "In this session ({n})",
+    "hostTag": "host",
+    "you": "(you)",
+    "hostNote": "Evidence, eliminations and Blood Moon are shared with everyone. Closing the app ends the session.",
+    "joinNote": "Evidence, eliminations and Blood Moon are shared with everyone. The session ends if the host leaves.",
+    "end": "End session",
+    "leave": "Leave session",
+    "banner": "Session {code} · {n} people",
+    "joinedToast": "{name} joined the session",
+    "err": {
+      "noName": "Enter your name first.",
+      "badCode": "The code must be 6 characters (letters and digits).",
+      "notFound": "No open session with this code. Check the code and that the host's app is open.",
+      "timeout": "Couldn't connect. Your network may be blocking direct connections; try again.",
+      "server": "Couldn't reach the connection server. Check your internet connection and try again.",
+      "lost": "The session connection was lost.",
+      "full": "The session is full (8 people max).",
+      "version": "The host is on a different app version. Both of you should update the app.",
+      "ended": "The host ended the session."
+    }
   }
 }

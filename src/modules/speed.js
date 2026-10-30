@@ -24,6 +24,8 @@ App.register({
       if (o) { app.speed.modifier = o.modifier || 1; app.speed.bloodMoon = !!o.bloodMoon; }
     } catch {}
     app.on('speed:clear', () => this.reset());
+    // Kanlı Ay kanıt durumunun parçası (oturumda ortak): değişince kaydet ve yeniden çiz.
+    app.on('bloodmoon:changed', () => { this.saveOptions(); this.render(); this.update(); });
     app.on('contract:new', () => {
       this.app.speed.bloodMoon = false;
       this.saveOptions();
@@ -112,12 +114,7 @@ App.register({
       this.render();
       this.update();
     });
-    this.panel.querySelector('#sp-blood').onchange = e => {
-      app.speed.bloodMoon = e.target.checked;
-      this.saveOptions();
-      this.render();
-      this.update();
-    };
+    this.panel.querySelector('#sp-blood').onchange = e => app.emit('ev:op', { k: 'blood', on: e.target.checked });
     this.renderResult(GhostLogic.measureTaps(this.taps));
   },
 

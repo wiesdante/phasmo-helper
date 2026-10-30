@@ -1,5 +1,5 @@
 // Ana süreç: pencere, her zaman üstte, şeffaflık, global kısayollar, ayarlar ve veri dosyaları.
-const { app, BrowserWindow, globalShortcut, ipcMain, shell } = require('electron');
+const { app, BrowserWindow, globalShortcut, ipcMain, shell, clipboard } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const analytics = require('./analytics');
@@ -10,7 +10,8 @@ const DEFAULT_SETTINGS = {
   language: null,            // ilk açılışta bilgisayarın diline göre seçilir (tr / en)
   opacity: 0.9,
   sound: true,
-  analytics: true,           // isimsiz kullanım sayısı (Ayarlar'dan kapatılabilir)
+  analytics: true,
+  playerName: '',            // online oturumda görünen isim           // isimsiz kullanım sayısı (Ayarlar'dan kapatılabilir)
   bounds: { width: 360, height: 600 },
   shortcuts: {
     toggleWindow: 'F8',
@@ -198,6 +199,7 @@ ipcMain.handle('i18n:get', (_e, lang) => {
 const PKG = readJson('package.json');
 ipcMain.handle('app:info', () => ({ version: app.getVersion(), packaged: app.isPackaged, homepage: PKG.homepage || '', analytics: analytics.enabled() }));
 
+ipcMain.handle('clipboard:write', (_e, text) => { clipboard.writeText(String(text).slice(0, 100)); return true; });
 ipcMain.on('window:hide', () => win && win.hide());
 ipcMain.on('window:minimize', () => win && win.minimize());
 ipcMain.on('app:quit', () => app.quit());

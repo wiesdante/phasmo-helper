@@ -13,6 +13,58 @@ App.register({
     this.state = this.loadState();
     this.expanded = null;
     app.on('speed', () => this.render());
+    app.on('ev:op', op => this.commit(op));          // başka modülden gelen işlem (ör. Kanlı Ay)
+    app.evidenceModule = this;                        // oturum modülü ortak durumu buradan okur/yazar
+    this.render();
+  },
+
+  // --- Ortak durum (online oturum) ---
+  // Her değişiklik bir işlemdir; yerelde uygulanır ve 'shared:local' ile oturuma bildirilir.
+  // İşlemler: {k:'count', n} {k:'ev', id, v:'found'|'out'|null} {k:'elim', id, on} {k:'reset'} {k:'blood', on}
+  commit(op) {
+    if (!this.applyOp(op)) return;
+    this.app.emit('shared:local', op);
+  },
+  applyOp(op) {
+    const s = this.state;
+    switch (op && op.k) {
+      case 'count': s.count = op.n; break;
+      case 'ev': if (op.v) s.ev[op.id] = op.v; else delete s.ev[op.id]; break;
+      case 'elim': {
+        const i = s.eliminated.indexOf(op.id);
+        if (op.on && i < 0) s.eliminated.push(op.id);
+        if (!op.on && i >= 0) s.eliminated.splice(i, 1);
+        break;
+      }
+      case 'reset':
+        this.state = { ...this.defaultState(), count: s.count };
+        this.expanded = null;
+        this.saveState();
+        this.app.emit('contract:new');
+        this.render();
+        return true;
+      case 'blood':
+        this.app.speed.bloodMoon = !!op.on;
+        this.app.emit('bloodmoon:changed');
+        break;
+      default: return false;
+    }
+    this.saveState();
+    this.render();
+    return true;
+  },
+  getShared() {
+    return { count: this.state.count, ev: { ...this.state.ev }, eliminated: [...this.state.eliminated], bloodMoon: !!this.app.speed.bloodMoon };
+  },
+  // Oturumdan gelen tam durum (host'un durumu). wasReset: yeni kontrat başladıysa yerel hız ölçümü de temizlenir.
+  setShared(sh, wasReset) {
+    if (wasReset) this.app.emit('contract:new');
+    this.state = { count: sh.count, ev: { ...sh.ev }, eliminated: [...sh.eliminated] };
+    if (!!this.app.speed.bloodMoon !== sh.bloodMoon) {
+      this.app.speed.bloodMoon = sh.bloodMoon;
+      this.app.emit('bloodmoon:changed');
+    }
+    this.saveState();
     this.render();
   },
 
@@ -31,13 +83,7 @@ App.register({
   },
   // Yeni kontrat: kanıtlar, elenenler ve hız ölçümü birlikte sıfırlanır
   // (eski ölçüm yeni oyundaki hayaletleri yanlışlıkla soluk göstermesin).
-  reset() {
-    this.state = { ...this.defaultState(), count: this.state.count };
-    this.expanded = null;
-    this.saveState();
-    this.app.emit('contract:new');
-    this.render();
-  },
+  reset() { this.commit({ k: 'reset' }); },
 
   // Tıklama: boş → bulundu → elendi → boş. Sağ tık: doğrudan elendi/boş.
   cycle(id, rightClick) {
@@ -45,18 +91,12 @@ App.register({
     let next;
     if (rightClick) next = cur === 'out' ? undefined : 'out';
     else next = !cur ? 'found' : cur === 'found' ? 'out' : undefined;
-    if (next) this.state.ev[id] = next; else delete this.state.ev[id];
-    this.saveState();
-    this.render();
+    this.commit({ k: 'ev', id, v: next || null });
     return next;
   },
 
   toggleEliminated(id) {
-    const list = this.state.eliminated;
-    const i = list.indexOf(id);
-    if (i >= 0) list.splice(i, 1); else list.push(id);
-    this.saveState();
-    this.render();
+    this.commit({ k: 'elim', id, on: !this.state.eliminated.includes(id) });
   },
 
   compute() {
@@ -121,6 +161,7 @@ App.register({
         <button class="link" id="ev-reset">${t('evidence.reset')}</button>
       </div>
       ${note}
+      ${app.sessionBanner ? app.sessionBanner() : ''}
       ${sp.bloodMoon ? `<div class="blood-bar">🌕 ${t('evidence.bloodMoon')}</div>` : ''}
       <div class="ev-grid">${evRows}</div>
       <p class="hint">${t('evidence.howTo')}</p>
@@ -140,9 +181,7 @@ App.register({
   bind() {
     const p = this.panel;
     p.querySelectorAll('[data-count]').forEach(b => b.onclick = () => {
-      this.state.count = Number(b.dataset.count);
-      this.saveState();
-      this.render();
+      this.commit({ k: 'count', n: Number(b.dataset.count) });
     });
     p.querySelectorAll('[data-ev]').forEach(b => {
       b.onclick = () => this.cycle(b.dataset.ev, false);

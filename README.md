@@ -19,6 +19,7 @@ Download `Phasmo-Helper-Setup-x.y.z.exe` from the [**Releases**](https://github.
 - **Hayaletler / Ghosts:** 30 hayaletin ölçülebilir davranışları ve "bunu görürsen bu hayalet değil" kuralları.
 - **Süreler / Timers:** Tütsü (60/90/180 sn) ve av + bekleme süresi.
 - **Hız / Speed:** Ayak seslerine vurarak m/s ölçümü; uyan hayaletleri vurgular.
+- **Oturum / Session:** Arkadaşlarınla tek kodla bağlan; kanıtlar, elemeler ve Kanlı Ay herkeste aynı anda güncellenir. / Connect with friends using one code; evidence, eliminations and Blood Moon stay in sync for everyone.
 - **Kısayollar / Shortcuts:** Ayarlardan tüm tuşlar değiştirilebilir. / Every key can be changed in Settings.
 - **Bilgi / Info:** 17 haritada lanetli eşya konumları; 21 ekipmanın I/II/III seviye farkları; 7 lanetli eşya, maliyetler, tarot ve maymun pençesi tabloları.
 
@@ -38,6 +39,9 @@ Download `Phasmo-Helper-Setup-x.y.z.exe` from the [**Releases**](https://github.
 
 Uygulama açıldığında isimsiz tek bir sayım gönderir: sadece uygulama sürümü, Windows sürümü ve dil. Kim olduğun ya da oyun bilgilerin gönderilmez. Ayarlar'daki "İsimsiz kullanım sayısı gönder" seçeneğiyle kapatabilirsin.
 When the app opens it sends a single anonymous count with only the app version, Windows version and language. Nothing about who you are or your games is sent. You can turn it off in Settings ("Send anonymous usage count").
+
+Online oturumda eşler birbirini PeerJS'in genel bağlantı sunucusu üzerinden bulur; kanıtlar ve isimler doğrudan oyuncuların bilgisayarları arasında gider.
+In an online session players find each other through PeerJS's public connection server; evidence and names travel directly between the players' computers.
 
 ## Kaynaklar ve yasal not / Sources & legal
 

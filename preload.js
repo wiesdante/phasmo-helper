@@ -18,5 +18,6 @@ contextBridge.exposeInMainWorld('api', {
   getUpdateState: () => ipcRenderer.invoke('update:get-state'),
   installUpdate: () => ipcRenderer.invoke('update:install'),
   onUpdateState: (cb) => ipcRenderer.on('update:state', (_e, s) => cb(s)),
-  onUpdateInstalled: (cb) => ipcRenderer.on('update:installed', (_e, v) => cb(v))
+  onUpdateInstalled: (cb) => ipcRenderer.on('update:installed', (_e, v) => cb(v)),
+  copyText: (text) => ipcRenderer.invoke('clipboard:write', text)
 });
