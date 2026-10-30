@@ -34,17 +34,6 @@ Download `Phasmo-Helper-Setup-x.y.z.exe` from the [**Releases**](https://github.
 | Num1–Num7 | Kanıtlar · Evidence |
 | Num0 | Kanıtları sıfırla · Reset evidence |
 
-## Geliştirme / Development
-
-```bash
-npm install
-npm start          # çalıştır / run
-npm run dist       # Windows kurulumu üret / build installer (dist/)
-```
-
-Yeni sürüm yayınlamak / Publishing a release: `CHANGELOG.md`'ye sürüm notunu ekle, `package.json` sürümünü artırıp main dalına gönder; GitHub Actions kurulumu üretir, `vX.Y.Z` etiketini oluşturur ve Releases'e yükler.
-Add the version's notes to `CHANGELOG.md`, bump the `package.json` version and push to `main`; GitHub Actions builds the installer, creates the `vX.Y.Z` tag and publishes it to Releases.
-
 ## Kaynaklar ve yasal not / Sources & legal
 
 Hayalet ve eşya bilgileri topluluk kaynaklarından derlenmiştir: [Phasmophobia Wiki](https://phasmophobia.fandom.com/) (CC BY-SA 3.0), [Phasmopedia](https://phasmopedia.com/), Steam topluluk kılavuzları ve Kinetic Games yama notları.
