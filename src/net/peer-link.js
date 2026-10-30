@@ -23,6 +23,8 @@ window.PeerLink = (() => {
   const isValidCode = c => c.length === CODE_LEN && [...c].every(ch => CODE_CHARS.includes(ch));
 
   // Sinyal sunucusuyla konuşan küçük istemci (PeerJS sunucu protokolü).
+  // Not: genel sunucu OFFER / ANSWER / CANDIDATE mesajlarında payload.type ister ('data');
+  // eksikse göndereni sessizce bağlantıdan atar.
   class Signal {
     constructor(id, handlers) {
       this.id = id; this.h = handlers; this.closed = false;
@@ -80,7 +82,7 @@ window.PeerLink = (() => {
           const pc = makePc();
           const entry = { pc, dc: null, connectionId: pl.connectionId };
           peers.set(src, entry);
-          pc.onicecandidate = e => { if (e.candidate) sig.send('CANDIDATE', src, { candidate: e.candidate, connectionId: pl.connectionId }); };
+          pc.onicecandidate = e => { if (e.candidate) sig.send('CANDIDATE', src, { candidate: e.candidate, type: 'data', connectionId: pl.connectionId }); };
           pc.ondatachannel = e => {
             entry.dc = e.channel;
             e.channel.onopen = () => events.peerOpen(src);
@@ -97,7 +99,7 @@ window.PeerLink = (() => {
             await pc.setRemoteDescription(pl.sdp);
             const answer = await pc.createAnswer();
             await pc.setLocalDescription(answer);
-            sig.send('ANSWER', src, { sdp: pc.localDescription, connectionId: pl.connectionId });
+            sig.send('ANSWER', src, { sdp: pc.localDescription, type: 'data', connectionId: pl.connectionId });
           } catch { api.kick(src); }
         } else if (m.type === 'CANDIDATE') {
           const p = peers.get(src);
@@ -134,7 +136,7 @@ window.PeerLink = (() => {
         if (m.type === 'OPEN') {
           pc = makePc();
           dc = pc.createDataChannel('sync', { ordered: true });
-          pc.onicecandidate = e => { if (e.candidate) sig.send('CANDIDATE', hostId, { candidate: e.candidate, connectionId }); };
+          pc.onicecandidate = e => { if (e.candidate) sig.send('CANDIDATE', hostId, { candidate: e.candidate, type: 'data', connectionId }); };
           dc.onopen = () => {
             opened = true; clearTimeout(timer);
             sig.close(); // bağlantı kuruldu; sinyal sunucusuna artık gerek yok

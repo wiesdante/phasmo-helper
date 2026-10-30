@@ -1,5 +1,13 @@
 # Değişiklik günlüğü / Changelog
 
+## Yayınlanmadı / Unreleased
+
+**Türkçe**
+- Oturuma katılırken çıkan "bağlantı sunucusuna ulaşılamadı" hatası düzeltildi; artık katılma birkaç saniyede gerçekleşiyor.
+
+**English**
+- Fixed the "couldn't reach the connection server" error when joining a session; joining now takes a few seconds.
+
 ## 1.0.0 — 2026-10-31
 
 **Türkçe**
