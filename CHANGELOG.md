@@ -1,14 +1,16 @@
 # Değişiklik günlüğü / Changelog
 
-## Yayınlanmadı / Unreleased
+## 1.0.0 — 2026-10-31
 
 **Türkçe**
+- Phasmo Helper 1.0! İlk tam sürüm.
 - Yeni 👥 Oturum sekmesi: "Host ol" ile 6 haneli bir kod al, arkadaşların bu kodla katılsın.
 - Oturumdaki herkesin kanıtları, kanıt sayısı, elle elenen hayaletleri ve Kanlı Ay seçeneği ortak: biri Num tuşuna bastığında herkeste anında değişir. Sıfırla da herkeste yeni kontrat başlatır.
 - Oturumdaki kişilerin isim listesi; Kanıtlar sekmesinde oturum kodu ve kişi sayısı görünür.
 - Bağlantı doğrudan oyuncular arasında kurulur, üyelik gerekmez. Host çıkarsa oturum biter.
 
 **English**
+- Phasmo Helper 1.0! The first full release.
 - New 👥 Session tab: "Host" gives you a 6-character code your friends join with.
 - Evidence, evidence count, manually eliminated ghosts and Blood Moon are shared: when someone presses a Num key it changes for everyone instantly. Reset starts a new contract for everyone.
 - A list of the people in the session; the Evidence tab shows the session code and head count.
