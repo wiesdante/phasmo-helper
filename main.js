@@ -2,6 +2,7 @@
 const { app, BrowserWindow, globalShortcut, ipcMain, shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const analytics = require('./analytics');
 
 // F tuşları varsayılan: oyun bunları kullanmıyor. Global kısayol, tuşu oyundan "çalar",
 // bu yüzden oyunda kullandığın tuşları buraya koyma.
@@ -9,6 +10,7 @@ const DEFAULT_SETTINGS = {
   language: null,            // ilk açılışta bilgisayarın diline göre seçilir (tr / en)
   opacity: 0.9,
   sound: true,
+  analytics: true,           // isimsiz kullanım sayısı (Ayarlar'dan kapatılabilir)
   bounds: { width: 360, height: 600 },
   shortcuts: {
     toggleWindow: 'F8',
@@ -194,7 +196,7 @@ ipcMain.handle('i18n:get', (_e, lang) => {
 });
 
 const PKG = readJson('package.json');
-ipcMain.handle('app:info', () => ({ version: app.getVersion(), packaged: app.isPackaged, homepage: PKG.homepage || '' }));
+ipcMain.handle('app:info', () => ({ version: app.getVersion(), packaged: app.isPackaged, homepage: PKG.homepage || '', analytics: analytics.enabled() }));
 
 ipcMain.on('window:hide', () => win && win.hide());
 ipcMain.on('window:minimize', () => win && win.minimize());
@@ -269,6 +271,7 @@ if (!app.requestSingleInstanceLock()) {
     createWindow();
     registerShortcuts();
     setupAutoUpdate();
+    analytics.start(() => settings.analytics !== false);
   });
 
   app.on('will-quit', () => globalShortcut.unregisterAll());

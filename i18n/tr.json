@@ -35,7 +35,9 @@
     "language": "Dil",
     "opacity": "Şeffaflık",
     "sound": "Sesli uyarılar",
-    "shortcuts": "Kısayollar"
+    "shortcuts": "Kısayollar",
+    "analytics": "İsimsiz kullanım sayısı gönder",
+    "analyticsHint": "Uygulama açıldığında sadece sürüm, Windows sürümü ve dil bilgisiyle tek bir sayım gönderilir. Kim olduğun, oyun bilgilerin ya da başka hiçbir veri gönderilmez. Kaç kişinin kullandığını görmemize yardım eder."
   },
   "shortcuts": {
     "toggleWindow": "Pencereyi göster/gizle",

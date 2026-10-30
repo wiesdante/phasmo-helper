@@ -1,5 +1,13 @@
 # Değişiklik günlüğü / Changelog
 
+## Yayınlanmadı / Unreleased
+
+**Türkçe**
+- Kaç kişinin kullandığını görebilmek için isimsiz kullanım sayacı: uygulama açıldığında sadece sürüm, Windows sürümü ve dil bilgisiyle tek bir sayım gönderilir. Ayarlar'dan kapatılabilir.
+
+**English**
+- Anonymous usage count so we can see how many people use the app: when it opens it sends a single count with only the app version, Windows version and language. Can be turned off in Settings.
+
 ## 0.4.2 — 2026-10-29
 
 **Türkçe**

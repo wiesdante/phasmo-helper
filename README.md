@@ -34,6 +34,11 @@ Download `Phasmo-Helper-Setup-x.y.z.exe` from the [**Releases**](https://github.
 | Num1–Num7 | Kanıtlar · Evidence |
 | Num0 | Kanıtları sıfırla · Reset evidence |
 
+## Gizlilik / Privacy
+
+Uygulama açıldığında isimsiz tek bir sayım gönderir: sadece uygulama sürümü, Windows sürümü ve dil. Kim olduğun ya da oyun bilgilerin gönderilmez. Ayarlar'daki "İsimsiz kullanım sayısı gönder" seçeneğiyle kapatabilirsin.
+When the app opens it sends a single anonymous count with only the app version, Windows version and language. Nothing about who you are or your games is sent. You can turn it off in Settings ("Send anonymous usage count").
+
 ## Kaynaklar ve yasal not / Sources & legal
 
 Hayalet ve eşya bilgileri topluluk kaynaklarından derlenmiştir: [Phasmophobia Wiki](https://phasmophobia.fandom.com/) (CC BY-SA 3.0), [Phasmopedia](https://phasmopedia.com/), Steam topluluk kılavuzları ve Kinetic Games yama notları.

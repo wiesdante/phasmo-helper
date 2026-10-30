@@ -52,6 +52,14 @@ App.register({
           <input type="checkbox" id="set-sound">
         </div>
       </div>
+${this.info.analytics ? `
+      <div class="field">
+        <div class="row">
+          <label for="set-analytics" data-i18n="settings.analytics"></label>
+          <input type="checkbox" id="set-analytics">
+        </div>
+        <p class="hint" data-i18n="settings.analyticsHint"></p>
+      </div>` : ''}
 
       <div class="field">
         <label data-i18n="settings.shortcuts"></label>
@@ -84,6 +92,11 @@ App.register({
     };
     opacity.oninput = () => this.save({ opacity: Number(opacity.value) });
     sound.onchange = () => this.save({ sound: sound.checked });
+    const analytics = this.panel.querySelector('#set-analytics');
+    if (analytics) {
+      analytics.checked = s.analytics !== false;
+      analytics.onchange = () => this.save({ analytics: analytics.checked });
+    }
 
     this.panel.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => this.startCapture(b.dataset.edit));
     this.panel.querySelector('#sc-reset').onclick = () => this.resetShortcuts();

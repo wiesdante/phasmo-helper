@@ -25,6 +25,7 @@
     "productName": "Phasmo Helper",
     "files": [
       "main.js",
+      "analytics.js",
       "preload.js",
       "package.json",
       "src/**/*",

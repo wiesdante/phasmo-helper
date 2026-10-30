@@ -35,7 +35,9 @@
     "language": "Language",
     "opacity": "Opacity",
     "sound": "Sound alerts",
-    "shortcuts": "Shortcuts"
+    "shortcuts": "Shortcuts",
+    "analytics": "Send anonymous usage count",
+    "analyticsHint": "When the app opens it sends a single count with only the app version, Windows version and language. Nothing about who you are or your games is sent. It helps us see how many people use the app."
   },
   "shortcuts": {
     "toggleWindow": "Show/hide window",
