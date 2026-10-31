@@ -1,5 +1,15 @@
 # Değişiklik günlüğü / Changelog
 
+## 1.0.2 — 2026-11-01
+
+**Türkçe**
+- Hız ölçer çok daha isabetli: hız artık tüm vuruşlara birlikte bakılarak hesaplanıyor. Aralık yaklaşık üçte bir genişliğe indi (ör. 8 vuruşta 2,03 m/s için 1,84–2,26 yerine 1,97–2,10) ve vuruş sayısı arttıkça daralıyor. Gerçek hayaletin yanlışlıkla elenmemesi korunuyor.
+- "Dondurucu Sıcaklık" kanıtının adı "Dondurucu Soğukluk" olarak düzeltildi.
+
+**English**
+- Much more precise speed meter: speed is now calculated from all taps together. The range is about a third as wide (e.g. 1.97–2.10 instead of 1.84–2.26 for 2.03 m/s with 8 taps) and narrows as you tap more. The real ghost is still never ruled out by mistake.
+- Turkish name of the Freezing Temperatures evidence corrected.
+
 ## 1.0.1 — 2026-10-31
 
 **Türkçe**

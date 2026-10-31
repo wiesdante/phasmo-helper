@@ -728,7 +728,7 @@
           "Soğuk odalarda hızlanır, sıcak odalarda yavaşlar. Görüş hattında hızlanmaz.",
           "Sigortayı asla açmaz; kapatma ihtimali daha yüksektir.",
           "Sigorta kapalıyken avda ağzından buhar (soğuk nefes) çıktığı görülür.",
-          "Azaltılmış kanıtta dondurucu sıcaklık her zaman gösterilir."
+          "Azaltılmış kanıtta dondurucu soğukluk her zaman gösterilir."
         ],
         "en": [
           "Faster in cold rooms, slower in warm ones; no line-of-sight acceleration.",

@@ -6,7 +6,7 @@
     { "id": "uv",        "name": { "en": "Ultraviolet",           "tr": "Ultraviyole (Parmak İzi)" }, "short": { "en": "UV",       "tr": "UV" } },
     { "id": "orb",       "name": { "en": "Ghost Orb",             "tr": "Hayalet Küresi (Orb)" },    "short": { "en": "Orb",      "tr": "Orb" } },
     { "id": "writing",   "name": { "en": "Ghost Writing",         "tr": "Hayalet Yazısı" },          "short": { "en": "Writing",  "tr": "Yazı" } },
-    { "id": "freezing",  "name": { "en": "Freezing Temperatures", "tr": "Dondurucu Sıcaklık" },      "short": { "en": "Freezing", "tr": "Soğuk" } },
+    { "id": "freezing",  "name": { "en": "Freezing Temperatures", "tr": "Dondurucu Soğukluk" },      "short": { "en": "Freezing", "tr": "Soğuk" } },
     { "id": "dots",      "name": { "en": "D.O.T.S Projector",     "tr": "D.O.T.S Projektörü" },      "short": { "en": "DOTS",     "tr": "DOTS" } }
   ]
 }

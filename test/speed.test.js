@@ -80,6 +80,15 @@ check('3.5: Yurei elenir (kovalama tepe hızı 2,8 üstü)', cls('yurei', 3.5) =
 check('1.5: Yurei elenir (1,7 altı)', cls('yurei', 1.5) === 'none');
 check('3.0: Revenant steady', cls('revenant', 3.0) === 'steady');
 
+// 6b) Aralık genişliği: 8 vuruşta 2,03 m/s için ±0,07 m/s'den dar olmalı; vuruş arttıkça daralmalı
+{
+  const w = n => { const m = L.measureTaps(taps(2.03, n)); return m.hi - m.lo; };
+  check('8 vuruşta aralık dar', w(8) < 0.14, w(8));
+  check('vuruş arttıkça aralık daralır', w(10) < w(6) && w(6) < w(4), [w(4), w(6), w(10)]);
+  const m = L.measureTaps(taps(2.03, 8));
+  console.log(`2,03 m/s @8 vuruş: ${m.lo.toFixed(2)}–${m.hi.toFixed(2)}`);
+}
+
 // 7) Değişken ritim (1,2 ↔ 2,25 karışık) uyarısı
 const mixed = []; let t = 0;
 for (const s of [1.2, 1.2, 1.2, 2.25, 2.25, 2.25, 1.2, 2.25, 1.2]) { mixed.push(t); t += (1 / s - 0.075) * 1000; }

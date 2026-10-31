@@ -42,7 +42,8 @@
   // --- Hız ---
   // Topluluk ölçümü (Zero Network): iki ayak sesi arası süre = 1 / hız − 0,075 sn.
   const STEP_OFFSET = 0.075;
-  const MIN_TIMING_ERROR = 0.05;   // elle vuruşta varsayılan en düşük zamanlama hatası (sn); ±50 ms'ye kadar gerçek hayalet elenmez
+  const TAP_SIGMA = 0.035;        // elle vuruşun varsayılan zamanlama hatası (sn, standart sapma)
+  const ERR_Z = 3;                // aralık genişliği: ±3 standart hata (gerçek hayalet neredeyse hiç elenmez)
   const BLOOD_MOON = 1.15;         // Kanlı Ay hava durumu hayaletleri %15 hızlandırır
 
   function speedFromInterval(sec) { return 1 / (sec + STEP_OFFSET); }
@@ -55,21 +56,32 @@
   }
 
   // Vuruş zamanlarından (ms) hız ve belirsizlik aralığı hesaplar. En az 3 vuruş gerekir.
-  // Aralık: ortanca aralık ± max(50 ms, aralıkların ortanca mutlak sapması).
+  // Adım aralığı, tüm vuruşlara uyan doğrunun eğimidir (en küçük kareler): tek tek aralıklara bakmaktan
+  // çok daha az hatalıdır, çünkü her vuruşun hatası bütün ölçüme yayılır. Vuruş arttıkça aralık daralır.
+  // Aralık: eğim ± 3 × standart hata; standart hata en az 35 ms'lik vuruş hatasıyla hesaplanır.
   function measureTaps(tapsMs) {
     if (!tapsMs || tapsMs.length < 3) return null;
+    const t = tapsMs.map(x => x / 1000), n = t.length, xm = (n - 1) / 2;
+    const ym = t.reduce((a, b) => a + b, 0) / n;
+    let sxx = 0, sxy = 0;
+    for (let i = 0; i < n; i++) { sxx += (i - xm) ** 2; sxy += (i - xm) * (t[i] - ym); }
+    const step = sxy / sxx;
+    let rss = 0;
+    for (let i = 0; i < n; i++) rss += (t[i] - (ym + step * (i - xm))) ** 2;
+    const resid = n > 2 ? Math.sqrt(rss / (n - 2)) : 0;
+    const err = ERR_Z * Math.max(TAP_SIGMA, resid) / Math.sqrt(sxx);
+    // Ritim düzensizliği (hız ölçüm sırasında değişti mi): tek tek aralıkların yayılımına bakılır.
     const iv = [];
-    for (let i = 1; i < tapsMs.length; i++) iv.push((tapsMs[i] - tapsMs[i - 1]) / 1000);
+    for (let i = 1; i < n; i++) iv.push(t[i] - t[i - 1]);
     const med = median(iv);
     const mad = median(iv.map(x => Math.abs(x - med)));
-    const err = Math.max(MIN_TIMING_ERROR, mad);
     return {
-      interval: med,
-      spm: 60 / med,
-      speed: speedFromInterval(med),
-      lo: speedFromInterval(med + err),
-      hi: speedFromInterval(Math.max(0.05, med - err)),
-      irregular: mad > 0.08 && mad / med > 0.12   // ritim çok düzensiz: büyük ihtimalle hız değişti
+      interval: step,
+      spm: 60 / step,
+      speed: speedFromInterval(step),
+      lo: speedFromInterval(step + err),
+      hi: speedFromInterval(Math.max(0.05, step - err)),
+      irregular: mad > 0.08 && mad / med > 0.12
     };
   }
 

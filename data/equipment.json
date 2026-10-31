@@ -228,7 +228,7 @@
         "en": "Thermometer"
       },
       "summary": {
-        "tr": "Oda sıcaklığını ölçer; 0 °C altı dondurucu sıcaklık kanıtıdır.",
+        "tr": "Oda sıcaklığını ölçer; 0 °C altı dondurucu soğukluk kanıtıdır.",
         "en": "Measures room temperature; below 0 °C is freezing evidence."
       },
       "tiers": [
@@ -248,7 +248,7 @@
       "tips": {
         "tr": [
           "Kanıt için 0 °C (32 °F) altı okuma gerekir; hayalet odası genelde evin en soğuk odasıdır.",
-          "Dondurucu odada nefesin buhar olarak görünür. Hantu'da azaltılmış kanıtta dondurucu sıcaklık her zaman vardır."
+          "Dondurucu odada nefesin buhar olarak görünür. Hantu'da azaltılmış kanıtta dondurucu soğukluk her zaman vardır."
         ],
         "en": [
           "Evidence needs a reading below 0 °C (32 °F); the ghost room is usually the coldest.",
